@@ -60,8 +60,10 @@ FirebaseAuth auth;
 
                         if (task.isSuccessful()){
 
-                            Toast.makeText(MainActivity.this, "Is Sucesfull", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Toast.makeText(MainActivity.this, "Is Successful", Toast.LENGTH_LONG).show();
+                            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Intent i = new Intent(MainActivity.this, dashboard.class);
+                            startActivity(i);
 
 
                         }else{
