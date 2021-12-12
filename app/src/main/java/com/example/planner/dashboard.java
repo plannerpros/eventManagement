@@ -47,7 +47,7 @@ public class dashboard extends AppCompatActivity {
         c4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(dashboard.this, feedback.class);
+                Intent i = new Intent(dashboard.this, feedback1.class);
                 startActivity(i);
             }
         });

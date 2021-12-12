@@ -10,25 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
-            android:name=".feedback"
+            android:name=".feedback1"
+            android:exported="false"
             android:label="Feedback"
-            android:parentActivityName=".dashboard"
-            android:exported="false" />
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".transactions"
+            android:exported="false"
             android:label="Transactions"
-            android:parentActivityName=".dashboard"
-            android:exported="false" />
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".tracking"
+            android:exported="false"
             android:label="Track the status"
-            android:parentActivityName=".dashboard"
-            android:exported="false" />
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".planning"
+            android:exported="false"
             android:label="Plan an event"
-            android:parentActivityName=".dashboard"
-            android:exported="false" />
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".activity_signup"
             android:exported="false"
