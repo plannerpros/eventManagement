@@ -15,8 +15,10 @@
             android:id="@+id/userAccount"
             android:layout_width="60sp"
             android:layout_height="60sp"
-            android:layout_marginStart="330sp"
-            android:layout_marginTop="10sp"
+            android:background=""
+            android:layout_marginStart="320sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
             android:scaleType="centerCrop"
             android:src="@drawable/profile_user" />
     </LinearLayout>
