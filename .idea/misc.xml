@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/Event_management/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
-        <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_Register.xml" value="0.1" />
+        <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_activitymain_register.xml" value="0.1" />
+        <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_register.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Cheth/AndroidStudioProjects/testRepo/app/src/main/res/layout/activity_signup.xml" value="0.33" />
       </map>
     </option>
   </component>
