@@ -16,6 +16,7 @@
             android:layout_width="60sp"
             android:layout_height="60sp"
             android:layout_marginStart="320sp"
+            android:background="@android:color/transparent"
             android:layout_marginTop="20sp"
             android:layout_marginBottom="20sp"
             android:scaleType="centerCrop"
