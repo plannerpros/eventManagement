@@ -11,9 +11,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class feedback1 extends AppCompatActivity {
     RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
     Button b1;
+    FirebaseDatabase fd;
+    DatabaseReference ar;
+
 
 
     @Override
@@ -31,6 +37,8 @@ public class feedback1 extends AppCompatActivity {
         b1 = findViewById(R.id.submit_button);
         final String[] satisfied = new String[1];
         final String[] futureEvents = new String[1];
+        fd = FirebaseDatabase.getInstance();
+        ar = fd.getReference().child("feedback");
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +58,8 @@ public class feedback1 extends AppCompatActivity {
                 }else{
                     futureEvents[0] = rb6.getText().toString();
                 }
-
+                ar.child("satsfaction").setValue(satisfied[0]);
+                ar.child("future event").setValue(futureEvents[0]);
                 System.out.println("hey!"+satisfied[0].toString()+" "+futureEvents[0]);
             }
         });
