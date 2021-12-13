@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
+            android:name=".activity_collectdetails"
+            android:exported="false" />
+        <activity
             android:name=".feedback1"
             android:exported="false"
             android:label="Feedback"
