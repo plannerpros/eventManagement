@@ -3,6 +3,7 @@ package com.example.planner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.content.Intent;
 
@@ -19,7 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_signup extends AppCompatActivity {
-    EditText t1,t2,t3,t4;
+    EditText t1,t2,t3,t4,t5;
     Button b1,b2;
     FirebaseAuth auth;
     ProgressBar p1;
@@ -27,7 +28,6 @@ public class activity_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
         t1 = findViewById(R.id.fullName);
         t2 = findViewById(R.id.Email);
         t3 = findViewById(R.id.password);

@@ -37,12 +37,17 @@ DatabaseReference df;
                 String address = aet.getText().toString();
                 String zipCode = zcet.getText().toString();
                 String dateBirth = dofet.getText().toString();
-                df.child("Full Name").setValue(name);
+                /*df.child("Full Name").setValue(name);
                 df.child("Phone Number").setValue(phNumber);
                 df.child("Aadhar").setValue(aadharNumber);
                 df.child("Address").setValue(address);
                 df.child("Zip Code").setValue(zipCode);
                 df.child("Date Of Birth").setValue(dateBirth);
+
+                 */
+
+                userDatabase user = new userDatabase(aadharNumber, address, name, phNumber, dateBirth, zipCode);
+                df.child(phNumber).setValue(user);
 
             }
         });

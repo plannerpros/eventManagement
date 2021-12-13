@@ -33,7 +33,7 @@
     <EditText
         android:id="@+id/address"
         android:layout_width="382dp"
-        android:layout_height="117dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="Full Name"
@@ -51,12 +51,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <EditText
         android:id="@+id/phone_Number"
         android:layout_width="386dp"
-        android:layout_height="88dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="Full Name"
@@ -79,7 +79,7 @@
     <EditText
         android:id="@+id/adhhar"
         android:layout_width="384dp"
-        android:layout_height="80dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="Full Name"
@@ -97,12 +97,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintVertical_bias="0.337" />
 
     <EditText
         android:id="@+id/Zipcode"
         android:layout_width="380dp"
-        android:layout_height="77dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="Full Name"
@@ -120,12 +120,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.663" />
 
     <EditText
         android:id="@+id/dateofbirth"
         android:layout_width="380dp"
-        android:layout_height="77dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="Full Name"
@@ -143,7 +143,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/details_submit"

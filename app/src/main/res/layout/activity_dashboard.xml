@@ -13,8 +13,8 @@
 
         <ImageButton
             android:id="@+id/userAccount"
-            android:layout_width="60sp"
-            android:layout_height="60sp"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
             android:layout_marginStart="320sp"
             android:background="@android:color/transparent"
             android:layout_marginTop="20sp"

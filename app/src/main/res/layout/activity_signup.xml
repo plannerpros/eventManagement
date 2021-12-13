@@ -12,21 +12,19 @@
         android:layout_marginTop="50sp"
         app:cardBackgroundColor="#ced4da"
         app:cardCornerRadius="30sp"
-        app:layout_constraintBottom_toBottomOf="@id/fullName"
+        app:layout_constraintBottom_toBottomOf="@id/Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <TextView
-
-            android:id="@+id/textView2"
+            android:id="@+id/main_text"
             android:layout_width="287dp"
             android:layout_height="53dp"
-
             android:gravity="center_horizontal"
-            android:text="Create New Account"
-
+            android:text="Create new account"
+            android:paddingTop="10sp"
             android:textColor="@android:color/holo_blue_bright"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,28 +46,7 @@
         tools:layout_editor_absoluteY="68dp">
 
     </androidx.cardview.widget.CardView>
-    <EditText
-        android:id="@+id/fullName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:autofillHints="Full Name"
-        android:ems="10"
-        android:hint="Full Name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+
 
     <EditText
         android:id="@+id/Email"
@@ -117,19 +94,17 @@
 
     <Button
         android:id="@+id/loginbtn"
-        android:layout_width="0dp"
+        android:layout_width="140sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
 
         android:text="Register"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.647" />
@@ -150,7 +125,7 @@
 
     <Button
         android:id="@+id/signin_button"
-        android:layout_width="0dp"
+        android:layout_width="140sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -159,10 +134,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/loginbtn"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.456" />
 
     <EditText
         android:id="@+id/phone"
@@ -175,8 +150,8 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:autofillHints="Enter Phonr Nmber"
-        android:hint="Phone Number"
-        android:inputType="number"
+        android:hint="Confirm password"
+        android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHint="@color/black"
         android:textSize="20sp"
