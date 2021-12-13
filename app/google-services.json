@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "6110199294",
+    "firebase_url": "https://planner-452a8-default-rtdb.firebaseio.com",
     "project_id": "planner-452a8",
     "storage_bucket": "planner-452a8.appspot.com"
   },
@@ -27,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "6110199294-tq933u880enilpk7fjrrrfo19t9elr5t.apps.googleusercontent.com",
+              "client_id": "6110199294-52ue3254fha09eus69nc8dpqm4ld4rp6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

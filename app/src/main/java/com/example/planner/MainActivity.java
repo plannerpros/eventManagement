@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 Button b1,b2;
+
 EditText t1,t2;
 ProgressBar p1;
 FirebaseAuth auth;
