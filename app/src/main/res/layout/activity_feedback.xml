@@ -23,25 +23,27 @@
         android:id="@+id/names"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
-        android:hint="ENTER NAME"
+        android:hint="Enter your name"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/gender"
-        android:layout_width="294dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="144dp"
+        android:layout_width="342dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="96dp"
         android:text="How satisfied were you with the event?"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,26 +51,25 @@
         android:id="@+id/radioGroup"
         android:layout_width="42dp"
         android:layout_height="22dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="128dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </RadioGroup>
 
-
     <TextView
         android:id="@+id/gender1"
-        android:layout_width="294dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="284dp"
+        android:layout_width="312dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="248dp"
         android:text="How likely are you to attend our future events?"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,10 +77,10 @@
         android:id="@+id/radioGroup1"
         android:layout_width="42dp"
         android:layout_height="22dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="280dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -87,142 +88,158 @@
 
     <RadioButton
         android:id="@+id/radioButton"
-        android:layout_width="83dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="204dp"
+        android:layout_width="91dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="152dp"
         android:onClick="radioButtonhandler"
         android:text="good"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <RadioButton
         android:id="@+id/other"
-        android:layout_width="101dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="348dp"
+        android:layout_width="119dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="156dp"
         android:onClick="radioButtonhandler"
         android:text="very good"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/female"
-        android:layout_width="102dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="204dp"
+        android:layout_width="123dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="152dp"
         android:onClick="radioButtonhandler"
         android:text="excellent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gender2"
-        android:layout_width="294dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="420dp"
+        android:layout_width="337dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="380dp"
         android:text="What were your greatest take-away from the event?"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/age"
-        android:layout_width="141dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="476dp"
+        android:layout_width="267dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="436dp"
         android:ems="10"
         android:hint="enter your comment here"
-        android:inputType="number"
+        android:inputType="text"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gender3"
-        android:layout_width="294dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="548dp"
+        android:layout_width="354dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="504dp"
         android:text="Please provide suggestions for improving our future events"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.596"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/Phone"
-        android:layout_width="182dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="604dp"
+        android:layout_width="244dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="556dp"
         android:ems="10"
         android:hint="please give your review here"
-        android:inputType="phone"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="684dp"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
         android:backgroundTint="#D500F9"
         android:onClick="submitbuttonHandler"
         android:text="SUBMIT"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/gender1"
+        android:gravity="center_horizontal">
+
 
     <RadioButton
         android:id="@+id/radioButton2"
-        android:layout_width="83dp"
-        android:layout_height="49dp"
+        android:layout_width="93dp"
+        android:layout_height="55dp"
         android:onClick="radioButtonhandler"
         android:text="depends"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.446" />
+
 
     <RadioButton
         android:id="@+id/other2"
-        android:layout_width="101dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="208dp"
+        android:layout_width="120dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="308dp"
         android:onClick="radioButtonhandler"
         android:text="will decide later"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/female2"
-        android:layout_width="102dp"
-        android:layout_height="55dp"
+        android:layout_width="109dp"
+        android:layout_height="63dp"
         android:onClick="radioButtonhandler"
         android:text="very likely"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.455"/>
+
+        </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
