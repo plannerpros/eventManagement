@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-Button b1;
+Button b1,b2;
 EditText t1,t2;
 ProgressBar p1;
 FirebaseAuth auth;
@@ -35,6 +35,7 @@ FirebaseAuth auth;
         t2 = findViewById(R.id.pass);
         b1 = findViewById(R.id.bu1);
         p1=findViewById(R.id.progressBar);
+        b2 = findViewById(R.id.register_id);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +61,7 @@ FirebaseAuth auth;
 
                         if (task.isSuccessful()){
 
-                            Toast.makeText(MainActivity.this, "Is Successful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                             //startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             Intent i = new Intent(MainActivity.this, dashboard.class);
                             startActivity(i);
@@ -74,6 +75,13 @@ FirebaseAuth auth;
                     }
                 });
 
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inew = new Intent(MainActivity.this,activity_signup.class);
+                startActivity(inew);
             }
         });
     }
