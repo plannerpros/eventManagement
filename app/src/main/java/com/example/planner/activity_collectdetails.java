@@ -3,6 +3,7 @@ package com.example.planner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +27,27 @@ DatabaseReference df;
         dofet = findViewById(R.id.dateofbirth);
         sb = findViewById(R.id.details_submit);
         fb = FirebaseDatabase.getInstance();
-        df = fb.getReference().child("user1");
+        df = fb.getReference().child("details");
+        sb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = fnet.getText().toString();
+                String phNumber = pnet.getText().toString();
+                String aadharNumber = anet.getText().toString();
+                String address = aet.getText().toString();
+                String zipCode = zcet.getText().toString();
+                String dateBirth = dofet.getText().toString();
+                df.child("Full Name").setValue(name);
+                df.child("Phone Number").setValue(phNumber);
+                df.child("Aadhar").setValue(aadharNumber);
+                df.child("Address").setValue(address);
+                df.child("Zip Code").setValue(zipCode);
+                df.child("Date Of Birth").setValue(dateBirth);
+
+            }
+        });
+
+
 
 
     }

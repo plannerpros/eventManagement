@@ -6,10 +6,12 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class dashboard extends AppCompatActivity {
 
     CardView c1,c2,c3,c4;
+    ImageButton ib;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,7 @@ public class dashboard extends AppCompatActivity {
         c2 = findViewById(R.id.card_view_track);
         c3 = findViewById(R.id.card_view_transaction);
         c4 = findViewById(R.id.card_view_feedback);
-
+        ib = findViewById(R.id.userAccount);
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +53,13 @@ public class dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(dashboard.this, feedback1.class);
+                startActivity(i);
+            }
+        });
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(dashboard.this,activity_collectdetails.class);
                 startActivity(i);
             }
         });
