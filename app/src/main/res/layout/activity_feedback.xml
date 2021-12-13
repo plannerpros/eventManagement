@@ -16,13 +16,13 @@
         android:layout_marginBottom="5sp"
         android:textColor="#2196F3"
         android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/names"
+        app:layout_constraintBottom_toTopOf="@+id/question1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/gender"
+        android:id="@+id/question1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90sp"
@@ -36,18 +36,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="42dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="128dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.924"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </RadioGroup>
 
     <TextView
         android:id="@+id/gender1"
@@ -61,20 +49,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.556" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="42dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="280dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </RadioGroup>
+        app:layout_constraintVertical_bias="0.382" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -115,7 +90,7 @@
         android:hint="enter your comment here"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -129,7 +104,7 @@
         android:text="Please provide suggestions for improving our future events"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +130,6 @@
         android:layout_width="116dp"
         android:layout_height="48dp"
         android:backgroundTint="#D500F9"
-        android:onClick="submitbuttonHandler"
         android:text="SUBMIT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -183,10 +157,12 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15sp"
         android:layout_marginTop="5sp"
+        android:layout_marginBottom="15sp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/gender1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout2">
 
 
@@ -239,8 +215,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="286dp">
+        app:layout_constraintBottom_toTopOf="@+id/gender2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender1"
+        app:layout_constraintVertical_bias="0.256">
 
 
         <RadioButton
@@ -248,7 +228,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20sp"
-            android:onClick="radioButtonhandler"
             android:text="depends"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -263,7 +242,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20sp"
-            android:onClick="radioButtonhandler"
             android:text="will decide later"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.92"
@@ -274,7 +252,6 @@
             android:id="@+id/likely"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="radioButtonhandler"
             android:text="very likely"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

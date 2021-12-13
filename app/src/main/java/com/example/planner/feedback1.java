@@ -13,7 +13,6 @@ import android.widget.RadioGroup;
 
 public class feedback1 extends AppCompatActivity {
     RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
-    RadioGroup rbg1, rbg2;
     Button b1;
 
 
@@ -21,9 +20,6 @@ public class feedback1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
         rb1 = findViewById(R.id.not_satisfied);
         rb2 = findViewById(R.id.good);
@@ -32,11 +28,11 @@ public class feedback1 extends AppCompatActivity {
         rb5 = findViewById(R.id.later);
         rb6 = findViewById(R.id.likely);
 
+        b1 = findViewById(R.id.submit_button);
         final String[] satisfied = new String[1];
-        final String[] futureEvents = {""};
+        final String[] futureEvents = new String[1];
 
-
-        rbg1.setOnClickListener(new View.OnClickListener() {
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (rb1.isChecked()){
@@ -46,12 +42,7 @@ public class feedback1 extends AppCompatActivity {
                 }else{
                     satisfied[0] = rb3.getText().toString();
                 }
-            }
-        });
 
-        rbg2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 if (rb1.isChecked()){
                     futureEvents[0] = rb4.getText().toString();
                 }else if (rb2.isChecked()){
@@ -59,16 +50,47 @@ public class feedback1 extends AppCompatActivity {
                 }else{
                     futureEvents[0] = rb6.getText().toString();
                 }
+
+                System.out.println("hey!"+satisfied[0].toString()+" "+futureEvents[0]);
             }
         });
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        /*
+        final String[] satisfied = new String[1];
+
+
+
+                //rbg1.setOnClickListener(new View.OnClickListener() {
+                //  @Override
+                // public void onClick(View v) {
+                if (rb1.isChecked()){
+                    satisfied[0] = rb1.getText().toString();
+                }else if (rb2.isChecked()){
+                    satisfied[0] = rb2.getText().toString();
+                }else{
+                    satisfied[0] = rb3.getText().toString();
+                }
+                //    }
+                //});
+
+        /*rbg2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+        if (rb1.isChecked()){
+            futureEvents[0] = rb4.getText().toString();
+        }else if (rb2.isChecked()){
+            futureEvents[0] = rb5.getText().toString();
+        }else{
+            futureEvents[0] = rb6.getText().toString();
+        }
+        //    }
+        //});
 
-            }
-        });
 
+
+
+        */
+        //String resultText = satisfied[0] + futureEvents[0];
 
         /*public void onRadioButtonClicked(View view) {
             // Is the button now checked?
@@ -88,36 +110,9 @@ public class feedback1 extends AppCompatActivity {
         }
         */
 
-        EditText nameEditText = (EditText) findViewById(R.id.names);
-        String fullName = nameEditText.getText().toString();
-
-        EditText ageEditText = (EditText) findViewById(R.id.age);
-        String age = ageEditText.getText().toString();
-
-        EditText phoneEditText = (EditText) findViewById(R.id.names);
-        String phone = phoneEditText.getText().toString();
-
-        EditText addressEditText = (EditText) findViewById(R.id.names);
-        String address = addressEditText.getText().toString();
-
-        final Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-
-            }
-        });
-    }
-
-
-    public void radioButtonhandler(View view) {
-
-        // Decide what happens when a user clicks on a button
-    }
-    public void submitbuttonHandler(View view) {
-        //Decide what happens when the user clicks the submit button
 
     }
+
 }
 
 
