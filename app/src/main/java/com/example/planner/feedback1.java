@@ -1,6 +1,9 @@
 package com.example.planner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.planner.activity_collectdetails;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,15 +14,18 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class feedback1 extends AppCompatActivity {
     RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
     Button b1;
     FirebaseDatabase fd;
     DatabaseReference ar;
-
+    DatabaseReference ref;
 
 
     @Override
@@ -40,27 +46,41 @@ public class feedback1 extends AppCompatActivity {
         fd = FirebaseDatabase.getInstance();
         ar = fd.getReference().child("feedback");
 
+        /*ref = fd.getReference().child("users.phNumber");
+        ref.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                feedback1 post = dataSnapshot.getValue(feedback1.class);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });*/
+
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rb1.isChecked()){
+                if (rb1.isChecked()) {
                     satisfied[0] = rb1.getText().toString();
-                }else if (rb2.isChecked()){
+                } else if (rb2.isChecked()) {
                     satisfied[0] = rb2.getText().toString();
-                }else{
+                } else {
                     satisfied[0] = rb3.getText().toString();
                 }
 
-                if (rb1.isChecked()){
+                if (rb1.isChecked()) {
                     futureEvents[0] = rb4.getText().toString();
-                }else if (rb2.isChecked()){
+                } else if (rb2.isChecked()) {
                     futureEvents[0] = rb5.getText().toString();
-                }else{
+                } else {
                     futureEvents[0] = rb6.getText().toString();
                 }
-                ar.child("satsfaction").setValue(satisfied[0]);
+                ar.child("Satisfaction").setValue(satisfied[0]);
                 ar.child("future event").setValue(futureEvents[0]);
-                System.out.println("hey!"+satisfied[0].toString()+" "+futureEvents[0]);
+                System.out.println("hey!" + satisfied[0].toString() + " " + futureEvents[0]+toString());
             }
         });
 

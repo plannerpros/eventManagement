@@ -10,11 +10,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+
 public class activity_collectdetails extends AppCompatActivity {
-EditText fnet,pnet,anet,aet,zcet,dofet;
-Button sb;
-FirebaseDatabase fb;
-DatabaseReference df;
+    EditText fnet, pnet, anet, aet, zcet, dofet;
+    Button sb;
+    FirebaseDatabase fb;
+    DatabaseReference df;
+
+    String fname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,10 @@ DatabaseReference df;
         sb = findViewById(R.id.details_submit);
         fb = FirebaseDatabase.getInstance();
         df = fb.getReference().child("details");
+
+
+        fname = fnet.getText().toString();
+
         sb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +45,7 @@ DatabaseReference df;
                 String address = aet.getText().toString();
                 String zipCode = zcet.getText().toString();
                 String dateBirth = dofet.getText().toString();
+
                 /*df.child("Full Name").setValue(name);
                 df.child("Phone Number").setValue(phNumber);
                 df.child("Aadhar").setValue(aadharNumber);
@@ -51,9 +60,9 @@ DatabaseReference df;
 
             }
         });
-
-
-
-
     }
+
+
+
+
 }
