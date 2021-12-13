@@ -4,9 +4,6 @@ public class userDatabase {
 
     String aadhar, address, fullName, phoneNo, dob, zip;
 
-    public userDatabase() {
-    }
-
     public String getAadhar() {
         return aadhar;
     }

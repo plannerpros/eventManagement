@@ -26,6 +26,7 @@ public class feedback1 extends AppCompatActivity {
     FirebaseDatabase fd;
     DatabaseReference ar;
     DatabaseReference ref;
+    EditText e1,e2;
 
 
     @Override
@@ -34,6 +35,8 @@ public class feedback1 extends AppCompatActivity {
         setContentView(R.layout.activity_feedback);
 
         rb1 = findViewById(R.id.not_satisfied);
+        e1 = findViewById(R.id.takeaway);
+        e2 = findViewById(R.id.suggestions);
         rb2 = findViewById(R.id.good);
         rb3 = findViewById(R.id.very_good);
         rb4 = findViewById(R.id.depends);
@@ -45,6 +48,9 @@ public class feedback1 extends AppCompatActivity {
         final String[] futureEvents = new String[1];
         fd = FirebaseDatabase.getInstance();
         ar = fd.getReference().child("feedback");
+
+        String suggestions = e1.getText().toString();
+        String takeAway = e2.getText().toString();
 
         /*ref = fd.getReference().child("users.phNumber");
         ref.addValueEventListener(new ValueEventListener() {
@@ -78,9 +84,14 @@ public class feedback1 extends AppCompatActivity {
                 } else {
                     futureEvents[0] = rb6.getText().toString();
                 }
-                ar.child("Satisfaction").setValue(satisfied[0]);
-                ar.child("future event").setValue(futureEvents[0]);
-                System.out.println("hey!" + satisfied[0].toString() + " " + futureEvents[0]+toString());
+
+                String sat = satisfied[0];
+                String future = futureEvents[0];
+                //ar.child("Satisfaction").setValue(satisfied[0]);
+                //ar.child("future event").setValue(futureEvents[0]);
+                //System.out.println("hey!" + satisfied[0].toString() + " " + futureEvents[0]+toString());
+                feedbackDatabase fb = new feedbackDatabase(sat,future,suggestions,takeAway);
+                ar.child("Feedback").setValue(fb);
             }
         });
 
