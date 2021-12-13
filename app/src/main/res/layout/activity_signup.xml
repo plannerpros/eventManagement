@@ -12,7 +12,7 @@
         android:layout_marginTop="50sp"
         app:cardBackgroundColor="#ced4da"
         app:cardCornerRadius="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/fullName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
