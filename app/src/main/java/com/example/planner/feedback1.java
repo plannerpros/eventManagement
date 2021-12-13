@@ -2,8 +2,10 @@ package com.example.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,6 +15,9 @@ public class feedback1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         EditText nameEditText = (EditText) findViewById(R.id.names);
         String fullName = nameEditText.getText().toString();
 
