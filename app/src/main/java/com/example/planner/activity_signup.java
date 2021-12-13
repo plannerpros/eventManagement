@@ -27,6 +27,7 @@ public class activity_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -38,6 +39,10 @@ public class activity_signup extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         b2 = findViewById(R.id.signin_button);
         p1=findViewById(R.id.progressBar);
+        if (auth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
