@@ -87,10 +87,7 @@ FirebaseAuth auth;
                 startActivity(inew);
             }
         });
-        /*if (auth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }*/
+
     }
 }
 /*
