@@ -15,6 +15,9 @@ public class dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         c1 = findViewById(R.id.card_view_plan);
         c2 = findViewById(R.id.card_view_track);
         c3 = findViewById(R.id.card_view_transaction);

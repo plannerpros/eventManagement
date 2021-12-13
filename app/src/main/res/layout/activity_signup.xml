@@ -104,8 +104,7 @@
         android:ems="10"
         android:autofillHints="Password"
         android:hint="Password"
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
+        android:inputType="textPassword"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -135,6 +134,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.647" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="16dp"
+        android:text="Already registered? Sign in here!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loginbtn"
+        app:layout_constraintVertical_bias="0.262" />
+
+    <Button
+        android:id="@+id/signin_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Sign in"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loginbtn"
+        app:layout_constraintVertical_bias="0.397" />
+
     <EditText
         android:id="@+id/phone"
         android:layout_width="0dp"
@@ -147,7 +176,7 @@
         android:ems="10"
         android:autofillHints="Enter Phonr Nmber"
         android:hint="Phone Number"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/black"
         android:textSize="20sp"

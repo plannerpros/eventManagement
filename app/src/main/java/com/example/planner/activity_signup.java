@@ -20,19 +20,23 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_signup extends AppCompatActivity {
     EditText t1,t2,t3,t4;
-    Button b1;
+    Button b1,b2;
     FirebaseAuth auth;
     ProgressBar p1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         t1 = findViewById(R.id.fullName);
         t2 = findViewById(R.id.Email);
         t3 = findViewById(R.id.password);
         t4 = findViewById(R.id.phone);
         b1 = findViewById(R.id.loginbtn);
         auth=FirebaseAuth.getInstance();
+        b2 = findViewById(R.id.signin_button);
         p1=findViewById(R.id.progressBar);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +73,14 @@ public class activity_signup extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(activity_signup.this, MainActivity.class);
+                startActivity(i);
             }
         });
     }
