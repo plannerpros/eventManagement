@@ -36,6 +36,10 @@ public class activity_signup extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         b2 = findViewById(R.id.signin_button);
         p1=findViewById(R.id.progressBar);
+        if(auth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),dashboard.class));
+            finish();
+        }
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +67,8 @@ public class activity_signup extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(activity_signup.this, "Registration Sucesfull", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Toast.makeText(activity_signup.this, "Register Sucesfull", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(),dashboard.class));
 
                         }else{
                             Toast.makeText(activity_signup.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();

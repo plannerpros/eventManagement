@@ -40,10 +40,15 @@ FirebaseAuth auth;
         t1 = findViewById(R.id.uname);
         t2 = findViewById(R.id.pass);
         b1 = findViewById(R.id.bu1);
+
         p1=findViewById(R.id.progressBar);
         b2 = findViewById(R.id.register_id);
-
-
+        auth = FirebaseAuth.getInstance();
+       if(auth.getCurrentUser() != null){
+           System.out.println("it working");
+          startActivity(new Intent(getApplicationContext(),dashboard.class));
+          finish();
+           }
 
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +68,7 @@ FirebaseAuth auth;
                     return;
                 }
 
-                auth = FirebaseAuth.getInstance();
+                //p1.setVisibility(View.VISIBLE);
 
                 auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -80,7 +85,7 @@ FirebaseAuth auth;
                         }else{
 
                             Toast.makeText(MainActivity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            p1.setVisibility(View.GONE);
+                            //p1.setVisibility(View.GONE);
                         }
                     }
                 });
