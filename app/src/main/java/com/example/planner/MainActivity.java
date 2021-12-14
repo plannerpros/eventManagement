@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 Button b1,b2;
 
 EditText t1,t2;
-ProgressBar p1;
+ProgressBar p12;
 FirebaseAuth auth;
 
 
@@ -37,13 +37,14 @@ FirebaseAuth auth;
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        auth = FirebaseAuth.getInstance();
         t1 = findViewById(R.id.uname);
         t2 = findViewById(R.id.pass);
         b1 = findViewById(R.id.bu1);
 
-        p1=findViewById(R.id.progressBar);
+        //p12=findViewById(R.id.progressBar);
         b2 = findViewById(R.id.register_id);
-        auth = FirebaseAuth.getInstance();
+
        if(auth.getCurrentUser() != null){
            System.out.println("it working");
           startActivity(new Intent(getApplicationContext(),dashboard.class));
@@ -68,7 +69,7 @@ FirebaseAuth auth;
                     return;
                 }
 
-                //p1.setVisibility(View.VISIBLE);
+                //p12.setVisibility(View.VISIBLE);
 
                 auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -85,7 +86,7 @@ FirebaseAuth auth;
                         }else{
 
                             Toast.makeText(MainActivity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            //p1.setVisibility(View.GONE);
+                            //p12.setVisibility(View.GONE);
                         }
                     }
                 });
