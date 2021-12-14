@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.planner.activity_collectdetails;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -94,6 +95,9 @@ public class feedback1 extends AppCompatActivity {
                 //System.out.println("hey!" + satisfied[0].toString() + " " + futureEvents[0]+toString());
                 feedbackDatabase fb = new feedbackDatabase(sat,future,suggestions,takeAway);
                 ar.child("Feedback").setValue(fb);
+
+                Intent i = new Intent(feedback1.this,dashboard.class);
+                startActivity(i);
             }
         });
 

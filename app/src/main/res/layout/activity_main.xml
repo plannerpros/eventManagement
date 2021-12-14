@@ -41,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:shadowColor="@color/white"
+                android:textColor="@color/white"
                 android:hint="Email"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -58,12 +59,13 @@
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:shadowColor="@color/white"
+                android:textColor="@color/white"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bu1"
-            android:layout_width="wrap_content"
+            android:layout_width="120sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center_horizontal"
