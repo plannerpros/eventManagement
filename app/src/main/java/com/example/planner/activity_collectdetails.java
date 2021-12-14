@@ -2,6 +2,7 @@ package com.example.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
@@ -57,6 +58,9 @@ public class activity_collectdetails extends AppCompatActivity {
 
                 userDatabase user = new userDatabase(aadharNumber, address, name, phNumber, dateBirth, zipCode);
                 df.child(phNumber).setValue(user);
+
+                Intent i = new Intent(activity_collectdetails.this, activity_display.class);
+                startActivity(i);
 
             }
         });

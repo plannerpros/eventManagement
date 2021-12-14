@@ -19,7 +19,7 @@ import com.google.firebase.database.core.ValueEventRegistration;
 
 
 public class activity_display extends AppCompatActivity {
-TextView t1,t2,t3,t4,t5;
+TextView t1,t2,t3,t4,t5, t6;
 ImageView iv1;
 Button b1 ;
 FirebaseDatabase database;
@@ -34,23 +34,30 @@ DatabaseReference dataRefrence;
         t3 = findViewById(R.id.address);
         t4 = findViewById(R.id.dateofbirth);
         t5 = findViewById(R.id.aadhar);
+        t6 = findViewById(R.id.finalRes);
         iv1 = findViewById(R.id.imageView);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(activity_display.this,activity_collectdetails.class);
+                Intent i = new Intent(activity_display.this,dashboard.class);
                 startActivity(i);
             }
         });
+
+
+
         database = FirebaseDatabase.getInstance();
         dataRefrence = database.getReference().child("8105902219");
-        dataRefrence.child("fullName").addValueEventListener(new ValueEventListener() {
+        dataRefrence.child("8105902219").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     t1.setText(snapshot.getValue(String.class));
                 }else{
-                    t1.setText("Not FOund");
+                    t6.setText("Not FOund");
 
                 }
             }
@@ -66,7 +73,7 @@ DatabaseReference dataRefrence;
                 if(snapshot.exists()){
                     t2.setText(snapshot.getValue(String.class));
                 }else{
-                    t2.setText("Not FOund");
+                    t6.setText("Not FOund");
 
                 }
             }
@@ -82,7 +89,7 @@ DatabaseReference dataRefrence;
                 if(snapshot.exists()){
                     t3.setText(snapshot.getValue(String.class));
                 }else{
-                    t3.setText("Not FOund");
+                    t6.setText("Not FOund");
 
                 }
             }
@@ -98,7 +105,7 @@ DatabaseReference dataRefrence;
                 if(snapshot.exists()){
                     t4.setText(snapshot.getValue(String.class));
                 }else{
-                    t4.setText("Not FOund");
+                    t6.setText("Not FOund");
 
                 }
             }
@@ -114,7 +121,7 @@ DatabaseReference dataRefrence;
                 if(snapshot.exists()){
                     t5.setText(snapshot.getValue(String.class));
                 }else{
-                    t5.setText("Not FOund");
+                    t6.setText("Not FOund");
 
                 }
             }
@@ -124,6 +131,12 @@ DatabaseReference dataRefrence;
 
             }
         });
+
+        t1.setText("Name: Arjun S Pramod");
+        t2.setText("Phone number: 8105902219");
+        t3.setText("Address: Mysore");
+        t4.setText("Date of Birth: 27/11/2001");
+        t5.setText("Aadhar card: 673244670906");
 
     }
 }

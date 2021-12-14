@@ -4,24 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_5"
     tools:context=".activity_display">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginTop="20sp"
+        android:src="@drawable/profile_user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="405dp"
         android:layout_height="80dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingStart="50sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.172"
@@ -33,7 +38,9 @@
         android:id="@+id/phonenumber"
         android:layout_width="405dp"
         android:layout_height="80dp"
-
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingStart="50sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,7 +52,9 @@
         android:id="@+id/address"
         android:layout_width="405dp"
         android:layout_height="80dp"
-
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingStart="50sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +65,9 @@
         android:id="@+id/dateofbirth"
         android:layout_width="405dp"
         android:layout_height="80dp"
-
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingStart="50sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -68,7 +79,9 @@
         android:id="@+id/aadhar"
         android:layout_width="405dp"
         android:layout_height="80dp"
-
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingStart="50sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,12 +92,25 @@
         android:id="@+id/editdetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EDIT DETAILS"
+        android:text="Go to dashboard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aadhar"
         app:layout_constraintVertical_bias="0.466" />
+
+    <TextView
+        android:id="@+id/finalRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editdetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aadhar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
