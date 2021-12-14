@@ -52,8 +52,8 @@ public class feedback1 extends AppCompatActivity {
         fd = FirebaseDatabase.getInstance();
         ar = fd.getReference().child("feedback");
 
-        String suggestions = e1.getText().toString();
-        String takeAway = e2.getText().toString();
+        String suggestions = e2.getText().toString();
+        String takeAway = e1.getText().toString();
 
         /*ref = fd.getReference().child("users.phNumber");
         ref.addValueEventListener(new ValueEventListener() {
@@ -90,11 +90,13 @@ public class feedback1 extends AppCompatActivity {
 
                 String sat = satisfied[0];
                 String future = futureEvents[0];
+                String sug = suggestions;
+                String take = takeAway;
                 //ar.child("Satisfaction").setValue(satisfied[0]);
                 //ar.child("future event").setValue(futureEvents[0]);
                 //System.out.println("hey!" + satisfied[0].toString() + " " + futureEvents[0]+toString());
-                feedbackDatabase fb = new feedbackDatabase(sat,future,suggestions,takeAway);
-                ar.child("Feedback").setValue(fb);
+                feedbackDatabase fb = new feedbackDatabase(sat,future,sug,take);
+                ar.child("7820404416").setValue(fb);
 
                 Intent i = new Intent(feedback1.this,dashboard.class);
                 startActivity(i);
