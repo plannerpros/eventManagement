@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
+            android:name=".activity_display"
+            android:exported="false" />
+        <activity
             android:name=".activity_collectdetails"
             android:exported="false"
-            android:parentActivityName=".dashboard"/>
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".feedback1"
             android:exported="false"
