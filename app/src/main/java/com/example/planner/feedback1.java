@@ -33,7 +33,9 @@ public class feedback1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         rb1 = findViewById(R.id.not_satisfied);
         e1 = findViewById(R.id.takeaway);
         e2 = findViewById(R.id.suggestions);
