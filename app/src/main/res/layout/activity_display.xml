@@ -89,13 +89,13 @@
         app:layout_constraintVertical_bias="0.88" />
 
     <Button
-        android:id="@+id/editdetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/dashboard"
+        android:layout_width="139dp"
+        android:layout_height="54dp"
         android:text="Go to dashboard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aadhar"
         app:layout_constraintVertical_bias="0.466" />
@@ -109,8 +109,22 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editdetails"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aadhar" />
+        app:layout_constraintTop_toBottomOf="@+id/aadhar"
+        app:layout_constraintVertical_bias="0.474" />
+
+    <Button
+        android:id="@+id/editDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDIT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.345"
+        app:layout_constraintStart_toEndOf="@+id/editdetails"
+        app:layout_constraintTop_toBottomOf="@+id/aadhar"
+        app:layout_constraintVertical_bias="0.366" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
