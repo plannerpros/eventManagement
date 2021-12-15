@@ -21,13 +21,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-Button b1,b2;
-
-EditText t1,t2;
-ProgressBar p12;
-FirebaseAuth auth;
-
-
+    Button b1, b2;
+    EditText t1, t2;
+    ProgressBar p1;
+    FirebaseAuth auth;
 
 
     @Override
@@ -42,40 +39,40 @@ FirebaseAuth auth;
         t2 = findViewById(R.id.pass);
         b1 = findViewById(R.id.bu1);
 
-        //p12=findViewById(R.id.progressBar);
+        p1 = findViewById(R.id.progressBar);
         b2 = findViewById(R.id.register_id);
 
-       if(auth.getCurrentUser() != null){
-           System.out.println("it working");
-          startActivity(new Intent(getApplicationContext(),dashboard.class));
-          finish();
-           }
+
+
+        if (auth.getCurrentUser() != null) {
+            System.out.println("it working");
+            startActivity(new Intent(getApplicationContext(), dashboard.class));
+            finish();
+        }
 
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email=t1.getText().toString().trim();
-                String password=t2.getText().toString().trim();
+                String email = t1.getText().toString().trim();
+                String password = t2.getText().toString().trim();
 
-                if(TextUtils.isEmpty(email))
-                {
+                if (TextUtils.isEmpty(email)) {
                     t1.setError("Email is Required");
                     return;
                 }
-                if(TextUtils.isEmpty(password))
-                {
+                if (TextUtils.isEmpty(password)) {
                     t2.setError("Password is required");
                     return;
                 }
 
-                //p12.setVisibility(View.VISIBLE);
+                //p1.setVisibility(View.VISIBLE);
 
-                auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
                             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                             //startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -83,10 +80,9 @@ FirebaseAuth auth;
                             startActivity(i);
 
 
-                        }else{
-
-                            Toast.makeText(MainActivity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            //p12.setVisibility(View.GONE);
+                        } else {
+                            Toast.makeText(MainActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            //p1.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -96,7 +92,7 @@ FirebaseAuth auth;
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inew = new Intent(MainActivity.this,activity_signup.class);
+                Intent inew = new Intent(MainActivity.this, activity_signup.class);
                 startActivity(inew);
             }
         });
