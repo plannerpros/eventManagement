@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
@@ -69,6 +70,37 @@ public class activity_collectdetails extends AppCompatActivity {
                 String address = aet.getText().toString();
                 String zipCode = zcet.getText().toString();
                 String dateBirth = dofet.getText().toString();
+                if(TextUtils.isEmpty(name))
+                {
+                    fnet.setError("Email is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(phNumber))
+                {
+                    pnet.setError("Password is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(aadharNumber))
+                {
+                    anet.setError("Email is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(address))
+                {
+                    aet.setError("Password is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(zipCode))
+                {
+                    zcet.setError("Email is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(dateBirth))
+                {
+                    dofet.setError("Password is required");
+                    return;
+                }
+
                 userId = auth.getCurrentUser().getUid();
                 DocumentReference docuRefr = fbs.collection("usersdata").document(userId);
                 Map<String,Object> user = new HashMap<>();

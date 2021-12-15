@@ -27,20 +27,22 @@ DatabaseReference dataRefrence;
         setContentView(R.layout.activity_display);
        // database = FirebaseDatabase.getInstance();
         b1=findViewById(R.id.dashboard);
-        b2 = findViewById(R.id.editdetails);
+        b2 = findViewById(R.id.editDetails);
         t1 = findViewById(R.id.name);
         t2 = findViewById(R.id.phonenumber);
         t3 = findViewById(R.id.address);
         t4 = findViewById(R.id.dateofbirth);
         t5 = findViewById(R.id.aadhar);
-        t6 = findViewById(R.id.finalRes);
+        //t6 = findViewById(R.id.finalRes);
         iv1 = findViewById(R.id.imageView);
+
 
 
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        System.out.println("working");
 
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +52,7 @@ DatabaseReference dataRefrence;
                 startActivity(i);
             }
         });
-
+        System.out.println("working");
 
 /*
         //database = FirebaseDatabase.getInstance();
@@ -142,6 +144,7 @@ DatabaseReference dataRefrence;
         t3.setText("Address: Mysore");
         t4.setText("Date of Birth: 27/11/2001");
         t5.setText("Aadhar card: 673244670906");
+        System.out.println("working");
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,6 +152,6 @@ DatabaseReference dataRefrence;
                 startActivity(i);
             }
         });
-
+        System.out.println("working");
     }
 }
