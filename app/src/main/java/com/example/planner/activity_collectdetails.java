@@ -132,10 +132,22 @@ public class activity_collectdetails extends AppCompatActivity {
                 docuRefr.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(@NonNull Void unused) {
-                        Log.d(TAG,"onSucces: user Profile is Updated for "+userId);
+                        Log.d(TAG,"onSuccess: user Profile is Updated for "+userId);
                         Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(activity_collectdetails.this, dashboard.class);
+                        startActivity(i);
                     }
-                });
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG,"onFailure: user profile didn't create for "+userId);
+                        Toast.makeText(activity_collectdetails.this, "Try again", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(activity_collectdetails.this, activity_collectdetails.class);
+                        startActivity(i);
+                    }
+                })
+                ;
 
 //                docuRefr.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
 //                    @Override
@@ -144,8 +156,7 @@ public class activity_collectdetails extends AppCompatActivity {
 //                        Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
 //                    }
 //                });
-                Intent i = new Intent(activity_collectdetails.this, dashboard.class);
-                startActivity(i);
+
 
             }
         });
