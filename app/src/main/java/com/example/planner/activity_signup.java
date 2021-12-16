@@ -80,7 +80,7 @@ public class activity_signup extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(activity_signup.this, "Register Sucesfull", Toast.LENGTH_LONG).show();
                             userId = auth.getCurrentUser().getUid();
-                            DocumentReference docuRefr = fbs.collection("usersdata").document(userId);
+                            DocumentReference docuRefr = fbs.collection("customer").document(userId);
                             Map<String,Object> user = new HashMap<>();
                             user.put("Email",email);
                             docuRefr.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {

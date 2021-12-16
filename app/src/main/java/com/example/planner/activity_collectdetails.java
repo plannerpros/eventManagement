@@ -112,7 +112,7 @@ public class activity_collectdetails extends AppCompatActivity {
                 user.put("Zip Code",zipCode);
                 user.put("Date Of Birth",dateBirth);
                 //fbs.collection("customer").add()
-                docuRefr.collection("customer")
+                docuRefr.collection("clientDetails")
                         .add(user)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
@@ -124,7 +124,7 @@ public class activity_collectdetails extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG,"onFailur: user Profile is not Created for "+userId);
+                        Log.w(TAG,"onFailur: user Profile is not Created for "+userId);
                         Toast.makeText(activity_collectdetails.this, "cant uploade try again", Toast.LENGTH_SHORT).show();
                     }
                 })
