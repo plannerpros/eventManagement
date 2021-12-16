@@ -112,23 +112,30 @@ public class activity_collectdetails extends AppCompatActivity {
                 user.put("Zip Code",zipCode);
                 user.put("Date Of Birth",dateBirth);
                 //fbs.collection("customer").add()
-                docuRefr.collection("clientDetails")
-                        .add(user)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(@NonNull DocumentReference documentReference) {
-                                Log.d(TAG,"onSucces: user Profile is Created for "+userId);
-                                Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                .addOnFailureListener(new OnFailureListener() {
+//                docuRefr.collection("clientDetails")
+//                        .add(user)
+//                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                            @Override
+//                            public void onSuccess(@NonNull DocumentReference documentReference) {
+//                                Log.d(TAG,"onSucces: user Profile is Created for "+userId);
+//                                Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
+//                            }
+//                        })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.w(TAG,"onFailur: user Profile is not Created for "+userId);
+//                        Toast.makeText(activity_collectdetails.this, "cant uploade try again", Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                ;
+                docuRefr.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG,"onFailur: user Profile is not Created for "+userId);
-                        Toast.makeText(activity_collectdetails.this, "cant uploade try again", Toast.LENGTH_SHORT).show();
+                    public void onSuccess(@NonNull Void unused) {
+                        Log.d(TAG,"onSucces: user Profile is Updated for "+userId);
+                        Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
                     }
-                })
-                ;
+                });
 
 //                docuRefr.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
 //                    @Override
