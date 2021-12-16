@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -105,18 +106,38 @@ public class activity_collectdetails extends AppCompatActivity {
                 DocumentReference docuRefr = fbs.collection("customer").document(userId);
                 Map<String,Object> user = new HashMap<>();
                 user.put("Full Name",name);
+               // docuRefr.update()
                 user.put("Phone Number",phNumber);
                 user.put("Aadhar Number",aadharNumber);
                 user.put("Address",address);
                 user.put("Zip Code",zipCode);
                 user.put("Date Of Birth",dateBirth);
-                docuRefr.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                //fbs.collection("customer").add()
+                docuRefr.collection("customer")
+                        .add(user)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(@NonNull DocumentReference documentReference) {
+                                Log.d(TAG,"onSucces: user Profile is Created for "+userId);
+                                Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                .addOnFailureListener(new OnFailureListener() {
                     @Override
-                    public void onSuccess(@NonNull Void unused) {
-                        Log.d(TAG,"onSucces: user Profile is Created for "+userId);
-                        Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG,"onFailur: user Profile is not Created for "+userId);
+                        Toast.makeText(activity_collectdetails.this, "cant uploade try again", Toast.LENGTH_SHORT).show();
                     }
-                });
+                })
+                ;
+
+//                docuRefr.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(@NonNull Void unused) {
+//                        Log.d(TAG,"onSucces: user Profile is Created for "+userId);
+//                        Toast.makeText(activity_collectdetails.this, "You are Done", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
                 Intent i = new Intent(activity_collectdetails.this, dashboard.class);
                 startActivity(i);
 
