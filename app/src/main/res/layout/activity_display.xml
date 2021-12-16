@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
 
+
     <TextView
         android:id="@+id/name"
         android:layout_width="405dp"
@@ -35,7 +36,7 @@
         app:layout_constraintVertical_bias="0.248" />
 
     <TextView
-        android:id="@+id/phonenumber"
+        android:id="@+id/phoneNumber"
         android:layout_width="405dp"
         android:layout_height="80dp"
         android:fontFamily="sans-serif-condensed-medium"
