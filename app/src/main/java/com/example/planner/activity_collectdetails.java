@@ -112,7 +112,7 @@ public class activity_collectdetails extends AppCompatActivity {
                 user.put("Zip Code",zipCode);
                 user.put("Date Of Birth",dateBirth);
                 //fbs.collection("customer").add()
-                docuRefr.collection("clientDetails")
+                docuRefr.collection("customer")
                         .add(user)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
