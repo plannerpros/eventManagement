@@ -104,6 +104,7 @@ public class activity_collectdetails extends AppCompatActivity {
                 userId = auth.getCurrentUser().getUid();
                 DocumentReference docuRefr = fbs.collection("customer").document(userId);
                 Map<String,Object> user = new HashMap<>();
+
                 user.put("Full Name",name);
                // docuRefr.update()
                 user.put("Phone Number",phNumber);
