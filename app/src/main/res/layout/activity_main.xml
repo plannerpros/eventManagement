@@ -78,10 +78,7 @@
             android:layout_height="wrap_content"
             android:text="Register" />
 
-        <com.google.android.gms.common.SignInButton
-            android:layout_width="120sp"
-            android:id="@+id/google_sign_in"
-            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 

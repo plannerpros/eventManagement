@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     EditText t1, t2;
     ProgressBar p1;
     FirebaseAuth auth;
-    SignInButton gSignIn;
+    //SignInButton gSignIn;
 
 
     @Override
