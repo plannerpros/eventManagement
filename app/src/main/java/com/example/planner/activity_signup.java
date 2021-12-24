@@ -2,6 +2,7 @@ package com.example.planner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ import java.util.Map;
 public class activity_signup extends AppCompatActivity {
     public static final String TAG = "Tag";
     EditText t1,t2,t3,t4,t5;
-    Button b1,b2;
+    CardView b1,b2;
     FirebaseAuth auth;
     ProgressBar p1;
     FirebaseFirestore fbs;
@@ -38,6 +39,9 @@ public class activity_signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         t1 = findViewById(R.id.fullName);
         t2 = findViewById(R.id.Email);
         t3 = findViewById(R.id.password);

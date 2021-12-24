@@ -23,15 +23,14 @@
             android:id="@+id/main_text"
             android:layout_width="287dp"
             android:layout_height="53dp"
-            android:gravity="center_horizontal"
-            android:text="Create new account"
-            android:paddingTop="10sp"
-            android:textColor="@color/black"
             android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center_horizontal"
+            android:paddingTop="10sp"
+            android:text="Create new account"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintHorizontal_bias="0.564"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -58,12 +57,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:ems="10"
         android:autofillHints="Email-Id"
+        android:ems="10"
         android:hint="Email ID"
         android:inputType="textPersonName"
         android:textColor="@color/white"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,11 +79,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:ems="10"
         android:autofillHints="Password"
+        android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,23 +94,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.459" />
 
-    <Button
-        android:id="@+id/loginbtn"
+    <androidx.cardview.widget.CardView
         android:layout_width="140sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="Register"
-        android:textSize="20sp"
+        android:id="@+id/loginbtn"
+        app:cardCornerRadius="30sp"
+        app:cardBackgroundColor="#ced4da"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintVertical_bias="0.647">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Register"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -118,24 +126,48 @@
         android:layout_marginTop="20sp"
         android:layout_marginEnd="16dp"
         android:text="Already registered? Sign in here!"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/loginbtn"
         app:layout_constraintVertical_bias="0.262" />
 
-    <Button
+    <androidx.cardview.widget.CardView
+        android:layout_width="140sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signin_button"
+        app:cardCornerRadius="30sp"
+        app:cardBackgroundColor="#ced4da"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loginbtn"
+        app:layout_constraintVertical_bias="0.456">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Sign in"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+    <!--<Button
         android:id="@+id/signin_button"
         android:layout_width="140sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Sign in"
-        android:background="@color/black"
         android:fontFamily="sans-serif-condensed-medium"
+        android:text="Sign in"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,6 +175,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/loginbtn"
         app:layout_constraintVertical_bias="0.456" />
+        -->
 
     <EditText
         android:id="@+id/phone"
@@ -153,12 +186,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:ems="10"
         android:autofillHints="Enter Phonr Nmber"
+        android:ems="10"
         android:hint="Confirm password"
         android:inputType="textPassword"
         android:textColor="@color/white"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
