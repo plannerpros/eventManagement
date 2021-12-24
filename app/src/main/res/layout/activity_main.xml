@@ -8,10 +8,8 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-
         android:id="@+id/linearLayout3"
         android:layout_width="416dp"
-
         android:layout_height="399dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
@@ -42,6 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
+                android:textColorHint="@color/white"
                 android:inputType="textEmailAddress"
                 android:shadowColor="@color/white"
                 android:textColor="@color/white" />
@@ -59,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:textColorHint="@color/white"
                 android:inputType="textPassword"
                 android:shadowColor="@color/white"
                 android:textColor="@color/white" />
@@ -70,12 +70,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center_horizontal"
+            app:cornerRadius="30sp"
             android:text="LOGIN" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/register_id"
             android:layout_width="120sp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6sp"
+            app:cornerRadius="30sp"
+            android:layout_gravity="center_horizontal"
             android:text="Register" />
 
 
@@ -92,5 +96,20 @@
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Planner Pros"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_margin="6sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.835" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
