@@ -5,7 +5,7 @@
 Every organization, system, whether big or small, or an individual, has challenges to overcome, and managing every event. The last few years have seen a rapid growth in the event management industry. Considering the problems related to event management we aimed to develop an android application for event management. This is designed to assist in strategic planning and equipped with the right level of information and needs. A reliable, efficient, minimalistic application is the solution. 
 
 ## Introduction to broad and specific area:
-
+![Broad area](/screenshots/Broad area.png)
 
 <details><summary>Technologies used:</summary>
 <p>
