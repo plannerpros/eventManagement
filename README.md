@@ -72,6 +72,12 @@ Achaiah K K (@dishanachaiah) </br>
 
 # Screenshots of the outputs:
 
-Home page: </br>
-![This is the main page](/res/Main_page.png)
+ Sign-in page              | Sign_up page              | User info collecting after registration
+:-------------------------:|:-------------------------:|:-------------------------:|
+![Login page](/screenshots/login_page.png)|![Sign up page](/screenshots/Sign_up_page.jpg)|![User profile](/screenshots/info.jpg)
+
+ Dashboard                 | User profile              | Feedback
+:-------------------------:|:-------------------------:|:-------------------------:|
+![Dashboard](/screenshots/dashboard.jpg)|![User profile](/screenshots/user.png)|![FFeedback](/screenshots/feedback.jpg)
+
 
