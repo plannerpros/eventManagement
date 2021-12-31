@@ -178,7 +178,7 @@
         -->
 
     <EditText
-        android:id="@+id/phone"
+        android:id="@+id/conpass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

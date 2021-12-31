@@ -35,6 +35,7 @@ public class activity_signup extends AppCompatActivity {
     ProgressBar p1;
     FirebaseFirestore fbs;
     String userId;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ public class activity_signup extends AppCompatActivity {
         t1 = findViewById(R.id.fullName);
         t2 = findViewById(R.id.Email);
         t3 = findViewById(R.id.password);
-        t4 = findViewById(R.id.phone);
+        t4 = findViewById(R.id.conpass);
         b1 = findViewById(R.id.loginbtn);
         auth=FirebaseAuth.getInstance();
         fbs = FirebaseFirestore.getInstance();
@@ -61,11 +62,19 @@ public class activity_signup extends AppCompatActivity {
             public void onClick(View v) {
                 String email=t2.getText().toString().trim();
                 String password=t3.getText().toString().trim();
-
+                String password1 = t4.getText().toString().trim();
                 if(TextUtils.isEmpty(email))
                 {
                     t2.setError("Email is Required");
                     return;
+                }
+                if (email.matches(emailPattern))
+                {
+
+                    Log.d(TAG,"onSucces: user Profile is Created for "+userId);
+                    //Toast.makeText(activity_signup.this,"valid email address",Toast.LENGTH_SHORT).show();
+                } else {
+                    t2.setError("Invalid email address");
                 }
                 if(TextUtils.isEmpty(password))
                 {
@@ -77,6 +86,32 @@ public class activity_signup extends AppCompatActivity {
                     t3.setError("password must be 8 characters and more");
                     return;
                 }
+                if(TextUtils.isEmpty(password1))
+                {
+                    t3.setError("Password is required");
+                    return;
+                }
+                if (password1.length()<6) {
+                    t3.setError("password must be 8 characters and more");
+                    return;
+                }
+                /*if(password == password1){
+                }else
+                {
+                    t4.setError("Password does not match");
+                    //Toast.makeText(activity_signup.this, "Password does not match", Toast.LENGTH_LONG).show();
+                    return;
+                }*/
+                if(password.equals(password1)){
+                    Log.d(TAG,"onSucces: user password "+userId);
+                } else {
+                    t4.setError("Password do not match");
+                    return;
+                }
+
+
+
+
                 p1.setVisibility(View.VISIBLE);
                 auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -104,6 +139,7 @@ public class activity_signup extends AppCompatActivity {
             }
         });
 
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,6 +147,8 @@ public class activity_signup extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
     }
 }
 /*

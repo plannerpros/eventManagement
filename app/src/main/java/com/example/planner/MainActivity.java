@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button b1, b2;
     EditText t1, t2;
     ProgressBar p1;
-    FirebaseAuth auth;
+    FirebaseAuth auth;public static final String TAG = "Tag";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     //SignInButton gSignIn;
 
 
@@ -63,13 +64,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = t1.getText().toString().trim();
                 String password = t2.getText().toString().trim();
-
+                int pass_length = password.length();
                 if (TextUtils.isEmpty(email)) {
                     t1.setError("Email is Required");
                     return;
                 }
-                if (TextUtils.isEmpty(password)) {
-                    t2.setError("Password is required");
+                if (email.matches(emailPattern))
+                {
+
+                    Log.d(TAG,"onSucces: user Profile is Created for ");
+                    //Toast.makeText(activity_signup.this,"valid email address",Toast.LENGTH_SHORT).show();
+                } else {
+                    t1.setError("Invalid email address");
+                }
+                if (TextUtils.isEmpty(password)  && pass_length<6) {
+                    t2.setError("Enter valid password");
                     return;
                 }
 
