@@ -111,8 +111,9 @@ public class activity_signup extends AppCompatActivity {
 
 
 
-
+                
                 p1.setVisibility(View.VISIBLE);
+                try{
                 auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -135,9 +136,19 @@ public class activity_signup extends AppCompatActivity {
                             p1.setVisibility(View.GONE);
                         }
                     }
+                    
                 });
+            }catch (Exception me){
+                    Log.d(TAG, "onClick: Error authuntication register");
+            }
             }
         });
+                              
+                         
+        
+            
+        
+                              
 
 
         b2.setOnClickListener(new View.OnClickListener() {
