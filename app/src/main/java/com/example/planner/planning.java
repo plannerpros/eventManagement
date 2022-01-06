@@ -57,6 +57,6 @@ public class planning extends AppCompatActivity {
         button_evntType = findViewById(R.id.type);
         button_venueChooser = findViewById(R.id.venue_choose);
         button_dateTime = findViewById(R.id.datentime);
-        button_noofpeople = findViewById(R.id.datentime);
+        button_noofpeople = findViewById(R.id.numberPeople);
     }
 }
