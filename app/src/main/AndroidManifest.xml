@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
+            android:name=".activiyt_noofPeople"
+            android:exported="false" />
+        <activity
+            android:name=".activity_dateTime"
+            android:exported="false" />
+        <activity
             android:name=".activity_venueChooser"
             android:exported="false" />
         <activity

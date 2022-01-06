@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class planning extends AppCompatActivity {
 
     CardView c1, c2, c3,c4;
-    ImageView i1;
+    ImageView button_evntType,button_venueChooser,button_dateTime,button_noofpeople;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +21,42 @@ public class planning extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        i1 = findViewById(R.id.type);
+        resourceid();
+        button_evntType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),activity_eventType.class));
+            }
+        });
+        button_venueChooser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
+            }
+        });
+        button_dateTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent(getApplicationContext(),activity_dateTime.class));
+            }
+        });
+        button_noofpeople.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),activiyt_noofPeople.class));
+            }
+        });
 
 
 
 
 
+    }
+
+    private void resourceid() {
+        button_evntType = findViewById(R.id.type);
+        button_venueChooser = findViewById(R.id.venue_choose);
+        button_dateTime = findViewById(R.id.datentime);
+        button_noofpeople = findViewById(R.id.datentime);
     }
 }
