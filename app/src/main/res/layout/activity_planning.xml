@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/adobe_background"
-    android:layout_height="match_parent">
+    tools:ignore="SpeakableTextPresentCheck">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,11 +28,11 @@
             android:background="@drawable/event_type" />
 
         <ImageView
-            android:id="@+id/venue_choose"
+            android:id="@+id/numberPeople"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
-            android:background="@drawable/venue_" />
+            android:background="@drawable/people_" />
 
         <ImageView
             android:id="@+id/datentime"
@@ -40,12 +42,11 @@
             android:background="@drawable/date_" />
 
         <ImageView
-            android:id="@+id/numberPeople"
+            android:id="@+id/venue_choose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
-            android:background="@drawable/people_" />
-
+            android:background="@drawable/venue_" />
 
 
     </LinearLayout>
