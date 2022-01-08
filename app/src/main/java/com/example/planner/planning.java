@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.Date;
+
 public class planning extends AppCompatActivity {
 
     CardView c1, c2, c3,c4;
@@ -37,7 +39,7 @@ public class planning extends AppCompatActivity {
         button_dateTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity( new Intent(getApplicationContext(),activity_dateTime.class));
+                startActivity( new Intent(getApplicationContext(), DateAndTimeActivity.class));
             }
         });
         button_noofpeople.setOnClickListener(new View.OnClickListener() {

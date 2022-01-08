@@ -139,8 +139,6 @@ public class feedback1 extends AppCompatActivity {
                         Toast.makeText(feedback1.this, "You are Done", Toast.LENGTH_SHORT).show();
                     }
                 });
-
-
                 Intent i = new Intent(feedback1.this,dashboard.class);
                 startActivity(i);
             }
