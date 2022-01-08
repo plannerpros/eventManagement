@@ -6,6 +6,7 @@ import androidx.core.util.Pair;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.os.Bundle;
 import android.view.View;
@@ -26,8 +27,8 @@ import java.util.Locale;
 
 public class DateAndTimeActivity extends AppCompatActivity {
 
-    private MaterialButton mDatePickerBtn;
-    private MaterialButton mTimePickerBtn, endTime;
+    private ImageButton mDatePickerBtn;
+    private ImageButton mTimePickerBtn, endTime;
     TextView dateResult,startTimeResult,endTimeResult;
     String duration;
     String time;

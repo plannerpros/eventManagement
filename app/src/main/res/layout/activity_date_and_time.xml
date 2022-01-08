@@ -4,51 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/background_2"
     android:elevation="14sp"
     tools:context=".DateAndTimeActivity">
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
         android:id="@+id/select_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E91E63"
+        android:background="@drawable/pick_date"
         android:text="Show date picker"
         app:cornerRadius="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.098" />
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
         android:id="@+id/time_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E91E63"
+        android:background="@drawable/start_time"
         android:text="Start time"
         app:cornerRadius="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.391" />
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
         android:id="@+id/end_time_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E91E63"
+        android:background="@drawable/end_time"
         android:text="End time"
         app:cornerRadius="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toEndOf="@+id/time_picker"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <TextView
         android:id="@+id/date_info"
@@ -57,12 +57,13 @@
         android:hint="Date info"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:textColorHint="#343a40"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="0.24" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -82,11 +83,13 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20sp"
             android:text="Time:"
-            android:textSize="24sp" />
+            android:textColor="#343a40"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/start_time_info"
-            android:layout_width="wrap_content"
+            android:layout_width="70sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
             android:layout_toEndOf="@id/time_"
@@ -99,18 +102,16 @@
             android:layout_marginStart="10sp"
             android:layout_toEndOf="@id/start_time_info"
             android:text="  to  "
+            android:textColor="#343a40"
             android:textSize="24sp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/end_time_info"
-            android:layout_width="wrap_content"
+            android:layout_width="70sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
             android:layout_toEndOf="@id/textView2"
             android:textSize="24sp" />
 
-
     </RelativeLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
