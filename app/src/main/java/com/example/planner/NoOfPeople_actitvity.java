@@ -78,8 +78,6 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
         /*selectedChip = custom.getText().toString();
         Toast.makeText(NoOfPeople_actitvity.this, "selected", Toast.LENGTH_SHORT).show();
         */
