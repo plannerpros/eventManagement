@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_2"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose the number of people"
+        android:textSize="30sp"
+        android:layout_marginTop="80sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:shadowColor="@color/black"
+        android:textColorHighlight="@color/white"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="250sp"
+        app:singleSelection="true"
+        app:selectionRequired="false"
+        android:foregroundGravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip0"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textStyle="italic"
+            android:text="0-50" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip50"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50-100" />
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip100"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100-150" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip150"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150-200" />
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip200"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200-250" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip250"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="250-300" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip300"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300-350" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip350"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="350-400" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip400"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="400-450" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip450"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="450-500" />
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip500"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="500-550" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip550"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="550-600" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <EditText
+        android:id="@+id/custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chip_group"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:hint="Custom number of people (if above 600)"
+        android:minHeight="48dp"
+        android:inputType="number"
+        android:textColor="@color/gray"
+        android:textStyle="italic" />
+
+    <ImageButton
+        android:id="@+id/choose"
+        android:layout_width="235sp"
+        android:layout_height="74sp"
+        android:layout_below="@id/custom"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40sp"
+        android:background="@drawable/choose"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+</RelativeLayout>

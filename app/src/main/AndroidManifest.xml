@@ -15,7 +15,7 @@
             android:name=".DateAndTimeActivity"
             android:exported="false" />
         <activity
-            android:name=".activiyt_noofPeople"
+            android:name=".NoOfPeople_actitvity"
             android:exported="false" />
         <activity
             android:name=".activity_venueChooser"
