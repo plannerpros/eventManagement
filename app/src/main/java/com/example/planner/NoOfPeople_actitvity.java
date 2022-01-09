@@ -148,10 +148,11 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                 }
             }
         });
-        String custom1 = custom.getText().toString(
+        String cus = custom.getText().toString();
 
-        );
-        if (custom1!=""){
+        int custom1 = Integer.parseInt(cus);
+        System.out.println(custom1+cus);
+        if (cus!=null){
             selectedChip = custom.getText().toString();
             Toast.makeText(NoOfPeople_actitvity.this, "selected", Toast.LENGTH_SHORT).show();
         }
