@@ -2,10 +2,14 @@ package com.example.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
+import android.view.Window;
 
+import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.os.Build;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.os.Bundle;
@@ -29,7 +33,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
     private ImageButton mDatePickerBtn;
     private ImageButton mTimePickerBtn, endTime;
-    TextView dateResult,startTimeResult,endTimeResult;
+    TextView dateResult, startTimeResult, endTimeResult;
     String duration;
     String time;
     int hour, minute;
@@ -40,6 +44,10 @@ public class DateAndTimeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_and_time);
+        //hiding action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         mTimePickerBtn = findViewById(R.id.time_picker);
         startTimeResult = findViewById(R.id.start_time_info);
@@ -104,16 +112,14 @@ public class DateAndTimeActivity extends AppCompatActivity {
             }
         });
     }
-    public void popTimePicker()
-    {
-        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener()
-        {
+
+    public void popTimePicker() {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
-            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
-            {
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 hour = selectedHour;
                 minute = selectedMinute;
-                startTimeResult.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+                startTimeResult.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
                 start_time = startTimeResult.getText().toString();
                 //start_time variable must be stored in database
                 //System.out.println(start_time);
@@ -129,16 +135,13 @@ public class DateAndTimeActivity extends AppCompatActivity {
         timePickerDialog.show();
     }
 
-    public void popTimePicker2()
-    {
-        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener()
-        {
+    public void popTimePicker2() {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
-            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
-            {
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 hour = selectedHour;
                 minute = selectedMinute;
-                endTimeResult.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+                endTimeResult.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
                 end_time = endTimeResult.getText().toString();
                 //end_time variable must be stored in the database.
                 //System.out.println(end_time);

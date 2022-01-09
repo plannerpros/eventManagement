@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_2"
+    android:background="@drawable/background_schedule"
     android:elevation="14sp"
+    android:layout_gravity="center_horizontal"
     tools:context=".DateAndTimeActivity">
 
     <ImageButton
@@ -56,6 +57,7 @@
         android:layout_height="wrap_content"
         android:hint="Date info"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="24sp"
         android:textColorHint="#343a40"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +93,9 @@
             android:id="@+id/start_time_info"
             android:layout_width="70sp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_marginStart="10sp"
+            android:textColor="@color/black"
             android:layout_toEndOf="@id/time_"
             android:textSize="24sp" />
 
@@ -103,6 +107,7 @@
             android:layout_toEndOf="@id/start_time_info"
             android:text="  to  "
             android:textColor="#343a40"
+            android:textStyle="bold"
             android:textSize="24sp" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -111,6 +116,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
             android:layout_toEndOf="@id/textView2"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="24sp" />
 
     </RelativeLayout>
