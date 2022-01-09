@@ -150,8 +150,8 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
         });
         String cus = custom.getText().toString();
 
-        int custom1 = Integer.parseInt(cus);
-        System.out.println(custom1+cus);
+        //int custom1 = Integer.parseInt(cus);
+        System.out.println(cus);
         if (cus!=null){
             selectedChip = custom.getText().toString();
             Toast.makeText(NoOfPeople_actitvity.this, "selected", Toast.LENGTH_SHORT).show();
