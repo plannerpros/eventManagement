@@ -68,10 +68,11 @@
         app:layout_constraintVertical_bias="0.24" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:padding="20sp"
         android:gravity="center_horizontal"
+        android:padding="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,11 +94,11 @@
             android:id="@+id/start_time_info"
             android:layout_width="70sp"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:layout_marginStart="10sp"
-            android:textColor="@color/black"
             android:layout_toEndOf="@id/time_"
-            android:textSize="24sp" />
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
@@ -107,8 +108,8 @@
             android:layout_toEndOf="@id/start_time_info"
             android:text="  to  "
             android:textColor="#343a40"
-            android:textStyle="bold"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/end_time_info"
@@ -117,8 +118,20 @@
             android:layout_marginStart="10sp"
             android:layout_toEndOf="@id/textView2"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

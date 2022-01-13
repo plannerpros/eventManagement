@@ -142,5 +142,15 @@
         android:background="@drawable/choose"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="235sp"
+        android:layout_height="74sp"
+        android:layout_below="@id/choose"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40sp"
+        android:background="@drawable/back"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 
 </RelativeLayout>

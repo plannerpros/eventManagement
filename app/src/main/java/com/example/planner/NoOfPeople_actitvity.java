@@ -16,7 +16,7 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
 
     Chip chip0, chip50, chip100, chip150, chip200, chip250, chip300, chip350, chip400, chip450, chip500, chip550;
     EditText custom;
-    ImageButton choose;
+    ImageButton choose, back;
     String selectedChip, finalNumber;
 
     @Override
@@ -41,6 +41,17 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
         chip550 = findViewById(R.id.chip550);
         custom = findViewById(R.id.custom);
         choose = findViewById(R.id.choose);
+        back  = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(NoOfPeople_actitvity.this, planning.class);
+                startActivity(i);
+
+                //Chethan, take it off from here
+            }
+        });
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

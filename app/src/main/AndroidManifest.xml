@@ -40,7 +40,7 @@
             android:exported="false"
             android:label="Feedback"
             android:parentActivityName=".dashboard" />
-        <activity
+        <activit
             android:name=".transactions"
             android:exported="false"
             android:label="Transactions"

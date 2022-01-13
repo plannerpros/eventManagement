@@ -2,6 +2,8 @@ package com.example.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
+
+import android.content.Intent;
 import android.view.Window;
 
 import android.app.ActionBar;
@@ -31,7 +33,7 @@ import java.util.Locale;
 
 public class DateAndTimeActivity extends AppCompatActivity {
 
-    private ImageButton mDatePickerBtn;
+    private ImageButton mDatePickerBtn, backBtn;
     private ImageButton mTimePickerBtn, endTime;
     TextView dateResult, startTimeResult, endTimeResult;
     String duration;
@@ -56,6 +58,17 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
         mDatePickerBtn = findViewById(R.id.select_date);
         dateResult = findViewById(R.id.date_info);
+        backBtn = findViewById(R.id.go_back);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DateAndTimeActivity.this, planning.class);
+                startActivity(i);
+
+                //take off from here Chethan
+            }
+        });
 
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         calendar.clear();
