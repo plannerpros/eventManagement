@@ -25,9 +25,14 @@ import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TimeZone;
 import java.util.Locale;
 
@@ -40,6 +45,11 @@ public class DateAndTimeActivity extends AppCompatActivity {
     String time;
     int hour, minute;
     String start_time, end_time;
+    FirebaseFirestore fireStore;
+    FirebaseAuth fireAuth;
+    String userId;
+
+
 
 
     @Override
@@ -50,6 +60,9 @@ public class DateAndTimeActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        fireStore = FirebaseFirestore.getInstance();
+        fireAuth = FirebaseAuth.getInstance();
+        userId = fireAuth.getCurrentUser().getUid();
 
         mTimePickerBtn = findViewById(R.id.time_picker);
         startTimeResult = findViewById(R.id.start_time_info);
@@ -141,7 +154,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
         int style = AlertDialog.THEME_HOLO_LIGHT;
         int style1 = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
-
+        //
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, style1, onTimeSetListener, hour, minute, true);
 
         timePickerDialog.setTitle("Select Time");
@@ -158,6 +171,14 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 end_time = endTimeResult.getText().toString();
                 //end_time variable must be stored in the database.
                 //System.out.println(end_time);
+                //dateTimestore();
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String,Object> dateTime = new HashMap<>();
+                String duratioString ;
+                dateTime.put("date",duration);
+                dateTime.put("startTime",start_time);
+                dateTime.put("endTime:",end_time);
+
             }
         };
 
@@ -167,4 +188,5 @@ public class DateAndTimeActivity extends AppCompatActivity {
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
     }
+    //private void dateTimestore(){ }
 }
