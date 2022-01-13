@@ -141,7 +141,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
         int style = AlertDialog.THEME_HOLO_LIGHT;
         int style1 = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
-
+        //
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, style1, onTimeSetListener, hour, minute, true);
 
         timePickerDialog.setTitle("Select Time");
