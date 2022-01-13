@@ -1,18 +1,26 @@
 package com.example.planner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.chip.Chip;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import android.os.Bundle;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class NoOfPeople_actitvity extends AppCompatActivity {
 
@@ -23,6 +31,8 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
     FirebaseFirestore fireStore;
     FirebaseAuth fireAuth;
     String userId;
+    public static final String TAG = "Tag";
+
 
 
     @Override
@@ -48,17 +58,18 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
         chip550 = findViewById(R.id.chip550);
         custom = findViewById(R.id.custom);
         choose = findViewById(R.id.choose);
-        back  = findViewById(R.id.back);
+        userId = fireAuth.getCurrentUser().getUid();
+        //back  = findViewById(R.id.back);
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(NoOfPeople_actitvity.this, planning.class);
-                startActivity(i);
-
-                //Chethan, take it off from here
-            }
-        });
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(NoOfPeople_actitvity.this, planning.class);
+//                startActivity(i);
+//
+//                //Chethan, take it off from here
+//            }
+//        });
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,13 +100,30 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                 } else if (custom != null) {
                     selectedChip = custom.getText().toString();
                 }
-                Toast.makeText(NoOfPeople_actitvity.this, "No of people chosen: " + selectedChip, Toast.LENGTH_SHORT).show();
+
                 finalNumber = selectedChip.toString();
                 //variable to be stored in the database
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String,Object> noPeople = new HashMap<>();
+                noPeople.put("numberOfpeople",finalNumber);
+                docuRefr.update(noPeople).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(@NonNull Void unused) {
+                        Toast.makeText(NoOfPeople_actitvity.this, "No of people chosen: " + selectedChip, Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(NoOfPeople_actitvity.this, planning.class);
+                        startActivity(i);
+                    }
+                })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG,"onFailur: problem in no of people"+e);
+                            }
+                        });
 
-                Intent i = new Intent(NoOfPeople_actitvity.this, planning.class);
-                startActivity(i);
+
             }
+
         });
         /*selectedChip = custom.getText().toString();
         Toast.makeText(NoOfPeople_actitvity.this, "selected", Toast.LENGTH_SHORT).show();
