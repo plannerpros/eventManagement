@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import android.os.Bundle;
 
@@ -18,6 +20,10 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
     EditText custom;
     ImageButton choose, back;
     String selectedChip, finalNumber;
+    FirebaseFirestore fireStore;
+    FirebaseAuth fireAuth;
+    String userId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +32,8 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
+        fireStore = FirebaseFirestore.getInstance();
+        fireAuth = FirebaseAuth.getInstance();
         chip0 = findViewById(R.id.chip0);
         chip50 = findViewById(R.id.chip50);
         chip100 = findViewById(R.id.chip100);
@@ -85,6 +92,7 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                 Toast.makeText(NoOfPeople_actitvity.this, "No of people chosen: " + selectedChip, Toast.LENGTH_SHORT).show();
                 finalNumber = selectedChip.toString();
                 //variable to be stored in the database
+
                 Intent i = new Intent(NoOfPeople_actitvity.this, planning.class);
                 startActivity(i);
             }
