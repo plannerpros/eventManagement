@@ -193,20 +193,25 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateTime.put("date",duration);
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
-                docuRefr.set(dateTime).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(@NonNull Void unused) {
-                        Toast.makeText(DateAndTimeActivity.this, "Sucessus", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),planning.class));
-                    }
-                })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG,"onFailure: dint insert data "+e);
-
-                            }
-                        });
+                try {
+                    docuRefr.set(dateTime).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(@NonNull Void unused) {
+                            Toast.makeText(DateAndTimeActivity.this, "Date Time Selected", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), planning.class));
+                        }
+                    })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "onFailure: dint insert data " + e);
+                                    Toast.makeText(DateAndTimeActivity.this, "Try Again", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                }
+                catch (Exception me){
+                    Log.w(TAG,"failur in date and time class");
+                }
             }
         });
 

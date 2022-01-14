@@ -118,6 +118,7 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG,"onFailur: problem in no of people"+e);
+                                Toast.makeText(NoOfPeople_actitvity.this, "Try again", Toast.LENGTH_LONG).show();
                             }
                         });
 
