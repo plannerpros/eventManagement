@@ -1,9 +1,11 @@
 package com.example.planner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.Window;
 
 import android.app.ActionBar;
@@ -20,6 +22,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
@@ -37,10 +41,12 @@ import java.util.TimeZone;
 import java.util.Locale;
 
 public class DateAndTimeActivity extends AppCompatActivity {
+    public static final String TAG = "Tag";
 
-    private ImageButton mDatePickerBtn, backBtn;
+    private ImageButton mDatePickerBtn, backBtn, submitButton;
     private ImageButton mTimePickerBtn, endTime;
     TextView dateResult, startTimeResult, endTimeResult;
+
     String duration;
     String time;
     int hour, minute;
@@ -56,6 +62,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_and_time);
+
         //hiding action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -63,7 +70,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         fireStore = FirebaseFirestore.getInstance();
         fireAuth = FirebaseAuth.getInstance();
         userId = fireAuth.getCurrentUser().getUid();
-
+        submitButton = findViewById(R.id.go_back);
         mTimePickerBtn = findViewById(R.id.time_picker);
         startTimeResult = findViewById(R.id.start_time_info);
         endTimeResult = findViewById(R.id.end_time_info);
@@ -172,15 +179,41 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 //end_time variable must be stored in the database.
                 //System.out.println(end_time);
                 //dateTimestore();
+
+
+
+            }
+        };
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String,Object> dateTime = new HashMap<>();
                 String duratioString ;
                 dateTime.put("date",duration);
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
-
+                try {
+                    docuRefr.set(dateTime).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(@NonNull Void unused) {
+                            Toast.makeText(DateAndTimeActivity.this, "Date Time Selected", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), planning.class));
+                        }
+                    })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "onFailure: dint insert data " + e);
+                                    Toast.makeText(DateAndTimeActivity.this, "Try Again", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                }
+                catch (Exception me){
+                    Log.w(TAG,"failur in date and time class");
+                }
             }
-        };
+        });
 
         int style = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
 
