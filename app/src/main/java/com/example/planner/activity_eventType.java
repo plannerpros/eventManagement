@@ -32,27 +32,27 @@ String eventName;
             @Override
             public void onClick(View v) {
 
-                eventType =  "Birthday";
-                System.out.println(eventType);
+                eventType =  birthdayButt.getContentDescription().toString();
+
             }
         });
         marrageButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType="Marrage";
+                eventType=marrageButt.getContentDescription().toString();
             }
         });
         nameCerobutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                eventType = "Naming Ceremony ";
+                eventType = nameCerobutton.getContentDescription().toString();
             }
         });
         getTogetherbutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = "Get Toghter";
+                eventType = getTogetherbutt.getContentDescription().toString();
             }
         });
         farewellButt.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +73,7 @@ String eventName;
                 eventType = "Tea Party";
             }
         });
-
+        System.out.println(eventType);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
