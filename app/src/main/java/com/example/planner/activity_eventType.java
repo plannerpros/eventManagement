@@ -10,5 +10,9 @@ public class activity_eventType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_type);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
     }
 }
