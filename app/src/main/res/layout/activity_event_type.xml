@@ -34,7 +34,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@id/previous_button"
                 android:background="@color/white"
-
                 android:src="@drawable/text_choose" />
         </RelativeLayout>
 
