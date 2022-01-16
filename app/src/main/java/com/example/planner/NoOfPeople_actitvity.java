@@ -58,7 +58,7 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
         custom = findViewById(R.id.custom);
         choose = findViewById(R.id.choose);
         userId = fireAuth.getCurrentUser().getUid();
-        //back  = findViewById(R.id.back);
+        back  = findViewById(R.id.go_back);
 
 //        back.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -238,7 +238,12 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
         }else{
             return;
         }*/
-
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(),planning.class));
+                }
+            });
 
     }
 }

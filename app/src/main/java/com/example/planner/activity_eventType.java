@@ -15,10 +15,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class activity_eventType extends AppCompatActivity {
 ImageButton backButton,birthdayButt,marrageButt,nameCerobutton,getTogetherbutt,farewellButt,housewarmingButt,teaPartybutt,customButton;
- String eventType;
+ int eventType=0;
 String eventName;
     String finalEventType;
 FirebaseAuth fireAuth;
@@ -27,6 +28,7 @@ EditText input_custom;
 String userId;
 int eventNo;
 FirebaseFirestore fireStore;
+final int birt = 101;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +55,7 @@ FirebaseFirestore fireStore;
         birthdayButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = "Birthday";
+                eventType = 101;
                 eventNo = 1;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
@@ -63,7 +65,9 @@ FirebaseFirestore fireStore;
         marrageButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType=marrageButt.getContentDescription().toString();
+
+                 eventType=birt;
+
                 eventNo = 2;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
@@ -74,31 +78,31 @@ FirebaseFirestore fireStore;
             @Override
             public void onClick(View v) {
 
-                eventType = nameCerobutton.getContentDescription().toString();
+                eventType = birt;
             }
         });
         getTogetherbutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = getTogetherbutt.getContentDescription().toString();
+                eventType = birt;
             }
         });
         farewellButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = "Farewell";
+                eventType = birt;
             }
         });
         housewarmingButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = "House Warming";
+                eventType = birt;
             }
         });
         teaPartybutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = "Tea Party";
+                eventType = birt;
             }
         });
         System.out.println(eventType);

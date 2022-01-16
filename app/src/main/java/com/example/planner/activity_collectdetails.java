@@ -31,7 +31,7 @@ public class activity_collectdetails extends AppCompatActivity {
     //FirebaseDatabase fb;
     //DatabaseReference df;
     FirebaseFirestore fbs;
-
+    ImageButton gobck;
     String userId;
 
     @Override
@@ -44,7 +44,8 @@ public class activity_collectdetails extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-
+        auth=FirebaseAuth.getInstance();
+        fbs = FirebaseFirestore.getInstance();
         fnet = findViewById(R.id.fullName);
         pnet = findViewById(R.id.phone_Number);
         anet = findViewById(R.id.adhhar);
@@ -54,8 +55,7 @@ public class activity_collectdetails extends AppCompatActivity {
         sb = findViewById(R.id.details_submit);
         //fb = FirebaseDatabase.getInstance();
         //df = fb.getReference().child("details");
-        auth=FirebaseAuth.getInstance();
-        fbs = FirebaseFirestore.getInstance();
+        gobck = findViewById(R.id.previous_button);
 
 
 
@@ -160,6 +160,12 @@ public class activity_collectdetails extends AppCompatActivity {
 //                });
 
 
+            }
+        });
+        gobck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),activity_display.class));
             }
         });
     }

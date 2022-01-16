@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
 
 import android.content.Intent;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Window;
 
@@ -44,7 +45,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
     public static final String TAG = "Tag";
 
     private ImageButton mDatePickerBtn, backBtn, submitButton;
-    private ImageButton mTimePickerBtn, endTime;
+    private ImageButton mTimePickerBtn, endTime, choose;
     TextView dateResult, startTimeResult, endTimeResult;
 
     String duration;
@@ -75,7 +76,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         startTimeResult = findViewById(R.id.start_time_info);
         endTimeResult = findViewById(R.id.end_time_info);
         endTime = findViewById(R.id.end_time_picker);
-
+        choose = findViewById(R.id.choose);
         mDatePickerBtn = findViewById(R.id.select_date);
         dateResult = findViewById(R.id.date_info);
         backBtn = findViewById(R.id.go_back);
@@ -158,6 +159,11 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 //System.out.println(start_time);
             }
         };
+        if(TextUtils.isEmpty(start_time))
+        {
+            startTimeResult.setError("Start time required");
+            return;
+        }
 
         int style = AlertDialog.THEME_HOLO_LIGHT;
         int style1 = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
@@ -184,7 +190,13 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
             }
         };
-        submitButton.setOnClickListener(new View.OnClickListener() {
+        if(TextUtils.isEmpty(end_time))
+        {
+            endTimeResult.setError("Start time required");
+            return;
+        }
+
+        choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
@@ -220,6 +232,12 @@ public class DateAndTimeActivity extends AppCompatActivity {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), planning.class));
+            }
+        });
     }
     //private void dateTimestore(){ }
 }
