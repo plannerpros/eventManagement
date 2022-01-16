@@ -81,25 +81,37 @@ public class activity_eventType extends AppCompatActivity {
         getTogetherbutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                eventNo=4;
+                eventName=eventAssigner(eventNo);
+                System.out.println(eventName);
 
             }
         });
         farewellButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = birt;
+
+                eventNo=5;
+                eventName=eventAssigner(eventNo);
+                System.out.println(eventName);
             }
         });
         housewarmingButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = birt;
+
+                eventNo=6;
+                eventName=eventAssigner(eventNo);
+                System.out.println(eventName);
             }
         });
         teaPartybutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventType = birt;
+
+                eventNo=7;
+                eventName=eventAssigner(eventNo);
+                System.out.println(eventName);
             }
         });
         System.out.println(eventType);
@@ -116,6 +128,9 @@ public class activity_eventType extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //String input =
+                eventNo=8;
+                eventName=eventAssigner(eventNo);
+                System.out.println(eventName);
             }
         });
         System.out.println(eventNo);
@@ -133,7 +148,19 @@ public class activity_eventType extends AppCompatActivity {
         } else if (eventNo == 3) {
             eventName = "Naming ceremony";
         } else if(eventNo == 4) {
-            eventName = "";
+            eventName = "Get-together";
+        }else if(eventNo==5)
+        {
+            eventName="Farewell";
+        }else if(eventNo==6)
+        {
+            eventName="House-warming ceremony";
+        }else if(eventNo==7)
+        {
+            eventName="Tea party";
+        }else if(eventNo==8)
+        {
+            eventName="Custom";
         }
         return eventName;
     }
