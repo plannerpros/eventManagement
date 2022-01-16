@@ -1,11 +1,12 @@
 package com.example.planner;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,8 +20,12 @@ public class activity_eventType extends AppCompatActivity {
 ImageButton backButton,birthdayButt,marrageButt,nameCerobutton,getTogetherbutt,farewellButt,housewarmingButt,teaPartybutt,customButton;
  String eventType;
 String eventName;
+    String finalEventType;
 FirebaseAuth fireAuth;
+CardView customEvent;
+EditText input_custom;
 String userId;
+int eventNo;
 FirebaseFirestore fireStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ FirebaseFirestore fireStore;
         fireStore = FirebaseFirestore.getInstance();
         userId = fireAuth.getCurrentUser().getUid();
         backButton =  findViewById(R.id.previous_button);
+        customEvent = findViewById(R.id.custom_event_type);
+        //input_custom = findViewById(R.id,input_custom);
         birthdayButt = findViewById(R.id.birthday__);
         marrageButt = findViewById(R.id.marriage);
         nameCerobutton = findViewById(R.id.naming);
@@ -47,10 +54,9 @@ FirebaseFirestore fireStore;
             @Override
             public void onClick(View v) {
                 eventType = "Birthday";
-                //eventType =  birthdayButt.getContentDescription().toString();
-                //evnt_funvtion(eventType);
-
-
+                eventNo = 1;
+                eventName = eventAssigner(eventNo);
+                System.out.println(eventName);
 
             }
         });
@@ -58,6 +64,10 @@ FirebaseFirestore fireStore;
             @Override
             public void onClick(View v) {
                 eventType=marrageButt.getContentDescription().toString();
+                eventNo = 2;
+                eventName = eventAssigner(eventNo);
+                System.out.println(eventName);
+
             }
         });
         nameCerobutton.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +111,30 @@ FirebaseFirestore fireStore;
             }
         });
 
+        customEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //String input =
+            }
+        });
+
+        System.out.println(eventNo);
+        //System.out.println(finalEventType);
+        System.out.println(eventName);
+
+
+
+    }
+
+    public static String eventAssigner(int eventNo){
+        String eventName = null;
+        if(eventNo == 1){
+            eventName = "Birthday";
+        }else if(eventNo==2){
+            eventName = "Marriage";
+        }
+
+        return eventName;
     }
 
 
