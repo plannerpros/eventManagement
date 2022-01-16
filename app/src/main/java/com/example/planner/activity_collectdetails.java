@@ -130,7 +130,8 @@ public class activity_collectdetails extends AppCompatActivity {
 //                    }
 //                })
 //                ;
-                docuRefr.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                docuRefr.update(user)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(@NonNull Void unused) {
                         Log.d(TAG,"onSuccess: user Profile is Updated for "+userId);
@@ -142,7 +143,7 @@ public class activity_collectdetails extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG,"onFailure: user profile didn't create for "+userId);
+                        Log.w(TAG,"onFailure: user profile didn't create for "+e+""+userId);
                         Toast.makeText(activity_collectdetails.this, "Try again", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(activity_collectdetails.this, activity_collectdetails.class);
                         startActivity(i);

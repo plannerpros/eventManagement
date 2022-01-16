@@ -8,10 +8,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class activity_eventType extends AppCompatActivity {
 ImageButton backButton,birthdayButt,marrageButt,nameCerobutton,getTogetherbutt,farewellButt,housewarmingButt,teaPartybutt,customButton;
  String eventType;
 String eventName;
+FirebaseAuth fireAuth;
+String userId;
+FirebaseFirestore fireStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +29,9 @@ String eventName;
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        fireAuth = FirebaseAuth.getInstance();
+        fireStore = FirebaseFirestore.getInstance();
+        userId = fireAuth.getCurrentUser().getUid();
         backButton =  findViewById(R.id.previous_button);
         birthdayButt = findViewById(R.id.birthday__);
         marrageButt = findViewById(R.id.marriage);
@@ -28,11 +41,16 @@ String eventName;
         housewarmingButt = findViewById(R.id.house_warming);
         teaPartybutt = findViewById(R.id.tea_party);
         //customButton = findViewById(R.id.);
+        DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+        Map<String,Object> eventTypech = new HashMap<>();
         birthdayButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                eventType = "Birthday";
+                //eventType =  birthdayButt.getContentDescription().toString();
+                //evnt_funvtion(eventType);
 
-                eventType =  birthdayButt.getContentDescription().toString();
+
 
             }
         });
@@ -84,4 +102,7 @@ String eventName;
         });
 
     }
+
+
+
 }
