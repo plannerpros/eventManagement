@@ -142,5 +142,25 @@
         android:background="@drawable/choose"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <ImageButton
+        android:id="@+id/go_back"
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/choose"
+        android:layout_alignStart="@+id/choose"
+        android:layout_alignParentEnd="true"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
+
 
 </RelativeLayout>
