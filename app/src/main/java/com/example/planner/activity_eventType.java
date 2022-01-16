@@ -1,5 +1,6 @@
 package com.example.planner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -8,7 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -41,7 +45,7 @@ public class activity_eventType extends AppCompatActivity {
         userId = fireAuth.getCurrentUser().getUid();
         backButton = findViewById(R.id.previous_button);
         customEvent = findViewById(R.id.custom_event_type);
-        //input_custom = findViewById(R.id,input_custom);
+        input_custom = findViewById(R.id.input_custom_event);
         birthdayButt = findViewById(R.id.birthday__);
         marrageButt = findViewById(R.id.marriage);
         nameCerobutton = findViewById(R.id.naming);
@@ -50,8 +54,7 @@ public class activity_eventType extends AppCompatActivity {
         housewarmingButt = findViewById(R.id.house_warming);
         teaPartybutt = findViewById(R.id.tea_party);
         //customButton = findViewById(R.id.);
-        DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
-        Map<String, Object> eventTypech = new HashMap<>();
+
         birthdayButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,8 +84,8 @@ public class activity_eventType extends AppCompatActivity {
         getTogetherbutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventNo=4;
-                eventName=eventAssigner(eventNo);
+                eventNo = 4;
+                eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
 
             }
@@ -91,8 +94,8 @@ public class activity_eventType extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                eventNo=5;
-                eventName=eventAssigner(eventNo);
+                eventNo = 5;
+                eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
             }
         });
@@ -100,8 +103,8 @@ public class activity_eventType extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                eventNo=6;
-                eventName=eventAssigner(eventNo);
+                eventNo = 6;
+                eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
             }
         });
@@ -109,35 +112,51 @@ public class activity_eventType extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                eventNo=7;
-                eventName=eventAssigner(eventNo);
+                eventNo = 7;
+                eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
             }
         });
         //System.out.println(eventType);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(activity_eventType.this, planning.class);
-                startActivity(i);
-                //startActivity(new Intent(getApplicationContext(),planning.class));
-            }
-        });
+
 
         customEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //String input =
-                eventNo=8;
-                eventName=eventAssigner(eventNo);
-                System.out.println(eventName);
+                eventName = input_custom.getText().toString();
             }
         });
         //System.out.println(eventNo);
         //System.out.println(finalEventType);
         //System.out.println(eventName);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //insertData();
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String, Object> eventInsert = new HashMap<>();
+                eventInsert.put("Event Name", eventName);
+                docuRefr.update(eventInsert).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(@NonNull Void unused) {
+                        Toast.makeText(activity_eventType.this, "Choosen", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), planning.class));
+                    }
+                })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(activity_eventType.this, "Try Again", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
+            }
+        });
 
     }
+
 
     public static String eventAssigner(int eventNo) {
         String eventName = null;
@@ -147,25 +166,23 @@ public class activity_eventType extends AppCompatActivity {
             eventName = "Marriage";
         } else if (eventNo == 3) {
             eventName = "Naming ceremony";
-        } else if(eventNo == 4) {
+        } else if (eventNo == 4) {
             eventName = "Get-together";
-        }else if(eventNo==5)
-        {
-            eventName="Farewell";
-        }else if(eventNo==6)
-        {
-            eventName="House-warming ceremony";
-        }else if(eventNo==7)
-        {
-            eventName="Tea party";
-        }else if(eventNo==8)
-        {
-            eventName="Custom";
+        } else if (eventNo == 5) {
+            eventName = "Farewell";
+        } else if (eventNo == 6) {
+            eventName = "House-warming ceremony";
+        } else if (eventNo == 7) {
+            eventName = "Tea party";
         }
         //System.out.println(eventName);
         return eventName;
 
+
     }
+    /*private void insertData(String nameEvent) {
+
+    }*/
 
 
 }
