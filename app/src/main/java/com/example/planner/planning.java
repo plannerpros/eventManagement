@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class planning extends AppCompatActivity {
 
     CardView c1, c2, c3,c4;
-    ImageView button_evntType,button_venueChooser,button_dateTime,button_noofpeople;
+    ImageView button_evntType,button_venueChooser,button_dateTime,button_noofpeople,button_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,13 @@ public class planning extends AppCompatActivity {
             }
         });
 
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(planning.this, dashboard.class));
+            }
+        });
+
 
 
 
@@ -58,5 +65,6 @@ public class planning extends AppCompatActivity {
         button_venueChooser = findViewById(R.id.venue_choose);
         button_dateTime = findViewById(R.id.datentime);
         button_noofpeople = findViewById(R.id.numberPeople);
+        button_back = findViewById(R.id.back_button);
     }
 }

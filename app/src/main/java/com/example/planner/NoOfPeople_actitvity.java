@@ -34,7 +34,6 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
     public static final String TAG = "Tag";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,8 +103,8 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                 finalNumber = selectedChip.toString();
                 //variable to be stored in the database
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
-                Map<String,Object> noPeople = new HashMap<>();
-                noPeople.put("numberOfpeople",finalNumber);
+                Map<String, Object> noPeople = new HashMap<>();
+                noPeople.put("numberOfpeople", finalNumber);
                 docuRefr.update(noPeople).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(@NonNull Void unused) {
@@ -117,7 +116,7 @@ public class NoOfPeople_actitvity extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG,"onFailur: problem in no of people"+e);
+                                Log.w(TAG, "onFailur: problem in no of people" + e);
                                 Toast.makeText(NoOfPeople_actitvity.this, "Try again", Toast.LENGTH_LONG).show();
                             }
                         });
