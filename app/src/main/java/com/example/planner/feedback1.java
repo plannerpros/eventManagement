@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class feedback1 extends AppCompatActivity {
     public static final String TAG = "Tag";
     RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
     Button b1;
+    ImageButton previous;
 //    FirebaseDatabase fd;
 //    DatabaseReference ar;
 //    DatabaseReference ref;
@@ -53,6 +55,7 @@ public class feedback1 extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         rb1 = findViewById(R.id.not_satisfied);
+        previous = findViewById(R.id.previous_button);
         e1 = findViewById(R.id.takeaway);
         e2 = findViewById(R.id.suggestions);
         rb2 = findViewById(R.id.good);
@@ -84,6 +87,13 @@ public class feedback1 extends AppCompatActivity {
 
             }
         });*/
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(feedback1.this,dashboard.class));
+            }
+        });
 
 
         b1.setOnClickListener(new View.OnClickListener() {
