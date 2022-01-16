@@ -27,7 +27,7 @@ public class activity_eventType extends AppCompatActivity {
     String userId;
     int eventNo;
     FirebaseFirestore fireStore;
-    final int birt = 101;
+    //final int birt = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +114,7 @@ public class activity_eventType extends AppCompatActivity {
                 System.out.println(eventName);
             }
         });
-        System.out.println(eventType);
+        //System.out.println(eventType);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,9 +133,9 @@ public class activity_eventType extends AppCompatActivity {
                 System.out.println(eventName);
             }
         });
-        System.out.println(eventNo);
+        //System.out.println(eventNo);
         //System.out.println(finalEventType);
-        System.out.println(eventName);
+        //System.out.println(eventName);
 
     }
 
@@ -162,7 +162,9 @@ public class activity_eventType extends AppCompatActivity {
         {
             eventName="Custom";
         }
+        //System.out.println(eventName);
         return eventName;
+
     }
 
 
