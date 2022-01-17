@@ -55,12 +55,13 @@ public class activity_venueChooser extends AppCompatActivity {
     }
 
     private void firebaseUserSearch(String searchText) {
-        Query firebaseSearchQuery = dataRefrence.orderByChild("venues").startAt(searchText).endAt(searchText + "\uf8ff");
+        Query firebaseSearchQuery = dataRefrence.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff");
         FirebaseRecyclerAdapter<venueHelper,userviewholder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<venueHelper, userviewholder>(
                 venueHelper.class,
                 R.layout.list_layout,
                 userviewholder.class,
-                firebaseSearchQuery
+                dataRefrence
+
         ) {
             @Override
             protected void populateViewHolder(userviewholder userviewholder, venueHelper venueHelper, int i) {
