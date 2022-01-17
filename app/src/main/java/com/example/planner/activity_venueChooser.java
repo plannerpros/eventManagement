@@ -20,9 +20,6 @@ public class activity_venueChooser extends AppCompatActivity {
     EditText searchBar;
     RecyclerView recyclerListView;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,17 +30,11 @@ public class activity_venueChooser extends AppCompatActivity {
         searchButton = findViewById(R.id.search_button);
         previousButton = findViewById(R.id.previous_button);
         recyclerListView = findViewById(R.id.recyclerListView);
-
-
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(activity_venueChooser.this, planning.class));
             }
         });
-
-
-
-
     }
 }
