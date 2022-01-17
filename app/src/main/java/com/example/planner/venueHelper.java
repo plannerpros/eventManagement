@@ -34,7 +34,7 @@ public class venueHelper {
     public venueHelper(String name, String image, String cost) {
         this.name = name;
         this.image = image;
-        this.location = cost;
+        this.location = location;
     }
 }
 
