@@ -97,6 +97,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
         calendar.setTimeInMillis(today);
 
+
         calendar.set(Calendar.MONTH, Calendar.JANUARY);
         long January = calendar.getTimeInMillis();
 
