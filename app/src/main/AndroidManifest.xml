@@ -12,25 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
-            android:name=".DateAndTimeActivity"
-            android:parentActivityName=".planning"
+            android:name=".venueImages"
             android:exported="false" />
+        <activity
+            android:name=".DateAndTimeActivity"
+            android:exported="false"
+            android:parentActivityName=".planning" />
         <activity
             android:name=".NoOfPeople_actitvity"
-            android:parentActivityName=".planning"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".planning" />
         <activity
             android:name=".activity_venueChooser"
-            android:parentActivityName=".planning"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".planning" />
         <activity
             android:name=".activity_eventType"
-            android:parentActivityName=".planning"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".planning" />
         <activity
             android:name=".activity_display"
-            android:parentActivityName=".dashboard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".activity_collectdetails"
             android:exported="false"
