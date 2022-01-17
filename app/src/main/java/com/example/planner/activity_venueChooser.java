@@ -28,6 +28,7 @@ public class activity_venueChooser extends AppCompatActivity {
     ImageView searchButton;
     EditText searchBar;
     RecyclerView recyclerListView;
+    TextView title,description,location, price, noOfPeople;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,11 @@ public class activity_venueChooser extends AppCompatActivity {
         recyclerListView = findViewById(R.id.recyclerListView);
         recyclerListView.setHasFixedSize(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(this));
+        title = findViewById(R.id.title);
+        description = findViewById(R.id.description);
+        location = findViewById(R.id.location_info);
+        price = findViewById(R.id.price_info);
+        noOfPeople = findViewById(R.id.people_info);
         //System.out.println("1");
 
 
@@ -71,13 +77,7 @@ public class activity_venueChooser extends AppCompatActivity {
             }
         });
         System.out.println("3");
-
-
     }
-
-
-
-
 
     private void firebaseUserSearch(String searchText) {
         Query firebaseSearchQuery = dataRefrence.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff");
