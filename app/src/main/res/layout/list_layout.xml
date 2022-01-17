@@ -5,29 +5,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/card_view_list"
-        app:cardCornerRadius="20sp">
+        android:layout_margin="20sp"
+        android:elevation="30sp"
+        app:cardCornerRadius="30sp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp">
 
             <ImageButton
                 android:id="@+id/display_image"
                 android:layout_width="150sp"
                 android:layout_height="120sp"
-                android:layout_marginTop="20sp"
                 android:src="@drawable/search_icon" />
 
             <TextView
                 android:id="@+id/title_event"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:layout_toEndOf="@id/display_image"
                 android:layout_marginStart="10sp"
+                android:layout_toEndOf="@id/display_image"
                 android:text="title"
                 android:textColor="@color/black"
                 android:textSize="26sp"
@@ -36,9 +37,9 @@
             <TextView
                 android:id="@+id/price"
                 android:layout_width="match_parent"
-                android:layout_marginStart="10sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title_event"
+                android:layout_marginStart="10sp"
                 android:layout_marginTop="1sp"
                 android:layout_toEndOf="@id/display_image"
                 android:text="Price"
