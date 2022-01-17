@@ -64,13 +64,13 @@ public class activity_venueChooser extends AppCompatActivity {
                 String searchText = searchBar.getText().toString().trim();
                 if(TextUtils.isEmpty(searchText))
                 {
-                    searchBar.setError("Password is required");
+                    searchBar.setError("Enter the name to search");
                     return;
                 }
                 firebaseUserSearch(searchText);
             }
         });
-        System.out.println("3");
+        //System.out.println("3");
 
 
     }

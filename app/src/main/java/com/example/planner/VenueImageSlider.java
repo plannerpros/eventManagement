@@ -1,27 +1,59 @@
 package com.example.planner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import android.os.Bundle;
+import com.example.planner.imageHelper;
 
 public class VenueImageSlider extends AppCompatActivity {
     FirebaseDatabase fireData;
     DatabaseReference dataRefre;
     //String url1, url2,url3;
-    String url1 = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
-    String url2 = "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
-    String url3 = "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
+    String url1; //= "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
+    String url2;//= "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
+    String url3; //= "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
+    String ID;
     //url must be replaced with the images data in the form if string
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fireData = FirebaseDatabase.getInstance();
-        dataRefre = FirebaseDatabase.getInstance().getReference("venues");
+        dataRefre = FirebaseDatabase.getInstance().getReference("venue");
+         ID = "101";
+
+
+
+
+        dataRefre.child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.getResult().exists()){
+                    DataSnapshot dataSnapshot = task.getResult();
+                    url1 = String.valueOf(dataSnapshot.child("image").getValue());
+                    url2 = String.valueOf(dataSnapshot.child("image1").getValue());
+                    url3 = String.valueOf(dataSnapshot.child("image2").getValue());
+
+
+
+                }
+            }
+        });
+
         setContentView(R.layout.activity_venue_image_slider);
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
 
