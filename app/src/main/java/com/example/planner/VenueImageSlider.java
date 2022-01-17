@@ -21,6 +21,8 @@ public class VenueImageSlider extends AppCompatActivity {
         // initializing the slider view.
         SliderView sliderView = findViewById(R.id.slider);
 
+        //firebase codes
+
         // adding the urls inside array list
         sliderDataArrayList.add(new SliderData(url1));
         sliderDataArrayList.add(new SliderData(url2));
