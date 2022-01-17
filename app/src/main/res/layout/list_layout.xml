@@ -2,37 +2,55 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    >
-
-    <ImageButton
-        android:id="@+id/display_image"
-        android:layout_width="150sp"
-        android:layout_height="120sp"
-        android:layout_marginTop="20sp"
-        android:src="@drawable/search_icon" />
-
-    <TextView
-        android:id="@+id/title_event"
-        android:layout_width="match_parent"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:layout_toEndOf="@id/display_image"
-        android:text="title"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:id="@+id/card_view"
+        app:cardCornerRadius="20sp">
 
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_event"
-        android:layout_marginTop="1sp"
-        android:layout_toEndOf="@id/display_image"
-        android:text="Price"
-        android:textColor="@color/colorInnactive"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/display_image"
+                android:layout_width="150sp"
+                android:layout_height="120sp"
+                android:layout_marginTop="20sp"
+                android:src="@drawable/search_icon" />
+
+            <TextView
+                android:id="@+id/title_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_toEndOf="@id/display_image"
+                android:layout_marginStart="10sp"
+                android:text="title"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_event"
+                android:layout_marginTop="1sp"
+                android:layout_toEndOf="@id/display_image"
+                android:text="Price"
+                android:textColor="@color/colorInnactive"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </RelativeLayout>
