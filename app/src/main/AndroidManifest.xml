@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
+            android:name=".VenueImageSlider"
+            android:exported="false" />
+        <activity
             android:name=".DateAndTimeActivity"
             android:exported="false"
             android:parentActivityName=".planning" />
