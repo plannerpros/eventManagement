@@ -4,12 +4,11 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/display_image"
         android:layout_width="150sp"
         android:layout_height="120sp"
-        android:src="@drawable/search_icon"
-        android:id="@+id/display_image"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="20sp"/>
+        android:layout_marginTop="20sp"
+        android:src="@drawable/search_icon" />
 
     <TextView
         android:layout_width="match_parent"
@@ -23,15 +22,15 @@
         android:layout_marginTop="20sp"/>
 
     <TextView
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/price"
-        android:textSize="16sp"
-        android:text="price"
-        android:textStyle="bold"
-        android:textColor="@color/colorInnactive"
-        android:layout_toEndOf="@id/display_image"
         android:layout_below="@id/title_event"
-        android:layout_marginTop="1sp"/>
+        android:layout_marginTop="1sp"
+        android:layout_toEndOf="@id/display_image"
+        android:text="description"
+        android:textColor="@color/colorInnactive"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

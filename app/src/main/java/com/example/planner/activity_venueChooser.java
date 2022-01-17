@@ -36,5 +36,6 @@ public class activity_venueChooser extends AppCompatActivity {
                 startActivity(new Intent(activity_venueChooser.this, planning.class));
             }
         });
+
     }
 }
