@@ -60,7 +60,7 @@ public class activity_venueChooser extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("2");
+                //System.out.println("2");
                 String searchText = searchBar.getText().toString().trim();
                 if(TextUtils.isEmpty(searchText))
                 {
@@ -71,7 +71,13 @@ public class activity_venueChooser extends AppCompatActivity {
             }
         });
         System.out.println("3");
+
+
     }
+
+
+
+
 
     private void firebaseUserSearch(String searchText) {
         Query firebaseSearchQuery = dataRefrence.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff");
@@ -85,8 +91,11 @@ public class activity_venueChooser extends AppCompatActivity {
             @Override
             protected void populateViewHolder(userviewholder userviewholder, venueHelper venueHelper, int i) {
                 userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getCost());
+
+
             }
         };
+
         recyclerListView.setAdapter(firebaseRecyclerAdapter);
     }
     public  static  class userviewholder extends RecyclerView.ViewHolder{
@@ -97,13 +106,17 @@ public class activity_venueChooser extends AppCompatActivity {
             mView = itemView;
         }
         public  void setDetails(Context ctx, String image, String title, String price){
-            ImageView venueImage = mView.findViewById(R.id.display_image);
+            ImageButton venueImage = mView.findViewById(R.id.display_image);
             TextView venueName = mView.findViewById(R.id.title_event);
             TextView venuePrice = mView.findViewById(R.id.price);
             venueName.setText(title);
             venuePrice.setText(price);
             Glide.with(ctx).load(image).into(venueImage);
 
+
+
         }
+
+
     }
 }
