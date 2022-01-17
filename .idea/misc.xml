@@ -16,13 +16,6 @@
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_planning.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_signup.xml" value="0.2" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_tracking.xml" value="0.2604166666666667" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_chooser.xml" value="0.23425925925925925" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_image_slider.xml" value="0.2557291666666667" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_images.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/image_layout.xml" value="0.25885416666666666" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/list_layout.xml" value="0.262037037037037" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/slide_images.xml" value="0.25885416666666666" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/slider_layout.xml" value="0.2713541666666667" />
         <entry key="..\:/Users/Arjun S Pramod/AppData/Local/Android/Sdk/platforms/android-31/android.jar!/res/layout/alert_dialog_holo.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/Event_management/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_activiyt_noof_people.xml" value="0.2" />
@@ -40,6 +33,7 @@
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_tracking.xml" value="0.2" />
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_trasactions.xml" value="0.2" />
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_chooser.xml" value="0.1859375" />
+        <entry key="..\:/Users/Cheth/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_image_slider.xml" value="0.2" />
         <entry key="..\:/Users/Cheth/AndroidStudioProjects/eventManagement/app/src/main/res/layout/list_layout.xml" value="0.2" />
         <entry key="..\:/Users/gau04/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_auth.xml" value="0.25" />
         <entry key="..\:/Users/gau04/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_dashboard.xml" value="0.12708333333333333" />
