@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerInParent="true"
     tools:context=".VenueImageSlider">
 
     <com.smarteist.autoimageslider.SliderView
@@ -22,5 +23,61 @@
         app:sliderIndicatorSelectedColor="#5A5A5A"
         app:sliderIndicatorUnselectedColor="#FFF"
         app:sliderScrollTimeInSec="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slider"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50sp"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:id="@+id/title"
+        android:text="Name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:textSize="24sp"
+        android:hint="Description"
+        android:textColor="#626467"
+        android:layout_below="@id/title"
+        android:gravity="left"
+        android:layout_margin="10sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Location details"
+        android:textColor="#0E0C0C"
+        android:textSize="24sp"
+        android:layout_below="@id/description"
+        android:id="@+id/location_info"
+        android:layout_margin="10sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Price details"
+        android:layout_below="@+id/location_info"
+        android:textSize="24sp"
+        android:textColor="#2C2929"
+        android:layout_margin="10sp"
+        android:id="@+id/price_info"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="No. of people details"
+        android:layout_below="@+id/price_info"
+        android:textSize="24sp"
+        android:textColor="#2C2929"
+        android:layout_margin="10sp"
+        android:id="@+id/people_info"/>
+
+
 
 </RelativeLayout>
