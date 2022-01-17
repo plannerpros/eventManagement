@@ -67,6 +67,7 @@ public class VenueImageSlider extends AppCompatActivity {
         sliderDataArrayList.add(new SliderData(url2));
         sliderDataArrayList.add(new SliderData(url3));
 
+
         // passing this array list inside our adapter class.
         SliderAdapter adapter = new SliderAdapter(this, sliderDataArrayList);
 
