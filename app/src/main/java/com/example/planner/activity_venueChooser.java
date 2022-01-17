@@ -3,7 +3,9 @@ package com.example.planner;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,6 +32,16 @@ public class activity_venueChooser extends AppCompatActivity {
         searchBar = findViewById(R.id.search_bar);
         searchButton = findViewById(R.id.search_button);
         previousButton = findViewById(R.id.previous_button);
+        recyclerListView = findViewById(R.id.recyclerListView);
+
+
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity_venueChooser.this, planning.class));
+            }
+        });
+
 
 
 
