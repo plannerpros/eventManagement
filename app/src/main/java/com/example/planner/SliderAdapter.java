@@ -6,19 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterViewHolder> {
+public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterViewHolder> implements View.OnClickListener{
 
         // list for storing urls of images.
         private final List<SliderData> mSliderItems;
+        private SliderAdapter.RecyclerViewClickListener recyclerViewClickListener;
 
         // Constructor
         public SliderAdapter(Context context, ArrayList<SliderData> sliderDataArrayList) {
             this.mSliderItems = sliderDataArrayList;
+
         }
 
         // We are inflating the slider_layout
@@ -51,7 +55,12 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
             return mSliderItems.size();
         }
 
-        public class SliderAdapterViewHolder extends SliderViewAdapter.ViewHolder {
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    public class SliderAdapterViewHolder extends SliderViewAdapter.ViewHolder {
             // Adapter class for initializing
             // the views of our slider view.
             View itemView;
@@ -61,7 +70,16 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
                 super(itemView);
                 imageViewBackground = itemView.findViewById(R.id.myimage);
                 this.itemView = itemView;
+                //itemView.setOnClickListener(this);
             }
+
+
         }
+
+    public interface RecyclerViewClickListener{
+        void onCLick(View v, int position);
+    }
+
+
     }
 

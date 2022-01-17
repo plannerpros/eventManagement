@@ -2,6 +2,7 @@ package com.example.planner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +29,8 @@ public class activity_venueChooser extends AppCompatActivity {
     ImageView searchButton;
     EditText searchBar;
     RecyclerView recyclerListView;
+    activity_list_layout.RecyclerViewClickListener recyclerViewClickListener;
+    CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class activity_venueChooser extends AppCompatActivity {
         recyclerListView = findViewById(R.id.recyclerListView);
         recyclerListView.setHasFixedSize(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(this));
+        //cardView = findViewById(R.id.card_view_list);
         //System.out.println("1");
 
 
@@ -92,8 +96,12 @@ public class activity_venueChooser extends AppCompatActivity {
             protected void populateViewHolder(userviewholder userviewholder, venueHelper venueHelper, int i) {
                 userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getLocation());
 
-
-
+                /*cardView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(),VenueImageSlider.class));
+                    }
+                });*/
             }
         };
 
@@ -117,8 +125,5 @@ public class activity_venueChooser extends AppCompatActivity {
 
 
         }
-
-
-
     }
 }
