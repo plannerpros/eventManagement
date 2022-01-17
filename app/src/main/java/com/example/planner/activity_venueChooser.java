@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -32,6 +33,11 @@ public class activity_venueChooser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_chooser);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         fireData = FirebaseDatabase.getInstance();
         dataRefrence = FirebaseDatabase.getInstance().getReference("venues");
         searchBar = findViewById(R.id.search_bar);
@@ -41,6 +47,9 @@ public class activity_venueChooser extends AppCompatActivity {
         recyclerListView.setHasFixedSize(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(this));
         //System.out.println("1");
+
+
+
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +61,12 @@ public class activity_venueChooser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("2");
-                String searchText = searchBar.getText().toString();
+                String searchText = searchBar.getText().toString().trim();
+                if(TextUtils.isEmpty(searchText))
+                {
+                    searchBar.setError("Password is required");
+                    return;
+                }
                 firebaseUserSearch(searchText);
             }
         });
@@ -65,7 +79,7 @@ public class activity_venueChooser extends AppCompatActivity {
                 venueHelper.class,
                 R.layout.list_layout,
                 userviewholder.class,
-                dataRefrence
+                firebaseSearchQuery
 
         ) {
             @Override
