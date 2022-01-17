@@ -70,7 +70,7 @@ public class activity_venueChooser extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(userviewholder userviewholder, venueHelper venueHelper, int i) {
-                userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getTitle(),venueHelper.getPrice());
+                userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getCost());
             }
         };
         recyclerListView.setAdapter(firebaseRecyclerAdapter);

@@ -1,18 +1,18 @@
 package com.example.planner;
 
 public class venueHelper {
-    String title, image, price;
+    String name, image, cost;
 
     public venueHelper() {
 
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getImage() {
@@ -23,20 +23,22 @@ public class venueHelper {
         this.image = image;
     }
 
-    public String getPrice() {
-        return price;
+    public String getCost() {
+        return cost;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setCost(String cost) {
+        this.cost = cost;
     }
 
-    public venueHelper(String title, String image, String price) {
-        this.title = title;
+    public venueHelper(String name, String image, String cost) {
+        this.name = name;
         this.image = image;
-        this.price = price;
+        this.cost = cost;
     }
 }
+
+
 
 
 
