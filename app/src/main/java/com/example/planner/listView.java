@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class listView extends AppCompatActivity {
+/*public class listView extends AppCompatActivity {
 
 
     @Override
@@ -26,4 +26,8 @@ public class listView extends AppCompatActivity {
             });
 
     }
+}
+*/
+public class listView{
+
 }

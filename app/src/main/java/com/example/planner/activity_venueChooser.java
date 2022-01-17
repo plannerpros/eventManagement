@@ -93,12 +93,13 @@ public class activity_venueChooser extends AppCompatActivity {
                 userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getCost());
 
 
+
             }
         };
 
         recyclerListView.setAdapter(firebaseRecyclerAdapter);
     }
-    public  static  class userviewholder extends RecyclerView.ViewHolder{
+    public static class userviewholder extends RecyclerView.ViewHolder  {
         View mView;
 
         public userviewholder(@NonNull View itemView) {
@@ -112,10 +113,11 @@ public class activity_venueChooser extends AppCompatActivity {
             venueName.setText(title);
             venuePrice.setText(price);
             Glide.with(ctx).load(image).into(venueImage);
-
+            //mView.setOnClickListener(this);
 
 
         }
+
 
 
     }
