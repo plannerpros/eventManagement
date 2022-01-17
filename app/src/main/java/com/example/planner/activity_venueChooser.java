@@ -23,7 +23,8 @@ import com.google.firebase.database.*;
 public class activity_venueChooser extends AppCompatActivity {
     FirebaseDatabase fireData;
     DatabaseReference dataRefrence;
-    ImageButton previousButton, searchButton;
+    ImageButton previousButton;
+    ImageView searchButton;
     EditText searchBar;
     RecyclerView recyclerListView;
 
@@ -34,24 +35,28 @@ public class activity_venueChooser extends AppCompatActivity {
         fireData = FirebaseDatabase.getInstance();
         dataRefrence = FirebaseDatabase.getInstance().getReference("venues");
         searchBar = findViewById(R.id.search_bar);
-        searchButton = findViewById(R.id.search_button);
+        searchButton = findViewById(R.id.search_button12);
         previousButton = findViewById(R.id.previous_button);
         recyclerListView = findViewById(R.id.recyclerListView);
         recyclerListView.setHasFixedSize(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(this));
+        //System.out.println("1");
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(activity_venueChooser.this, planning.class));
+               startActivity(new Intent(activity_venueChooser.this, planning.class));
             }
         });
+       // System.out.println("2");
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("2");
                 String searchText = searchBar.getText().toString();
                 firebaseUserSearch(searchText);
             }
         });
+        System.out.println("3");
     }
 
     private void firebaseUserSearch(String searchText) {
