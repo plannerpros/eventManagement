@@ -137,7 +137,7 @@ public class activity_eventType extends AppCompatActivity {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String, Object> eventInsert = new HashMap<>();
                 eventInsert.put("Event Name", eventName);
-                docuRefr.update(eventInsert).addOnSuccessListener(new OnSuccessListener<Void>() {
+                docuRefr.set(eventInsert).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(@NonNull Void unused) {
                         Toast.makeText(activity_eventType.this, "Choosen", Toast.LENGTH_SHORT).show();

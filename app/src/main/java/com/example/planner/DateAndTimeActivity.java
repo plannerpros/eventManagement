@@ -206,7 +206,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
                 try {
-                    docuRefr.set(dateTime).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    docuRefr.update(dateTime).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(@NonNull Void unused) {
                             Toast.makeText(DateAndTimeActivity.this, "Date Time Selected", Toast.LENGTH_LONG).show();
