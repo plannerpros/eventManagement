@@ -45,7 +45,6 @@
                 android:id="@+id/search_bar"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20sp"
                 android:hint="Search here..."
                 android:inputType="text"
                 android:paddingStart="20sp"
