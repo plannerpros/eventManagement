@@ -160,11 +160,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 //System.out.println(start_time);
             }
         };
-        if(TextUtils.isEmpty(start_time))
-        {
-            startTimeResult.setError("Start time required");
-            return;
-        }
+
 
         int style = AlertDialog.THEME_HOLO_LIGHT;
         int style1 = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
@@ -191,11 +187,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
             }
         };
-        if(TextUtils.isEmpty(end_time))
-        {
-            endTimeResult.setError("Start time required");
-            return;
-        }
+
 
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -233,6 +225,17 @@ public class DateAndTimeActivity extends AppCompatActivity {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
+
+        if(TextUtils.isEmpty(end_time))
+        {
+            endTimeResult.setError("Start time required");
+            return;
+        }
+        if(TextUtils.isEmpty(start_time))
+        {
+            startTimeResult.setError("Start time required");
+            return;
+        }
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

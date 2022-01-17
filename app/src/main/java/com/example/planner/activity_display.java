@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
 import com.google.firebase.database.ValueEventListener;
@@ -66,6 +67,8 @@ public class activity_display extends AppCompatActivity {
                 t4.setText(value.getString("Date Of Birth"));
                 t1.setText(value.getString("Full Name"));
                 t2.setText(value.getString("Phone Number"));
+                String photo = value.getString("photo");
+                Glide.with(getApplicationContext()).load(photo).into(iv1);
             }
         });
 
