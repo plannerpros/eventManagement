@@ -1,11 +1,16 @@
 package com.example.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import android.os.Bundle;
 
 public class VenueImageSlider extends AppCompatActivity {
+    FirebaseDatabase fireData;
+    DatabaseReference dataRefre;
     //String url1, url2,url3;
     String url1 = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
     String url2 = "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
@@ -15,6 +20,8 @@ public class VenueImageSlider extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fireData = FirebaseDatabase.getInstance();
+        dataRefre = FirebaseDatabase.getInstance().getReference("venues");
         setContentView(R.layout.activity_venue_image_slider);
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
 

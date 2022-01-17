@@ -1,7 +1,7 @@
 package com.example.planner;
 
 public class venueHelper {
-    String name, image, cost;
+    String name, image, location;
 
     public venueHelper() {
 
@@ -24,17 +24,17 @@ public class venueHelper {
     }
 
     public String getCost() {
-        return cost;
+        return location;
     }
 
     public void setCost(String cost) {
-        this.cost = cost;
+        this.location = cost;
     }
 
     public venueHelper(String name, String image, String cost) {
         this.name = name;
         this.image = image;
-        this.cost = cost;
+        this.location = cost;
     }
 }
 
