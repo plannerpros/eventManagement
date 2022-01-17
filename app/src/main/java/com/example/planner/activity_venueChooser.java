@@ -90,7 +90,7 @@ public class activity_venueChooser extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(userviewholder userviewholder, venueHelper venueHelper, int i) {
-                userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getCost());
+                userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getLocation());
 
 
 
@@ -106,12 +106,12 @@ public class activity_venueChooser extends AppCompatActivity {
             super(itemView);
             mView = itemView;
         }
-        public  void setDetails(Context ctx, String image, String title, String price){
+        public  void setDetails(Context ctx, String image, String title, String location){
             ImageButton venueImage = mView.findViewById(R.id.display_image);
             TextView venueName = mView.findViewById(R.id.title_event);
             TextView venuePrice = mView.findViewById(R.id.price);
             venueName.setText(title);
-            venuePrice.setText(price);
+            venuePrice.setText(location);
             Glide.with(ctx).load(image).into(venueImage);
             //mView.setOnClickListener(this);
 
