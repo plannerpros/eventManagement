@@ -226,14 +226,15 @@ public class DateAndTimeActivity extends AppCompatActivity {
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
 
-        if(TextUtils.isEmpty(end_time))
-        {
-            endTimeResult.setError("Start time required");
-            return;
-        }
+
         if(TextUtils.isEmpty(start_time))
         {
             startTimeResult.setError("Start time required");
+            return;
+        }
+        if(TextUtils.isEmpty(end_time))
+        {
+            endTimeResult.setError("Start time required");
             return;
         }
         submitButton.setOnClickListener(new View.OnClickListener() {
