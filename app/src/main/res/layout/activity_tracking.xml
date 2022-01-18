@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".tracking"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".tracking">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_list"
@@ -69,6 +68,7 @@
                 android:textColor="@color/colorInnactive"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/noOfPeople"
                 android:layout_width="177dp"
@@ -85,11 +85,61 @@
 
         </RelativeLayout>
 
-
-
     </androidx.cardview.widget.CardView>
 
+    <View
+        android:id="@+id/view_"
+        android:layout_width="wrap_content"
+        android:layout_height="2sp"
+        android:layout_below="@id/card_view_list"
+        android:background="@color/gray" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="10sp"
+        android:padding="20sp">
+
+        <ImageView
+            android:id="@+id/image_view_1"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:background="@drawable/ellipse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/mdtp_circle_background" />
+
+        <ImageView
+            android:id="@+id/image_view_2"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_marginTop="60sp"
+            android:background="@drawable/ellipse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/image_view_1"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_1"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="60sp"
+            android:layout_height="4sp"
+            android:progress="100"
+            android:rotation="90"
+            android:progressTint="#545659"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_2"
+            app:layout_constraintEnd_toEndOf="@id/image_view_1"
+            app:layout_constraintStart_toStartOf="@id/image_view_1"
+            app:layout_constraintTop_toTopOf="@id/image_view_1" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

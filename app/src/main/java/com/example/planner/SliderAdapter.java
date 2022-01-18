@@ -1,6 +1,7 @@
 package com.example.planner;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,13 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
             final SliderData sliderItem = mSliderItems.get(position);
 
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
             // Glide is use to load image
             // from url in your imageview.
             Glide.with(viewHolder.itemView)
@@ -57,8 +65,9 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
     @Override
     public void onClick(View v) {
-
+        
     }
+
 
     public class SliderAdapterViewHolder extends SliderViewAdapter.ViewHolder {
             // Adapter class for initializing
