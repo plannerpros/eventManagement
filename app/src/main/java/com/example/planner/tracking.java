@@ -42,6 +42,7 @@ public class tracking extends AppCompatActivity {
         setContentView(R.layout.activity_tracking);
         previousButton = findViewById(R.id.previous_button);
         cancelButton = findViewById(R.id.cancel_event);
+        //added
 
 
         previousButton.setOnClickListener(v -> startActivity(new Intent(tracking.this, dashboard.class)));
