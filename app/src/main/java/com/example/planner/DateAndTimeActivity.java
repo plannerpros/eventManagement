@@ -135,6 +135,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateResult.setText("Selected dates: " + duration);
             }
         });
+        //endDtaePicker added
 
         MaterialDatePicker.Builder builder1 = MaterialDatePicker.Builder.datePicker();
         builder1.setTitleText("Select end date");
