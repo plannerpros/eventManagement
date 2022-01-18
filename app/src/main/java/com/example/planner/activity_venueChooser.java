@@ -22,7 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.*;
 
-public class activity_venueChooser extends AppCompatActivity {
+public class activity_venueChooser extends AppCompatActivity  {
     FirebaseDatabase fireData;
     DatabaseReference dataRefrence;
     ImageButton previousButton;
@@ -68,13 +68,14 @@ public class activity_venueChooser extends AppCompatActivity {
                 String searchText = searchBar.getText().toString().trim();
                 if(TextUtils.isEmpty(searchText))
                 {
-                    searchBar.setError("Password is required");
+                    searchBar.setError("Enter the Name to search");
                     return;
                 }
                 firebaseUserSearch(searchText);
             }
         });
         System.out.println("3");
+
 
 
     }
@@ -107,23 +108,34 @@ public class activity_venueChooser extends AppCompatActivity {
 
         recyclerListView.setAdapter(firebaseRecyclerAdapter);
     }
+
+
+
     public static class userviewholder extends RecyclerView.ViewHolder  {
         View mView;
 
-        public userviewholder(@NonNull View itemView) {
+
+        public userviewholder(@NonNull View itemView ) {
             super(itemView);
             mView = itemView;
+
+
         }
-        public  void setDetails(Context ctx, String image, String title, String location){
+
+        public void setDetails(Context ctx, String image, String title, String location) {
             ImageButton venueImage = mView.findViewById(R.id.display_image);
             TextView venueName = mView.findViewById(R.id.title_event);
             TextView venuePrice = mView.findViewById(R.id.price);
             venueName.setText(title);
             venuePrice.setText(location);
             Glide.with(ctx).load(image).into(venueImage);
-            //mView.setOnClickListener(this);
+
 
 
         }
+
+
     }
+
+
 }
