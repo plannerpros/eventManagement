@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:exported="true"
         android:theme="@style/Theme.Planner">
         <activity
             android:name=".VenueImageSlider"
@@ -46,7 +47,7 @@
             android:parentActivityName=".dashboard" />
         <activity
             android:name=".transactions"
-            android:exported="false"
+            android:exported="true"
             android:label="Transactions"
             android:parentActivityName=".dashboard" />
         <activity
