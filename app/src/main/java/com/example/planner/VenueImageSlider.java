@@ -23,6 +23,8 @@ import android.widget.TextView;
 import com.example.planner.imageHelper;
 
 public class VenueImageSlider extends AppCompatActivity {
+
+
     FirebaseDatabase fireData;
     DatabaseReference dataRefre;
     //String url1, url2,url3;
@@ -38,6 +40,11 @@ public class VenueImageSlider extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_image_slider);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         fireData = FirebaseDatabase.getInstance();
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
 

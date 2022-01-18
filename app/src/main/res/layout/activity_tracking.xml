@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".tracking">
+    tools:context=".tracking"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:elevation="30sp"
+        app:cardCornerRadius="30sp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="20sp">
+
+            <ImageButton
+                android:id="@+id/display_image"
+                android:layout_width="145dp"
+                android:layout_height="137dp"
+                android:src="@drawable/search_icon" />
+
+            <TextView
+                android:id="@+id/title_event1"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/display_image"
+                android:text="title"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="175dp"
+                android:layout_height="38dp"
+                android:layout_below="@id/title_event1"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="1sp"
+                android:layout_toEndOf="@id/display_image"
+                android:text="Price"
+                android:textColor="@color/colorInnactive"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="177dp"
+                android:layout_height="36dp"
+                android:layout_below="@id/price"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="1sp"
+                android:layout_toEndOf="@id/display_image"
+                android:text="location"
+                android:textColor="@color/colorInnactive"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/noOfPeople"
+                android:layout_width="177dp"
+                android:layout_height="36dp"
+                android:layout_below="@id/location"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="1sp"
+                android:layout_toEndOf="@id/display_image"
+                android:text="No of People"
+                android:textColor="@color/colorInnactive"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>
