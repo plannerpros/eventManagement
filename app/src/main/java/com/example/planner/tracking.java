@@ -43,7 +43,7 @@ public class tracking extends AppCompatActivity {
     }
 
     private void setText() {
-        t1.setText("");
+        t1.setText("HI");
         t2.setText("");
         t3.setText("");
         t4.setText("");
