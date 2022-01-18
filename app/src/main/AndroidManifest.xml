@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.planner">
 
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="30" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -78,6 +82,9 @@
                 <action android:name="android.intent.action.MAIN"
 
                     />
+                <meta-data
+                    android:name="com.razorpay.plugin.googlepay_all"
+                    android:value="com.razorpay.RzpGpayMerged" />
 
 
                 <category android:name="android.intent.category.LAUNCHER" />
