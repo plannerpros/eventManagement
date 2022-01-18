@@ -45,7 +45,7 @@ public class transactions extends AppCompatActivity {
             }
         });
 
-   // }
+    }
 
     private void makepayment() {
         Checkout checkout = new Checkout();
