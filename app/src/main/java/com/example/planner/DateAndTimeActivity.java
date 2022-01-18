@@ -33,6 +33,8 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.type.Date;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 
 import java.util.Calendar;
@@ -56,6 +58,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
     FirebaseFirestore fireStore;
     FirebaseAuth fireAuth;
     String userId;
+
 
 
 
@@ -109,6 +112,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
         //Calender constraints
 
+
         CalendarConstraints.Builder calenderConstraintBuilder = new CalendarConstraints.Builder();
         //calenderConstraintBuilder.setStart(January);
         //calenderConstraintBuilder.setEnd(December);
@@ -157,6 +161,58 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 endDateResult.setText("Selected dates: " + end_date);
             }
         });
+
+        //testing to disable the dates
+        /*
+
+        Calendar min_date_c = Calendar.getInstance();
+        datePickerDialog.setMinDate(min_date_c);
+
+
+
+        // Setting Max Date to next 2 years
+        Calendar max_date_c = Calendar.getInstance();
+        max_date_c.set(Calendar.YEAR, 2022+2);
+        datePickerDialog.setMaxDate(max_date_c);
+        for (Calendar loopdate = min_date_c; min_date_c.before(max_date_c); min_date_c.add(Calendar.DATE, 1), loopdate = min_date_c) {
+            int dayOfWeek = loopdate.get(Calendar.DAY_OF_WEEK);
+            if (dayOfWeek == Calendar.SUNDAY || dayOfWeek == Calendar.SATURDAY) {
+                Calendar[] disabledDays =  new Calendar[1];
+                disabledDays[0] = loopdate;
+                datePickerDialog.setDisabledDays(disabledDays);
+            }
+        }
+
+        public void getDisabledDaysShouldHaveDatesTrimmedToMidnight() {
+            DefaultDateRangeLimiter limiter = new DefaultDateRangeLimiter();
+            Calendar[] days = new Calendar[3];
+            for (int i = 0;i < days.length; i++) {
+                Calendar day = Calendar.getInstance();
+                day.set(Calendar.YEAR, 1999 + i);
+                day.set(Calendar.HOUR_OF_DAY, 2);
+                day.set(Calendar.MINUTE, 10);
+                day.set(Calendar.SECOND, 30);
+                day.set(Calendar.MILLISECOND, 25);
+                days[i] = day;
+            }
+
+            limiter.setDisabledDays(days);
+            Calendar[] disabledDays = limiter.getDisabledDays();
+
+            Assert.assertNotNull(disabledDays);
+            Assert.assertEquals(days.length, disabledDays.length);
+            for (Calendar selectableDay : disabledDays) {
+                Assert.assertEquals(selectableDay.get(Calendar.HOUR_OF_DAY), 0);
+                Assert.assertEquals(selectableDay.get(Calendar.MINUTE), 0);
+                Assert.assertEquals(selectableDay.get(Calendar.SECOND), 0);
+                Assert.assertEquals(selectableDay.get(Calendar.MILLISECOND), 0);
+            }
+        }*/
+
+
+
+
+
 
 
         mTimePickerBtn.setOnClickListener(new View.OnClickListener() {
@@ -271,5 +327,6 @@ public class DateAndTimeActivity extends AppCompatActivity {
             }
         });
     }
+
     //private void dateTimestore(){ }
 }

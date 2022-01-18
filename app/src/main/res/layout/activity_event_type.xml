@@ -122,6 +122,74 @@
                 android:background="#F2F1FF"
                 android:src="@drawable/tea_party" />
 
+            <ImageButton
+                android:id="@+id/reception"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F2F1FF"
+                android:src="@drawable/reception" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:src="@drawable/corporate_events"
+            android:layout_gravity="left"
+            android:layout_marginStart="20sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/appreciation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F2F1FF"
+                android:src="@drawable/appreciation" />
+
+            <ImageButton
+                android:id="@+id/fund_raising"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F2F1FF"
+                android:src="@drawable/charity" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/seminars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:background="#F2F1FF"
+            android:src="@drawable/seminars" />
+
+        <ImageButton
+            android:id="@+id/team_building"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:background="#F2F1FF"
+            android:src="@drawable/team_building" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/product_launch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F2F1FF"
+                android:src="@drawable/product_launch" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/custom_event_type"
                 android:layout_width="150sp"
@@ -172,6 +240,11 @@
 
 
         </LinearLayout>
+
+
+
+
+
 
         <!--
         <ImageButton
