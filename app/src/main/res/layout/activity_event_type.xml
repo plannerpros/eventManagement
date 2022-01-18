@@ -134,10 +134,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:src="@drawable/corporate_events"
             android:layout_gravity="left"
-            android:layout_marginStart="20sp"/>
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="10sp"
+            android:src="@drawable/corporate_events" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -181,6 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
+
             android:orientation="horizontal">
 
             <ImageButton
@@ -238,14 +239,7 @@
 
             </androidx.cardview.widget.CardView>
 
-
         </LinearLayout>
-
-
-
-
-
-
         <!--
         <ImageButton
                 android:id="@+id/fund_raising"
