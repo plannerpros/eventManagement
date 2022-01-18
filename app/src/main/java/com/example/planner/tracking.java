@@ -30,7 +30,6 @@ public class tracking extends AppCompatActivity {
         getData();
         ID = "1";
         firebaseInsert(ID);
-
     }
 
     private void firebaseInsert(String id) {
