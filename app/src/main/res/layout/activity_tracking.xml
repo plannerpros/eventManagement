@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/view_"
         android:layout_marginStart="10sp"
-        android:layout_marginTop="10sp"
+        android:layout_marginTop="-13dp"
         android:layout_marginEnd="10sp"
         android:layout_marginBottom="10sp"
         android:padding="20sp">
@@ -108,6 +108,7 @@
             android:id="@+id/image_view_1"
             android:layout_width="15sp"
             android:layout_height="15sp"
+            android:layout_marginStart="20sp"
             android:background="@drawable/ellipse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -119,26 +120,147 @@
             android:layout_height="15sp"
             android:layout_marginTop="60sp"
             android:background="@drawable/ellipse"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_3"
             app:layout_constraintStart_toStartOf="@id/image_view_1"
             app:layout_constraintTop_toBottomOf="@+id/image_view_1"
-            app:layout_constraintVertical_bias="0.75" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <ProgressBar
+            android:id="@+id/progress_bar_1"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="60sp"
             android:layout_height="4sp"
             android:progress="100"
-            android:rotation="90"
             android:progressTint="#545659"
+            android:rotation="90"
             app:layout_constraintBottom_toBottomOf="@id/image_view_2"
             app:layout_constraintEnd_toEndOf="@id/image_view_1"
             app:layout_constraintStart_toStartOf="@id/image_view_1"
             app:layout_constraintTop_toTopOf="@id/image_view_1" />
 
+        <TextView
+            android:id="@+id/status_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:hint="1st status message"
+            app:layout_constraintStart_toEndOf="@+id/image_view_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/status_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="76dp"
+            android:hint="2nd status message"
+            app:layout_constraintStart_toEndOf="@+id/image_view_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/status_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="148dp"
+            android:hint="3rd status message"
+            app:layout_constraintStart_toEndOf="@+id/image_view_3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/status_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="224dp"
+            android:hint="4th status message"
+            app:layout_constraintStart_toEndOf="@+id/image_view_4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/status_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="292dp"
+            android:hint="5th status message"
+            app:layout_constraintStart_toEndOf="@+id/image_view_5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_view_3"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/ellipse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_2" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_2"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="60sp"
+            android:layout_height="4sp"
+
+            android:progress="100"
+            android:progressTint="#545659"
+            android:rotation="90"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_3"
+            app:layout_constraintEnd_toEndOf="@id/image_view_2"
+            app:layout_constraintStart_toStartOf="@id/image_view_2"
+            app:layout_constraintTop_toTopOf="@id/image_view_2" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_3"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="60sp"
+
+            android:layout_height="4sp"
+            android:progress="100"
+            android:progressTint="#545659"
+            android:rotation="90"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_4"
+            app:layout_constraintEnd_toEndOf="@id/image_view_3"
+            app:layout_constraintStart_toStartOf="@id/image_view_3"
+            app:layout_constraintTop_toTopOf="@id/image_view_3" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_5"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="60sp"
+            android:layout_height="4sp"
+            android:progress="100"
+            android:progressTint="#545659"
+            android:rotation="90"
+
+            app:layout_constraintBottom_toBottomOf="@id/image_view_5"
+            app:layout_constraintEnd_toEndOf="@id/image_view_4"
+            app:layout_constraintStart_toStartOf="@id/image_view_4"
+            app:layout_constraintTop_toTopOf="@id/image_view_4" />
+
+        <ImageView
+            android:id="@+id/image_view_4"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/ellipse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_3" />
+
+        <ImageView
+            android:id="@+id/image_view_5"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/ellipse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_4" />
 
 
-<!-- hey-->
+        <!-- hey-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
