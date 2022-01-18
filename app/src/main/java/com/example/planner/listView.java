@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-/*public class listView extends AppCompatActivity {
+public class listView extends AppCompatActivity {
 
 
     @Override
@@ -21,13 +21,11 @@ import androidx.appcompat.app.AppCompatActivity;
             im1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(),tracking.class));
+                    System.out.println("CLicking on the button");
+                    //startActivity(new Intent(getApplicationContext(),tracking.class));
                 }
             });
 
     }
 }
-*/
-public class listView{
 
-}
