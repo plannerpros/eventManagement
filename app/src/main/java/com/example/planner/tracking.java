@@ -32,12 +32,13 @@ public class tracking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
 
-        setText();
+
         getData();
         ID = "1";
         firebaseInsert(ID);
         progrssCOunt = 10;
         progressBar(progrssCOunt);
+        setText();
 
     }
 
@@ -51,7 +52,7 @@ public class tracking extends AppCompatActivity {
 
     private void progressBar(int progrssCOunt) {
         //step1.setVisibility(View.VISIBLE);
-        int fin = progrssCOunt+10;
+        int fin = progrssCOunt+50;
         step1.setProgress(fin);
         step1.setMax(100);
 
