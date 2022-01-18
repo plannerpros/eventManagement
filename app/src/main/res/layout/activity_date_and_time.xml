@@ -10,10 +10,10 @@
     tools:context=".DateAndTimeActivity">
 
     <ImageButton
-        android:id="@+id/select_date"
+        android:id="@+id/select_start_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/pick_date"
+        android:background="@drawable/start_date"
         android:text="Show date picker"
         app:cornerRadius="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,37 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.064" />
+
+    <TextView
+        android:id="@+id/end_date_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="end_date_info"
+        android:textColor="@color/black"
+        android:textColorHint="#343a40"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/time_picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_end_date"
+        app:layout_constraintVertical_bias="0.327" />
+
+    <ImageButton
+        android:id="@+id/select_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/end_date"
+        android:text="Show date picker"
+        app:cornerRadius="14sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
 
     <ImageButton
         android:id="@+id/time_picker"
@@ -35,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintVertical_bias="0.567" />
 
     <ImageButton
         android:id="@+id/end_time_picker"
@@ -49,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <TextView
         android:id="@+id/date_info"
@@ -57,15 +87,15 @@
         android:layout_height="wrap_content"
         android:hint="Date info"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp"
         android:textColorHint="#343a40"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintVertical_bias="0.206" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -78,7 +108,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.798">
+        app:layout_constraintVertical_bias="0.884">
 
         <TextView
             android:id="@+id/time_"
@@ -130,10 +160,10 @@
         android:background="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <ImageButton
         android:id="@+id/choose"
@@ -144,11 +174,11 @@
         android:background="@drawable/choose"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintHorizontal_bias="0.881"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949"
+        app:layout_constraintVertical_bias="0.976"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

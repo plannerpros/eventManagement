@@ -44,11 +44,12 @@ import java.util.Locale;
 public class DateAndTimeActivity extends AppCompatActivity {
     public static final String TAG = "Tag";
 
-    private ImageButton mDatePickerBtn, backBtn, submitButton;
+    private ImageButton mDatePickerBtn, backBtn, submitButton, endDatePicker;
     private ImageButton mTimePickerBtn, endTime, choose;
-    TextView dateResult, startTimeResult, endTimeResult;
+    TextView dateResult, startTimeResult, endTimeResult, endDateResult;
 
     String duration;
+    String end_date;
     String time;
     int hour, minute;
     String start_time, end_time;
@@ -77,9 +78,11 @@ public class DateAndTimeActivity extends AppCompatActivity {
         endTimeResult = findViewById(R.id.end_time_info);
         endTime = findViewById(R.id.end_time_picker);
         choose = findViewById(R.id.choose);
-        mDatePickerBtn = findViewById(R.id.select_date);
+        mDatePickerBtn = findViewById(R.id.select_start_date);
         dateResult = findViewById(R.id.date_info);
         backBtn = findViewById(R.id.go_back);
+        endDatePicker = findViewById(R.id.select_end_date);
+        endDateResult = findViewById(R.id.end_date_info);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,8 +115,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
         calenderConstraintBuilder.setOpenAt(today);
         calenderConstraintBuilder.setValidator(DateValidatorPointForward.now());
 
-        MaterialDatePicker.Builder<Pair<Long, Long>> builder = MaterialDatePicker.Builder.dateRangePicker();
-        builder.setTitleText("Select a date");
+        MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
+        builder.setTitleText("Select start date");
         builder.setCalendarConstraints(calenderConstraintBuilder.build());
         MaterialDatePicker materialDatePicker = builder.build();
 
@@ -132,6 +135,28 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateResult.setText("Selected dates: " + duration);
             }
         });
+
+        MaterialDatePicker.Builder builder1 = MaterialDatePicker.Builder.datePicker();
+        builder1.setTitleText("Select end date");
+        builder1.setCalendarConstraints(calenderConstraintBuilder.build());
+        MaterialDatePicker materialDatePicker1 = builder1.build();
+
+        endDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialDatePicker1.show(getSupportFragmentManager(),"END DATE PICKER");
+            }
+        });
+
+        materialDatePicker1.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+            @Override
+            public void onPositiveButtonClick(Object selection) {
+                end_date = materialDatePicker1.getHeaderText();
+                //This variable variable must be stored in database, it has both start and end date
+                endDateResult.setText("Selected dates: " + end_date);
+            }
+        });
+
 
         mTimePickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,7 +220,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String,Object> dateTime = new HashMap<>();
                 String duratioString ;
-                dateTime.put("date",duration);
+                dateTime.put("startDate",duration);
+                dateTime.put("endDate",end_date);
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
                 try {
