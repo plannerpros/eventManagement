@@ -1,13 +1,19 @@
 package com.example.planner;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,15 +28,66 @@ public class tracking extends AppCompatActivity {
     String url, tName, tPrice, tLocation, tPeople;
     ImageView tImage;
     TextView titleName, titlePrice, titleLocation, titleNOpeople;
-    TextView t1,t2,t3,t4,t5;
+    TextView t1, t2, t3, t4, t5;
     FirebaseDatabase fireData;
     DatabaseReference dataRefre;
     ProgressBar step1, step2, step3, step4;
+    ImageButton previousButton, cancelButton;
+    Dialog dialog;
+    Button okay, cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
+        previousButton = findViewById(R.id.previous_button);
+        cancelButton = findViewById(R.id.cancel_event);
+
+
+        previousButton.setOnClickListener(v -> startActivity(new Intent(tracking.this, dashboard.class)));
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.show();
+            }
+        });
+        //startActivity(new Intent(tracking.this, dashboard.class)));
+        //(v -> dialog.show());
+
+        //creating dialog
+        //Create the Dialog here
+        //dialogBuilder();
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog_layout);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false); //Optional
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog_layout);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false); //Optional
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+        okay = dialog.findViewById(R.id.btn_okay);
+        okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(tracking.this, "Confirm", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        cancel = dialog.findViewById(R.id.btn_cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(tracking.this, "Cancel", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
 
 
         getData();
@@ -42,8 +99,16 @@ public class tracking extends AppCompatActivity {
 
     }
 
+    /*private void dialogBuilder() {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog_layout);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false); //Optional
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+    }*/
+
     private void setText() {
-        t1.setText("HI");
+        t1.setText("");
         t2.setText("");
         t3.setText("");
         t4.setText("");
@@ -55,10 +120,6 @@ public class tracking extends AppCompatActivity {
         int fin = progrssCOunt+50;
         step1.setProgress(fin);
         step1.setMax(100);
-
-        step2.setVisibility(View.INVISIBLE);
-        step3.setVisibility(View.INVISIBLE);
-        step4.setVisibility(View.INVISIBLE);
     }
 
     private void firebaseInsert(String id) {
@@ -94,10 +155,6 @@ public class tracking extends AppCompatActivity {
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
 
         step1 = findViewById(R.id.progress_bar_1);
-        step2 = findViewById(R.id.progress_bar_2);
-        step3 = findViewById(R.id.progress_bar_3);
-        step4 = findViewById(R.id.progress_bar_4);
-
 
         tImage = findViewById(R.id.display_image);
         titleName = findViewById(R.id.title_event1);
@@ -113,6 +170,10 @@ public class tracking extends AppCompatActivity {
         t5 = findViewById(R.id.status_5);
 
 
+
+        /*okay = dialog.findViewById(R.id.btn_okay);
+        cancel = dialog.findViewById(R.id.btn_cancel);
+        */
 
     }
 }

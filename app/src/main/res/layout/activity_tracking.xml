@@ -6,273 +6,307 @@
     android:layout_height="wrap_content"
     tools:context=".tracking">
 
-
-
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginBottom="20sp"
-        android:elevation="30sp"
-        app:cardCornerRadius="30sp">
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginTop="20sp"
-            android:layout_marginEnd="20sp"
-            android:layout_marginBottom="20sp">
+            android:gravity="center_horizontal">
 
             <ImageButton
-                android:id="@+id/display_image"
-                android:layout_width="145dp"
-                android:layout_height="137dp"
-                android:src="@drawable/search_icon" />
-
-            <TextView
-                android:id="@+id/title_event1"
-                android:layout_width="173dp"
+                android:id="@+id/previous_button"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/display_image"
-                android:text="title"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:layout_marginStart="30sp"
+                android:layout_marginTop="30sp"
+                android:background="@drawable/previous" />
 
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="175dp"
-                android:layout_height="38dp"
-                android:layout_below="@id/title_event1"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="1sp"
-                android:layout_toEndOf="@id/display_image"
-                android:text="Price"
-                android:textColor="@color/colorInnactive"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23sp"
+                android:background="@drawable/track" />
 
-            <TextView
-                android:id="@+id/location"
-                android:layout_width="177dp"
-                android:layout_height="36dp"
-                android:layout_below="@id/price"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="1sp"
-                android:layout_toEndOf="@id/display_image"
-                android:text="location"
-                android:textColor="@color/colorInnactive"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/noOfPeople"
-                android:layout_width="177dp"
-                android:layout_height="36dp"
-                android:layout_below="@id/location"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="1sp"
-                android:layout_toEndOf="@id/display_image"
-                android:text="No of People"
-                android:textColor="@color/colorInnactive"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginBottom="20sp"
+                android:elevation="30sp"
+                app:cardCornerRadius="30sp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginBottom="20sp">
+
+                    <ImageButton
+                        android:id="@+id/display_image"
+                        android:layout_width="145dp"
+                        android:layout_height="137dp"
+                        android:src="@drawable/search_icon" />
+
+                    <TextView
+                        android:id="@+id/title_event1"
+                        android:layout_width="173dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@id/display_image"
+                        android:text="title"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="175dp"
+                        android:layout_height="38dp"
+                        android:layout_below="@id/title_event1"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="1sp"
+                        android:layout_toEndOf="@id/display_image"
+                        android:text="Price"
+                        android:textColor="@color/colorInnactive"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="177dp"
+                        android:layout_height="36dp"
+                        android:layout_below="@id/price"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="1sp"
+                        android:layout_toEndOf="@id/display_image"
+                        android:text="location"
+                        android:textColor="@color/colorInnactive"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/noOfPeople"
+                        android:layout_width="177dp"
+                        android:layout_height="36dp"
+                        android:layout_below="@id/location"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="1sp"
+                        android:layout_toEndOf="@id/display_image"
+                        android:text="No of People"
+                        android:textColor="@color/colorInnactive"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/view_"
+                android:layout_width="wrap_content"
+                android:layout_height="2sp"
+                android:layout_below="@id/card_view_list"
+                android:background="@color/gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="-13dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginBottom="10sp"
+                android:padding="20sp">
+
+                <ImageView
+                    android:id="@+id/image_view_1"
+                    android:layout_width="15sp"
+                    android:layout_height="15sp"
+                    android:background="@drawable/ellipse"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/mdtp_circle_background" />
+
+                <ImageView
+                    android:id="@+id/image_view_2"
+                    android:layout_width="15sp"
+                    android:layout_height="15sp"
+                    android:layout_marginTop="60sp"
+                    android:background="@drawable/ellipse"
+                    app:layout_constraintBottom_toBottomOf="@id/image_view_3"
+                    app:layout_constraintStart_toStartOf="@id/image_view_1"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_1"
+                    app:layout_constraintVertical_bias="1.0" />
+
+
+                <ProgressBar
+                    android:id="@+id/progress_bar_1"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="left"
+                    android:progress="100"
+                    android:progressTint="#545659"
+                    android:rotation="90"
+                    app:layout_constraintBottom_toBottomOf="@id/image_view_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/image_view_1"
+                    app:layout_constraintVertical_bias="0.558" />
+
+                <TextView
+                    android:id="@+id/status_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="1st status message"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="76dp"
+                    android:hint="2nd status message"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="148dp"
+                    android:hint="3rd status message"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="224dp"
+                    android:hint="4th status message"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/status_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="292dp"
+                    android:hint="5th status message"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--
+                <ProgressBar
+                    android:id="@+id/progress_bar_2"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="60sp"
+                    android:layout_height="4sp"
+
+                    android:progress="100"
+                    android:progressTint="#545659"
+                    android:rotation="90"
+                    app:layout_constraintBottom_toBottomOf="@id/image_view_3"
+                    app:layout_constraintEnd_toEndOf="@id/image_view_2"
+                    app:layout_constraintStart_toStartOf="@id/image_view_2"
+                    app:layout_constraintTop_toTopOf="@id/image_view_2" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar_3"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="60sp"
+
+                    android:layout_height="4sp"
+                    android:progress="100"
+                    android:progressTint="#545659"
+                    android:rotation="90"
+                    app:layout_constraintBottom_toBottomOf="@id/image_view_4"
+                    app:layout_constraintEnd_toEndOf="@id/image_view_3"
+                    app:layout_constraintStart_toStartOf="@id/image_view_3"
+                    app:layout_constraintTop_toTopOf="@id/image_view_3" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar_4"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="60sp"
+                    android:layout_height="4sp"
+                    android:progress="100"
+                    android:progressTint="#545659"
+                    android:rotation="90"
+
+                    app:layout_constraintBottom_toBottomOf="@id/image_view_5"
+                    app:layout_constraintEnd_toEndOf="@id/image_view_4"
+                    app:layout_constraintStart_toStartOf="@id/image_view_4"
+                    app:layout_constraintTop_toTopOf="@id/image_view_4" />
+    -->
+                <ImageView
+                    android:id="@+id/image_view_3"
+                    android:layout_width="15sp"
+                    android:layout_height="15sp"
+                    android:layout_marginTop="56dp"
+                    android:background="@drawable/ellipse"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_2" />
+
+                <ImageView
+                    android:id="@+id/image_view_4"
+                    android:layout_width="15sp"
+                    android:layout_height="15sp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/ellipse"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_3" />
+
+                <ImageView
+                    android:id="@+id/image_view_5"
+                    android:layout_width="15sp"
+                    android:layout_height="15sp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/ellipse"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_4" />
+
+
+                <!-- hey-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <View
-        android:id="@+id/view_"
-        android:layout_width="wrap_content"
-        android:layout_height="2sp"
-        android:layout_below="@id/card_view_list"
-        android:background="@color/gray" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_layout_"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/cancel_event"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/view_"
-            android:layout_marginStart="10sp"
-            android:layout_marginTop="-13dp"
-            android:layout_marginEnd="10sp"
-            android:layout_marginBottom="10sp"
-            android:padding="20sp">
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/cancel" />
 
-            <ImageView
-                android:id="@+id/image_view_1"
-                android:layout_width="15sp"
-                android:layout_height="15sp"
-                android:layout_marginStart="20sp"
-                android:background="@drawable/ellipse"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/mdtp_circle_background" />
-
-            <ImageView
-                android:id="@+id/image_view_2"
-                android:layout_width="15sp"
-                android:layout_height="15sp"
-                android:layout_marginTop="60sp"
-                android:background="@drawable/ellipse"
-                app:layout_constraintBottom_toBottomOf="@id/image_view_3"
-                app:layout_constraintStart_toStartOf="@id/image_view_1"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_1"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <ProgressBar
-                android:id="@+id/progress_bar_1"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="60sp"
-                android:layout_height="4sp"
-                android:progress="100"
-                android:progressTint="#545659"
-                android:rotation="90"
-                app:layout_constraintBottom_toBottomOf="@id/image_view_2"
-                app:layout_constraintEnd_toEndOf="@id/image_view_1"
-                app:layout_constraintStart_toStartOf="@id/image_view_1"
-                app:layout_constraintTop_toTopOf="@id/image_view_1" />
-
-            <TextView
-                android:id="@+id/status_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20sp"
-                android:hint="1st status message"
-                app:layout_constraintStart_toEndOf="@+id/image_view_1"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/status_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="76dp"
-                android:hint="2nd status message"
-                app:layout_constraintStart_toEndOf="@+id/image_view_2"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/status_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="148dp"
-                android:hint="3rd status message"
-                app:layout_constraintStart_toEndOf="@+id/image_view_3"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/status_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="224dp"
-                android:hint="4th status message"
-                app:layout_constraintStart_toEndOf="@+id/image_view_4"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/status_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="292dp"
-                android:hint="5th status message"
-                app:layout_constraintStart_toEndOf="@+id/image_view_5"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/image_view_3"
-                android:layout_width="15sp"
-                android:layout_height="15sp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
-                android:background="@drawable/ellipse"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_2" />
-
-            <ProgressBar
-                android:id="@+id/progress_bar_2"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="60sp"
-                android:layout_height="4sp"
-
-                android:progress="100"
-                android:progressTint="#545659"
-                android:rotation="90"
-                app:layout_constraintBottom_toBottomOf="@id/image_view_3"
-                app:layout_constraintEnd_toEndOf="@id/image_view_2"
-                app:layout_constraintStart_toStartOf="@id/image_view_2"
-                app:layout_constraintTop_toTopOf="@id/image_view_2" />
-
-            <ProgressBar
-                android:id="@+id/progress_bar_3"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="60sp"
-
-                android:layout_height="4sp"
-                android:progress="100"
-                android:progressTint="#545659"
-                android:rotation="90"
-                app:layout_constraintBottom_toBottomOf="@id/image_view_4"
-                app:layout_constraintEnd_toEndOf="@id/image_view_3"
-                app:layout_constraintStart_toStartOf="@id/image_view_3"
-                app:layout_constraintTop_toTopOf="@id/image_view_3" />
-
-            <ProgressBar
-                android:id="@+id/progress_bar_4"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="60sp"
-                android:layout_height="4sp"
-                android:progress="100"
-                android:progressTint="#545659"
-                android:rotation="90"
-
-                app:layout_constraintBottom_toBottomOf="@id/image_view_5"
-                app:layout_constraintEnd_toEndOf="@id/image_view_4"
-                app:layout_constraintStart_toStartOf="@id/image_view_4"
-                app:layout_constraintTop_toTopOf="@id/image_view_4" />
-
-            <ImageView
-                android:id="@+id/image_view_4"
-                android:layout_width="15sp"
-                android:layout_height="15sp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
-                android:background="@drawable/ellipse"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_3" />
-
-            <ImageView
-                android:id="@+id/image_view_5"
-                android:layout_width="15sp"
-                android:layout_height="15sp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
-                android:background="@drawable/ellipse"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_4" />
-
-
-            <!-- hey-->
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
 
