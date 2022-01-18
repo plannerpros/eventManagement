@@ -10,6 +10,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+
+
+
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,6 +21,15 @@
         android:supportsRtl="true"
         android:exported="true"
         android:theme="@style/Theme.Planner">
+
+
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="rzp.device_token.share" />
+            </intent-filter>
+        </receiver>
         <activity
             android:name=".VenueImageSlider"
             android:exported="false" />
@@ -74,6 +87,22 @@
             android:exported="false"
             android:label="Dashboard"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@style/CheckoutTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp" />
+            </intent-filter>
+        </activity>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -82,9 +111,7 @@
                 <action android:name="android.intent.action.MAIN"
 
                     />
-                <meta-data
-                    android:name="com.razorpay.plugin.googlepay_all"
-                    android:value="com.razorpay.RzpGpayMerged" />
+
 
 
                 <category android:name="android.intent.category.LAUNCHER" />
