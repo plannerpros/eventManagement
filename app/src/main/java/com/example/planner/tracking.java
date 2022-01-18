@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -16,20 +18,46 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class tracking extends AppCompatActivity {
     String ID;
-    String url,tName,tPrice,tLocation,tPeople;
+    int progrssCOunt = 0;
+    String url, tName, tPrice, tLocation, tPeople;
     ImageView tImage;
-    TextView titleName,titlePrice,titleLocation,titleNOpeople;
+    TextView titleName, titlePrice, titleLocation, titleNOpeople;
+    TextView t1,t2,t3,t4,t5;
     FirebaseDatabase fireData;
     DatabaseReference dataRefre;
+    ProgressBar step1, step2, step3, step4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
 
+        setText();
         getData();
         ID = "1";
         firebaseInsert(ID);
+        progrssCOunt = 10;
+        progressBar(progrssCOunt);
+
+    }
+
+    private void setText() {
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+    }
+
+    private void progressBar(int progrssCOunt) {
+        //step1.setVisibility(View.VISIBLE);
+        int fin = progrssCOunt+10;
+        step1.setProgress(fin);
+        step1.setMax(100);
+
+        step2.setVisibility(View.INVISIBLE);
+        step3.setVisibility(View.INVISIBLE);
+        step4.setVisibility(View.INVISIBLE);
     }
 
     private void firebaseInsert(String id) {
@@ -43,7 +71,7 @@ public class tracking extends AppCompatActivity {
                     tPrice = String.valueOf(dataSnapshot.child("cost").getValue());
                     tLocation = String.valueOf(dataSnapshot.child("location").getValue());
                     tPeople = String.valueOf(dataSnapshot.child("noPeople").getValue());
-                    addInfo(url,tName,tPrice,tLocation,tPeople);
+                    addInfo(url, tName, tPrice, tLocation, tPeople);
                 }
             }
         });
@@ -63,11 +91,27 @@ public class tracking extends AppCompatActivity {
         }
         fireData = FirebaseDatabase.getInstance();
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
+
+        step1 = findViewById(R.id.progress_bar_1);
+        step2 = findViewById(R.id.progress_bar_2);
+        step3 = findViewById(R.id.progress_bar_3);
+        step4 = findViewById(R.id.progress_bar_4);
+
+
         tImage = findViewById(R.id.display_image);
         titleName = findViewById(R.id.title_event1);
         titlePrice = findViewById(R.id.price);
         titleLocation = findViewById(R.id.location);
         titleNOpeople = findViewById(R.id.noOfPeople);
+
+
+        t1 = findViewById(R.id.status_1);
+        t2 = findViewById(R.id.status_2);
+        t3 = findViewById(R.id.status_3);
+        t4 = findViewById(R.id.status_4);
+        t5 = findViewById(R.id.status_5);
+
+
 
     }
 }
