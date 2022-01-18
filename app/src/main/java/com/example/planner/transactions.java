@@ -24,18 +24,18 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
-public class transactions extends AppCompatActivity {
+public class transactions extends AppCompatActivity implements  PaymentResultListener {
     Button paybtn;
     TextView paytext;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trasactions);
         Checkout.preload(getApplicationContext());
-        paytext=(TextView)findViewById(R.id.paytext);
-        paybtn=(Button) findViewById(R.id.paybtn);
+        paytext=(TextView)findViewById(R.id.textView);
+        paybtn=(Button) findViewById(R.id.button2);
 
         paybtn.setOnClickListener(new View.OnClickListener()
         {
@@ -78,7 +78,7 @@ public class transactions extends AppCompatActivity {
             Log.e("TAG", "Error in starting Razorpay Checkout", e);
         }
     }
-
+//
 
     @Override
     public void onPaymentSuccess(String s) {
@@ -95,7 +95,7 @@ public class transactions extends AppCompatActivity {
 
 
 
-    }
+
 
 
 }
