@@ -44,8 +44,6 @@ public class tracking extends AppCompatActivity {
                     tLocation = String.valueOf(dataSnapshot.child("location").getValue());
                     tPeople = String.valueOf(dataSnapshot.child("noPeople").getValue());
                     addInfo(url,tName,tPrice,tLocation,tPeople);
-
-
                 }
             }
         });
