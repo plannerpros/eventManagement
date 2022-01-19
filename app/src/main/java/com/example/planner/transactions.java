@@ -27,6 +27,8 @@ import org.json.JSONObject;
 public class transactions extends AppCompatActivity implements  PaymentResultListener {
     Button paybtn;
     TextView paytext;
+    int Amount=0;
+
 
 
     @Override
@@ -37,13 +39,15 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
         Checkout.preload(getApplicationContext());
         paytext=(TextView)findViewById(R.id.textView);
         paybtn=(Button) findViewById(R.id.button2);
+        Amount=50+100;
+
 
 
         paybtn.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
             {
-                makepayment();
+                makepayment(Amount);
             }
         });
 
@@ -51,7 +55,10 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
 
 
 
-    private void makepayment() {
+
+
+    private void makepayment(int amount) {
+
         Checkout checkout = new Checkout();
         checkout.setKeyID("rzp_test_ggWRwRO9LHJ5ax");
 
@@ -68,7 +75,7 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
             //options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             options.put("theme.color", "#3399cc");
             options.put("currency", "INR");
-            options.put("amount", "30000");//pass amount in currency subunits
+            options.put("amount", amount);//pass amount in currency subunits
             options.put("prefill.email", "gaurav.kumar@example.com");
             options.put("prefill.contact","9551864622");
             JSONObject retryObj = new JSONObject();
