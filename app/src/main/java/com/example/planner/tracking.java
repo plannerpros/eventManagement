@@ -59,12 +59,6 @@ public class tracking extends AppCompatActivity {
         //creating dialog
         //Create the Dialog here
         //dialogBuilder();
-        dialog = new Dialog(this);
-        dialog.setContentView(R.layout.custom_dialog_layout);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.setCancelable(false); //Optional
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
-
 
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_dialog_layout);
