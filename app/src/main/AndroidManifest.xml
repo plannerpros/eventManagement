@@ -10,18 +10,16 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-
-
-
-
         android:allowBackup="true"
+        android:exported="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:exported="true"
         android:theme="@style/Theme.Planner">
-
+        <activity
+            android:name=".activityChoosePlan"
+            android:exported="false" />
 
         <receiver
             android:name="com.razorpay.RzpTokenReceiver"
@@ -30,6 +28,7 @@
                 <action android:name="rzp.device_token.share" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".VenueImageSlider"
             android:exported="false" />
@@ -87,12 +86,11 @@
             android:exported="false"
             android:label="Dashboard"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name="com.razorpay.CheckoutActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:theme="@style/CheckoutTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/CheckoutTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -101,18 +99,11 @@
                     android:scheme="io.rzp" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-
-                    />
-
-
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
