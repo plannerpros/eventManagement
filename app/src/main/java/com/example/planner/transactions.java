@@ -24,29 +24,27 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
-public class transactions extends AppCompatActivity implements  PaymentResultListener {
+public class transactions extends AppCompatActivity implements PaymentResultListener {
     Button paybtn;
     TextView paytext;
-    int Amount=0;
-
+    int Amount = 0;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trasactions);
 
         Checkout.preload(getApplicationContext());
-        paytext=(TextView)findViewById(R.id.textView);
-        paybtn=(Button) findViewById(R.id.button2);
-        Amount=50+100;
+        paytext = (TextView) findViewById(R.id.textView);
+        paybtn = (Button) findViewById(R.id.button2);
+        Amount = 100000 ;//(100+50)/10;
+        System.out.println(Amount);
 
+        paybtn.setOnClickListener(new View.OnClickListener() {
 
-
-        paybtn.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
+                System.out.println(Amount);
                 makepayment(Amount);
             }
         });
@@ -54,11 +52,8 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
     }
 
 
-
-
-
     private void makepayment(int amount) {
-
+        int finalAmount = amount;
         Checkout checkout = new Checkout();
         checkout.setKeyID("rzp_test_ggWRwRO9LHJ5ax");
 
@@ -69,15 +64,15 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
         try {
             JSONObject options = new JSONObject();
 
-            options.put("name", "ALGORIAL EDCUARE");
+            options.put("name", "PLANNER PROS");
             options.put("description", "Reference No. #123456");
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
             //options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             options.put("theme.color", "#3399cc");
             options.put("currency", "INR");
-            options.put("amount", amount);//pass amount in currency subunits
+            options.put("amount", finalAmount);//pass amount in currency subunits
             options.put("prefill.email", "gaurav.kumar@example.com");
-            options.put("prefill.contact","9551864622");
+            options.put("prefill.contact", "9551864622");
             JSONObject retryObj = new JSONObject();
             retryObj.put("enabled", true);
             retryObj.put("max_count", 4);
@@ -85,7 +80,7 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
 
             checkout.open(activity, options);
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             Log.e("TAG", "Error in starting Razorpay Checkout", e);
         }
     }
@@ -93,20 +88,15 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
 
     @Override
     public void onPaymentSuccess(String s) {
-        paytext.setText("Successful payment ID:"+s);
+        paytext.setText("Successful payment ID:" + s);
 
     }
 
     @Override
     public void onPaymentError(int i, String s) {
-        paytext.setText("Failed and cause is:"+s);
+        paytext.setText("Failed and cause is:" + s);
 
     }
-
-
-
-
-
 
 
 }

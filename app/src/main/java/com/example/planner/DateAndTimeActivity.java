@@ -3,6 +3,7 @@ package com.example.planner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.text.TextUtils;
@@ -23,14 +24,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
@@ -54,6 +58,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
     String duration;
     String end_date;
+    String startDate;
+    String endtDate;
     String time;
     int hour, minute;
     String start_time, end_time;
@@ -62,7 +68,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
     FirebaseFirestore fireStore;
     FirebaseAuth fireAuth;
     String userId;
-
+    String Start1;
 
 
 
@@ -94,6 +100,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         endDatePicker = findViewById(R.id.select_end_date);
         endDateResult = findViewById(R.id.end_date_info);
         getallId();
+
 
 
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -283,6 +290,30 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
             }
         };
+        dataRefre.child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.getResult().exists()) {
+                    DataSnapshot dataSnapshot = task.getResult();
+                    startDate = String.valueOf(dataSnapshot.child("startDate").getValue());
+                    endtDate = String.valueOf(dataSnapshot.child("endDate").getValue());
+
+                }
+                else{
+                    System.out.println("no value");
+                }
+
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        System.out.println("failed to get value");
+                    }
+                });
+
+        System.out.println(startDate);;
+        System.out.println(endtDate);
 
 
 
@@ -316,7 +347,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
                                     Toast.makeText(DateAndTimeActivity.this, "Try Again", Toast.LENGTH_LONG).show();
                                 }
                             });
-                }
+            }
+                //
                 catch (Exception me){
                     Log.w(TAG,"failur in date and time class");
                 }
