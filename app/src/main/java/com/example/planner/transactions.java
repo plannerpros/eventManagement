@@ -33,9 +33,11 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trasactions);
+
         Checkout.preload(getApplicationContext());
         paytext=(TextView)findViewById(R.id.textView);
         paybtn=(Button) findViewById(R.id.button2);
+
 
         paybtn.setOnClickListener(new View.OnClickListener()
         {
@@ -46,6 +48,8 @@ public class transactions extends AppCompatActivity implements  PaymentResultLis
         });
 
     }
+
+
 
     private void makepayment() {
         Checkout checkout = new Checkout();

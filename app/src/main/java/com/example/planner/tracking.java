@@ -41,7 +41,7 @@ public class tracking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
         previousButton = findViewById(R.id.previous_button);
-        cancelButton = findViewById(R.id.cancel_event);
+        cancelButton = findViewById(R.id.cancel_event1);
         //added
 
 
