@@ -31,6 +31,8 @@ import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.type.Date;
@@ -55,9 +57,12 @@ public class DateAndTimeActivity extends AppCompatActivity {
     String time;
     int hour, minute;
     String start_time, end_time;
+    FirebaseDatabase fireData;
+    DatabaseReference dataRefre;
     FirebaseFirestore fireStore;
     FirebaseAuth fireAuth;
     String userId;
+
 
 
 
@@ -74,6 +79,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
         }
         fireStore = FirebaseFirestore.getInstance();
         fireAuth = FirebaseAuth.getInstance();
+        fireData = FirebaseDatabase.getInstance();
+        dataRefre = FirebaseDatabase.getInstance().getReference("dates");
         userId = fireAuth.getCurrentUser().getUid();
         submitButton = findViewById(R.id.go_back);
         mTimePickerBtn = findViewById(R.id.time_picker);
@@ -86,6 +93,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.go_back);
         endDatePicker = findViewById(R.id.select_end_date);
         endDateResult = findViewById(R.id.end_date_info);
+        getallId();
+
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -230,6 +239,11 @@ public class DateAndTimeActivity extends AppCompatActivity {
         });
     }
 
+    private void getallId() {
+
+
+    }
+
     public void popTimePicker() {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -271,6 +285,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         };
 
 
+
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -281,6 +296,11 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateTime.put("endDate",end_date);
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
+
+                dataRefre.child(userId).setValue(dateTime);
+
+
+
                 try {
                     docuRefr.update(dateTime).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -309,7 +329,6 @@ public class DateAndTimeActivity extends AppCompatActivity {
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
 
-
         if(TextUtils.isEmpty(start_time))
         {
             startTimeResult.setError("Start time required");
@@ -320,6 +339,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
             endTimeResult.setError("Start time required");
             return;
         }
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
