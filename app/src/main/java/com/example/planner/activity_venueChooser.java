@@ -97,16 +97,24 @@ public class activity_venueChooser extends AppCompatActivity  {
             protected void populateViewHolder(userviewholder userviewholder, venueHelper venueHelper, int i) {
                 userviewholder.setDetails(getApplicationContext(),venueHelper.getImage(),venueHelper.getName(),venueHelper.getLocation());
 
-                /*cardView.setOnClickListener(new View.OnClickListener() {
+                userviewholder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(),VenueImageSlider.class));
+                        String User_id = getRef(i).getKey();
+                        //startActivity(new Intent(getApplicationContext(),VenueImageSlider.class));
+                        Intent i = new Intent(activity_venueChooser.this,VenueImageSlider.class);
+                        i.putExtra("userId",User_id);
+                        startActivity(i);
+
                     }
-                });*/
+                });
+
+
             }
         };
 
         recyclerListView.setAdapter(firebaseRecyclerAdapter);
+        firebaseRecyclerAdapter.startListening();
     }
 
 

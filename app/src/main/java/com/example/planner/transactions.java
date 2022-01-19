@@ -53,7 +53,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
 
 
     private void makepayment(int amount) {
-        int finalAmount = amount;
+        String finalAmount = Integer.toString(amount);
         Checkout checkout = new Checkout();
         checkout.setKeyID("rzp_test_ggWRwRO9LHJ5ax");
 

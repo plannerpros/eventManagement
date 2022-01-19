@@ -34,6 +34,7 @@ public class VenueImageSlider extends AppCompatActivity {
     String tName,tDescription,tLocation,tPrice,tPeople;
     String ID;
     TextView titleName,titleDescription,titleLocation,titlePrice,titlePeople;
+
     //url must be replaced with the images data in the form if string
 
     @Override
@@ -48,7 +49,7 @@ public class VenueImageSlider extends AppCompatActivity {
         fireData = FirebaseDatabase.getInstance();
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
 
-        ID = "1";
+        ID = getIntent().getExtras().get("userId").toString();
 
 
         dataRefre.child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
