@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class tracking extends AppCompatActivity {
     String ID;
-    int progrssCOunt = 0;
+    int progrssCOunt = 0,min=1,max=100;
     String url, tName, tPrice, tLocation, tPeople;
     ImageView tImage;
     TextView titleName, titlePrice, titleLocation, titleNOpeople;
@@ -94,7 +94,7 @@ public class tracking extends AppCompatActivity {
         getData();
         ID = "1";
         firebaseInsert(ID);
-        progrssCOunt = 10;
+        progrssCOunt = (int)(Math.random()*(max-min+1)+min); ;
         progressBar(progrssCOunt);
         setText();
 
