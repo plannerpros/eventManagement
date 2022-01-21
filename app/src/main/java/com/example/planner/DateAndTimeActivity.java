@@ -6,6 +6,7 @@ import androidx.core.util.Pair;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Window;
@@ -59,7 +60,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
     String duration;
     String end_date;
     String startDate;
-    String endtDate;
+    String endDate;
     String time;
     int hour, minute;
     String start_time, end_time;
@@ -69,6 +70,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
     FirebaseAuth fireAuth;
     String userId;
     String Start1;
+    int startDateint;
+    int endDateint;
 
 
 
@@ -99,7 +102,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.go_back);
         endDatePicker = findViewById(R.id.select_end_date);
         endDateResult = findViewById(R.id.end_date_info);
-        getallId();
+        
 
 
 
@@ -178,6 +181,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
             }
         });
 
+
         //testing to disable the dates
         /*
 
@@ -246,10 +250,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         });
     }
 
-    private void getallId() {
-
-
-    }
+    
 
     public void popTimePicker() {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
@@ -290,13 +291,40 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
             }
         };
+
+
         dataRefre.child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.getResult().exists()) {
                     DataSnapshot dataSnapshot = task.getResult();
                     startDate = String.valueOf(dataSnapshot.child("startDate").getValue());
-                    endtDate = String.valueOf(dataSnapshot.child("endDate").getValue());
+                    endDate = String.valueOf(dataSnapshot.child("endDate").getValue());
+
+                    System.out.println(startDate);
+                    System.out.println(endDate);
+                    System.out.println(duration);
+                    System.out.println(end_date);
+                    if(TextUtils.equals(duration,startDate)&&TextUtils.equals(end_date,endDate)){
+                        System.out.println("matching");
+                        dateResult.setError("");
+                        dateResult.setTextColor(Color.RED);
+                        dateResult.setText("date is taken");
+                        endDateResult.setError("date is taken");
+                        endDateResult.setTextColor(Color.RED);
+                        endDateResult.setText("date is taken");
+                        return;
+                    }
+//                    errorText.setError("");
+//                    errorText.//just to highlight that this is an error
+//                    errorText.setText("my actual error text");
+//                            if(duration.equals(startDate) && end_date.equals(endDate)) {
+//                                System.out.println("matching");
+//                                dateResult.setError("date is taken");
+//                                endDateResult.setError("date is taken");
+//                                return;
+//                            }
+                    Toast.makeText(DateAndTimeActivity.this, "Date is taken", Toast.LENGTH_LONG).show();
 
                 }
                 else{
@@ -312,15 +340,16 @@ public class DateAndTimeActivity extends AppCompatActivity {
                     }
                 });
 
-        String startD = startDate;
-        System.out.println(startD);
-        System.out.println(endtDate);
 
 
 
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                
+                
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String,Object> dateTime = new HashMap<>();
                 String duratioString ;
@@ -329,7 +358,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
 
-                dataRefre.child(userId).setValue(dateTime);
+                //dataRefre.child(userId).setValue(dateTime);
 
 
 
@@ -362,16 +391,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
 
-        if(TextUtils.isEmpty(start_time))
-        {
-            startTimeResult.setError("Start time required");
-            return;
-        }
-        if(TextUtils.isEmpty(end_time))
-        {
-            endTimeResult.setError("Start time required");
-            return;
-        }
+
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -380,6 +400,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     //private void dateTimestore(){ }
 }
