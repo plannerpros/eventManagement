@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
+            android:name=".acitivity_standard_plan"
+            android:exported="false" />
+        <activity
             android:name=".basicPLanActivity"
             android:exported="false" />
         <activity

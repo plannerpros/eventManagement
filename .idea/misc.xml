@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/drawable/dialog_bg.xml" value="0.275" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/drawable/ic_event_available_black_24dp.xml" value="0.290625" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/acitivity_standard_plan.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_acitivity_standard_plan.xml" value="0.25885416666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_basic_plan.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_choose_plan.xml" value="0.26296296296296295" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_collectdetails.xml" value="0.27447916666666666" />
@@ -16,6 +19,7 @@
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_no_of_people.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_planning.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_premium_plan.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_services.xml" value="0.2" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_signup.xml" value="0.2" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_tracking.xml" value="0.2604166666666667" />
