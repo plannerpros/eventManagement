@@ -35,6 +35,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trasactions);
 
+
         Checkout.preload(getApplicationContext());
         paytext = (TextView) findViewById(R.id.textView);
         paybtn = (Button) findViewById(R.id.button2);
@@ -95,6 +96,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
     @Override
     public void onPaymentError(int i, String s) {
         paytext.setText("Failed and cause is:" + s);
+
 
     }
 
