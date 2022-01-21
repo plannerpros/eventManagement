@@ -312,7 +312,8 @@ public class DateAndTimeActivity extends AppCompatActivity {
                     }
                 });
 
-        System.out.println(startDate);;
+        String startD = startDate;
+        System.out.println(startD);
         System.out.println(endtDate);
 
 

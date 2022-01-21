@@ -67,7 +67,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
 
-                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
         marrageButt.setOnClickListener(new View.OnClickListener() {
