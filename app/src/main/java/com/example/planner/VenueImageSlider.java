@@ -17,8 +17,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.planner.imageHelper;
 
@@ -27,6 +33,7 @@ public class VenueImageSlider extends AppCompatActivity {
 
     FirebaseDatabase fireData;
     DatabaseReference dataRefre;
+    String venueConfirmStatus;
     //String url1, url2,url3;
     String url1; //= "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
     String url2; //= "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
@@ -34,6 +41,9 @@ public class VenueImageSlider extends AppCompatActivity {
     String tName,tDescription,tLocation,tPrice,tPeople;
     String ID;
     TextView titleName,titleDescription,titleLocation,titlePrice,titlePeople;
+    ImageButton previousButton, confirmButton;
+    Dialog dialog1;
+    String venueName;
 
     //url must be replaced with the images data in the form if string
 
@@ -41,10 +51,17 @@ public class VenueImageSlider extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_image_slider);
+        previousButton = findViewById(R.id.previous_button_imageSlider);
+        confirmButton = findViewById(R.id.confirm_button_imageSlider);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+
+
+
+
 
         fireData = FirebaseDatabase.getInstance();
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
@@ -76,10 +93,27 @@ public class VenueImageSlider extends AppCompatActivity {
 
 
 
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
+            }
+        });
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                venueName = tName;
+                //System.out.println(tName);
+                System.out.println(venueName);
+
+                //variable to set to the database confirmation of the event
+            }
+        });
 
 
-
-
+        System.out.println("Venue name: "+tName);
+        System.out.println(venueName);
 
 
         // initializing the slider view.
@@ -99,6 +133,7 @@ public class VenueImageSlider extends AppCompatActivity {
         // passing this array list inside our adapter class.
 
     }
+
 
     private void addInfo(String tName, String tDescription, String tLocation, String tPrice, String tPeople) {
         titleName = findViewById(R.id.title);

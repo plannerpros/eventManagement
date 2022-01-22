@@ -142,6 +142,28 @@
 
         </androidx.cardview.widget.CardView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/card_view_people"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/previous_button_imageSlider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/go_back_button" />
+
+            <ImageButton
+                android:id="@+id/confirm_button_imageSlider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/confirm_button" />
+
+        </LinearLayout>
 
 
 
