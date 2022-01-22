@@ -8,23 +8,44 @@
     android:background="@drawable/background_2"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose the number of people"
-        android:textSize="30sp"
-        android:layout_marginTop="80sp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textStyle="italic"
-        android:textColor="@color/white"
-        android:shadowColor="@color/black"
-        android:textColorHighlight="@color/white"/>
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_title"
+        android:layout_marginTop="150sp"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/choose"
+            android:background="@drawable/previous"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:shadowColor="@color/black"
+            android:text="Choose the number of people"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:layout_marginLeft="10sp" />
+
+    </LinearLayout>
+
+
+
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250sp"
+        android:layout_below="@id/linear_layout_title"
+        android:layout_marginTop="50sp"
         android:foregroundGravity="center_horizontal"
         app:selectionRequired="false"
         app:singleSelection="true">
@@ -127,8 +148,8 @@
         android:layout_below="@id/chip_group"
         android:fontFamily="sans-serif-condensed-medium"
         android:hint="Custom number of people (if above 600)"
-        android:minHeight="48dp"
         android:inputType="number"
+        android:minHeight="48dp"
         android:textColor="@color/gray"
         android:textStyle="italic" />
 
@@ -136,41 +157,17 @@
         android:id="@+id/choose"
         android:layout_width="235sp"
         android:layout_height="74sp"
-
         android:layout_below="@+id/chip_group"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="88dp"
-        android:background="@drawable/choose"
-        tools:ignore="SpeakableTextPresentCheck"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
-
-    <ImageButton
-        android:id="@+id/go_back"
-        android:layout_width="66dp"
-        android:layout_height="68dp"
-        android:layout_below="@+id/choose"
-        android:layout_alignStart="@+id/choose"
-        android:layout_alignLeft="@+id/choose"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="-82dp"
-        android:layout_marginLeft="-82dp"
-        android:layout_marginTop="-62dp"
-        android:layout_marginEnd="339dp"
-        android:layout_marginRight="339dp"
-        android:layout_marginBottom="169dp"
-        android:background="@drawable/previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="88dp"
+        android:background="@drawable/choose"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 
 
 </RelativeLayout>

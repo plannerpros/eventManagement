@@ -18,6 +18,11 @@ public class Services extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         basic = findViewById(R.id.card_view_basic);
         standard = findViewById(R.id.card_view_standard);
         premium = findViewById(R.id.card_view_premium);

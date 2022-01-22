@@ -32,7 +32,7 @@ public class tracking extends AppCompatActivity {
     FirebaseDatabase fireData;
     DatabaseReference dataRefre;
     ProgressBar step1, step2, step3, step4;
-    ImageButton previousButton, cancelButton;
+    ImageButton previousButton, cancelButton, detailsButton;
     Dialog dialog;
     Button okay, cancel;
 
@@ -40,10 +40,22 @@ public class tracking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        detailsButton = findViewById(R.id.event_details_button);
         previousButton = findViewById(R.id.previous_button);
         cancelButton = findViewById(R.id.cancel_event1);
         //added
 
+        detailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),venueDetails.class));
+            }
+        });
 
         previousButton.setOnClickListener(v -> startActivity(new Intent(tracking.this, dashboard.class)));
 

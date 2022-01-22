@@ -77,7 +77,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 2;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-
+                startActivity(new Intent(getApplicationContext(),Services.class));
             }
         });
         nameCerobutton.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +86,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 3;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
         getTogetherbutt.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +96,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 4;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
 
             }
         });
@@ -104,6 +107,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 5;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
         housewarmingButt.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +118,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 6;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
         teaPartybutt.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +129,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 7;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
         //System.out.println(eventType);
@@ -132,6 +141,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 8;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
 
@@ -141,6 +152,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 9;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
 
@@ -150,6 +163,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 10;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
 
@@ -159,6 +174,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 11;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
 
@@ -168,6 +185,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 12;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
 
@@ -177,6 +196,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 13;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
+                startActivity(new Intent(getApplicationContext(),Services.class));
+
             }
         });
 
@@ -190,8 +211,6 @@ public class activity_eventType extends AppCompatActivity {
 
             }
         });
-
-
         //System.out.println(eventNo);
         //System.out.println(finalEventType);
         //System.out.println(eventName);

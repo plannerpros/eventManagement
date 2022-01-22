@@ -21,7 +21,6 @@
                 android:id="@+id/previous_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30sp"
                 android:layout_marginTop="30sp"
                 android:background="@drawable/previous" />
 
@@ -30,6 +29,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23sp"
                 android:background="@drawable/track" />
+
+            <ImageButton
+                android:id="@+id/event_details_button"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginTop="35sp"
+                android:background="@drawable/details"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp" />
 
         </LinearLayout>
 

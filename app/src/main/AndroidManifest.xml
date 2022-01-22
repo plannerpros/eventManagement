@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planner">
         <activity
+            android:name=".billing_info"
+            android:exported="false" />
+        <activity
+            android:name=".venueDetails"
+            android:exported="false" />
+        <activity
             android:name=".acitivity_standard_plan"
             android:exported="false" />
         <activity

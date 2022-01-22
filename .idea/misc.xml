@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/acitivity_standard_plan.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_acitivity_standard_plan.xml" value="0.25885416666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_basic_plan.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_billing_info.xml" value="0.20092592592592592" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_choose_plan.xml" value="0.26296296296296295" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_collectdetails.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_dashboard.xml" value="0.2604166666666667" />
@@ -20,9 +21,11 @@
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_no_of_people.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_planning.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_premium_plan.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_services.xml" value="0.2" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_services.xml" value="0.176" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_signup.xml" value="0.2" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_tracking.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_trasactions.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_details.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/activity_venue_image_slider.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Arjun S Pramod/AndroidStudioProjects/eventManagement/app/src/main/res/layout/custom_dialog_layout.xml" value="0.264" />
         <entry key="..\:/Users/Arjun S Pramod/AppData/Local/Android/Sdk/platforms/android-31/android.jar!/res/layout/alert_dialog_holo.xml" value="0.27447916666666666" />

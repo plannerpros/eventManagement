@@ -35,6 +35,10 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trasactions);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
 
         Checkout.preload(getApplicationContext());
         paytext = (TextView) findViewById(R.id.textView);

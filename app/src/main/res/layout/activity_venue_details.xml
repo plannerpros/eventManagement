@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/adobe_background"
+    android:gravity="center"
+    tools:context=".venueDetails">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mdtp_transparent_black"
+        android:layout_margin="20sp"
+        android:elevation="50sp"
+        app:cardCornerRadius="30sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/previous_details_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="20sp"
+                android:src="@drawable/previous"
+                android:layout_marginLeft="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginEnd="20sp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Event planned by: "
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="#01685F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/client_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Person's name"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Event type: "
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="#01685F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/type_of_event"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Event type"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plans chosen: "
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="#01685F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/subscription_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="subscription_plan_name"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Event duration: "
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="#01685F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/start_date_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="start"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" to "
+                        android:textColor="#01685F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/end_date_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="end"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Venue: "
+                        android:textColor="#01685F"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/venue_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Venue's name"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Billing info: "
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="#01685F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/billing_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Click here!"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Event strength: "
+                        android:textColor="#01685F"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/no_of_people"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="no. of people"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location: "
+                        android:textColor="#01685F"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Location's name"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
