@@ -207,8 +207,10 @@
         android:elevation="50sp"
         android:background="@drawable/path_13"
         android:id="@+id/card_view_custom"
+        android:layout_marginStart="20sp"
         android:layout_below="@id/chip_group_non_vegetarian"
-        app:cardCornerRadius="30sp">
+        app:cardCornerRadius="30sp"
+        android:layout_marginLeft="20sp">
 
         <EditText
             android:id="@+id/custom"
