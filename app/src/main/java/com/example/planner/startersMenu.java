@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
-import java.util.StringJoiner;
 
 public class startersMenu extends AppCompatActivity {
     Chip chip0, chip10, chip1,chip6, chip11, chip2, chip12, chip3, chip13, chip4, chip14, chip5, chip15, chip16;
@@ -18,6 +17,7 @@ public class startersMenu extends AppCompatActivity {
     ImageButton previousButton, chooseButton;
     String[] starters = new String[50];
     int noOfItems=0;
+    int index = 0;
 
 
     @Override
@@ -57,89 +57,62 @@ public class startersMenu extends AppCompatActivity {
         chip3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip3.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip4.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip5.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip6.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
         chip11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip11.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip12.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip13.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip14.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip15.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
             }
         });
 
         chip16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                starters[++noOfItems] = chip16.getText().toString();
-                System.out.println(starters[noOfItems]);
-                System.out.println(noOfItems);
+//                starters[++noOfItems] = chip16.getText().toString();
+//                System.out.println(starters[noOfItems]);
+//                System.out.println(noOfItems);
             }
         });
 
@@ -157,17 +130,73 @@ public class startersMenu extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(startersMenu.this,"Chosen",Toast.LENGTH_SHORT).show();
                 if(chip0.isChecked()){
-                    starters[++noOfItems] = chip16.getText().toString();
+                    noOfItems = index++;
+                    starters[noOfItems] = chip0.getText().toString();
+                    System.out.println(starters[++noOfItems]);
                 }else if(chip1.isChecked()){
-                    starters[++noOfItems] = chip16.getText().toString();
-                }else if (chip2.isChecked()){
+                    noOfItems = index++;
+                    starters[noOfItems] = chip1.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+                }else if (chip2.isChecked()) {
+                    noOfItems = index++;
                     starters[++noOfItems] = chip2.getText().toString();
-                }else if (chip3.isChecked()){
-                    starters[++noOfItems] = chip3.getText().toString();
-                }else if(chip4.isChecked()){
-                    starters[++noOfItems] = chip4.getText().toString();
-                }else if(chip5.isChecked()){
-                    starters[++noOfItems] = chip5.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                }else if (chip3.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip3.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                }else if (chip4.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip4.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip5.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip5.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip6.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip6.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip10.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip10.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip11.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip11.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip12.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip12.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip13.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip13.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip14.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip14.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip15.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip15.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
+                } else if (chip16.isChecked()) {
+                    noOfItems = index++;
+                    starters[noOfItems] = chip16.getText().toString();
+                    System.out.println(starters[++noOfItems]);
+
                 }
 
                 for(int i=0;i<=noOfItems;i++){
