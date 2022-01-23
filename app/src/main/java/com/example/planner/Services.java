@@ -11,15 +11,29 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class Services extends AppCompatActivity {
     CardView basic, standard, premium;
     Dialog dialog, dialog1, dialog2;
     ImageButton previousButton;
-
+    String finalService;
+    FirebaseAuth fireAuth;
+    FirebaseFirestore fireStore;
+    String userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
+        fireAuth = FirebaseAuth.getInstance();
+        fireStore = FirebaseFirestore.getInstance();
+        userId = fireAuth.getCurrentUser().getUid();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -84,6 +98,12 @@ public class Services extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println(" Standard_4");
+                finalService = "Standard Plan";
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String, Object> planInsert = new HashMap<>();
+                planInsert.put("Plan Choosen",finalService);
+                docuRefr.set(planInsert);
+                System.out.println(finalService);
                 Toast.makeText(Services.this, "Standard plan confirmed", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),planning.class));
             }
@@ -119,6 +139,14 @@ public class Services extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finalService = "Basic Plan";
+
+                System.out.println(finalService);
+                System.out.println(userId);
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String, Object> planInsert = new HashMap<>();
+                planInsert.put("Plan Choosen",finalService);
+                docuRefr.set(planInsert);
                 Toast.makeText(Services.this, "Basic plan confirmed!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
                 startActivity(new Intent(getApplicationContext(),planning.class));
@@ -153,6 +181,12 @@ public class Services extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finalService = "Premium Plan";
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String, Object> planInsert = new HashMap<>();
+                planInsert.put("Plan Choosen",finalService);
+                docuRefr.set(planInsert);
+                System.out.println(finalService);
                 Toast.makeText(Services.this, "Premium plan confirmed!", Toast.LENGTH_SHORT).show();
                 dialog2.dismiss();
                 startActivity(new Intent(getApplicationContext(),planning.class));
@@ -170,6 +204,8 @@ public class Services extends AppCompatActivity {
         });
 
         dialog2.show();
+
+
     }
 
 }
