@@ -8,10 +8,23 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class startersMenu extends AppCompatActivity {
     Chip chip0, chip10, chip1,chip6, chip11, chip2, chip12, chip3, chip13, chip4, chip14, chip5, chip15, chip16;
@@ -21,6 +34,10 @@ public class startersMenu extends AppCompatActivity {
     String[] starters = new String[50];
     int noOfItems=0;
     int index = 0;
+    String userId;
+    FirebaseFirestore fireStore;
+    FirebaseAuth fireAuth;
+
 
 
     @Override
@@ -128,6 +145,8 @@ public class startersMenu extends AppCompatActivity {
             }
         });
 
+        DocumentReference dockRefre = fireStore.collection("food").document(userId);
+
         chooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,9 +168,18 @@ public class startersMenu extends AppCompatActivity {
                     if (chip1.isChecked()){
                         //Log.i("inside if ", i+ " chip = " + chip.getText().toString());
                         starters[j] = chip1.getText().toString();
+
                         System.out.println(starters[j]);
                     }
                 }
+                List<String> putMenue = Arrays.asList(starters);
+                dockRefre.set(putMenue);
+            /*get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(@NonNull DocumentSnapshot documentSnapshot) {
+                        for (String Menue:putMenue)
+                    }
+                });*/
                 //new comment
                 /*if(chip0.isChecked()){
                     noOfItems = index++;
@@ -240,6 +268,9 @@ public class startersMenu extends AppCompatActivity {
     }
 
     private void findViews() {
+        fireAuth = FirebaseAuth.getInstance();
+        fireStore = FirebaseFirestore.getInstance();
+        userId = fireAuth.getCurrentUser().getUid();
         chip0 = findViewById(R.id.chip20);
         chip10 = findViewById(R.id.chip10);
         chip1= findViewById(R.id.chip1);
