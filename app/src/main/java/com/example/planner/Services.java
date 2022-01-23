@@ -84,8 +84,8 @@ public class Services extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println(" Standard_4");
-                Toast.makeText(Services.this, "Confirm", Toast.LENGTH_SHORT).show();
-                dialog1.dismiss();
+                Toast.makeText(Services.this, "Standard plan confirmed", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),planning.class));
             }
         });
         System.out.println(" Standard_5");
@@ -119,8 +119,10 @@ public class Services extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Services.this, "Confirm", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Services.this, "Basic plan confirmed!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
+                startActivity(new Intent(getApplicationContext(),planning.class));
+
             }
         });
         System.out.println("3");
@@ -151,8 +153,9 @@ public class Services extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Services.this, "Confirm", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Services.this, "Premium plan confirmed!", Toast.LENGTH_SHORT).show();
                 dialog2.dismiss();
+                startActivity(new Intent(getApplicationContext(),planning.class));
             }
         });
         System.out.println("3");
