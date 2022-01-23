@@ -2,7 +2,9 @@ package com.example.planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -18,9 +20,44 @@ public class foodMenu extends AppCompatActivity {
         setContentView(R.layout.activity_food_menu);
         findViews();
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
+        starters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),startersMenu.class));
+            }
+        });
 
+        mainCourses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),mainCourses.class));
+            }
+        });
 
+        beverages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),beverages.class));
+            }
+        });
+
+        desserts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),desserts.class));
+            }
+        });
+
+        confirmed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void findViews() {

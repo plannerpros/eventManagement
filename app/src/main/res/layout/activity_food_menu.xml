@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50sp"
-            android:background="none"
+            android:background="@drawable/path_13"
             android:src="@drawable/starters" />
 
         <ImageButton
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/starters_"
             android:layout_marginTop="30sp"
-            android:background="none"
+            android:background="@drawable/path_13"
             android:src="@drawable/main_courses" />
 
         <ImageButton
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/main_courses_"
             android:layout_marginTop="30sp"
-            android:background="none"
+            android:background="@drawable/path_13"
             android:src="@drawable/beverages" />
 
         <ImageButton
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/beverages"
             android:layout_marginTop="30sp"
-            android:background="none"
+            android:background="@drawable/path_13"
             android:src="@drawable/desserts" />
 
         <androidx.cardview.widget.CardView
@@ -97,7 +97,7 @@
             android:layout_below="@id/custom_food"
             android:layout_marginTop="30sp"
             android:layout_marginBottom="50sp"
-            android:background="none"
+            android:background="@drawable/path_13"
             android:src="@drawable/all_set" />
 
     </RelativeLayout>

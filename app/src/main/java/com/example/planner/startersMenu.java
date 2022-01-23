@@ -1,9 +1,11 @@
 package com.example.planner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +26,11 @@ public class startersMenu extends AppCompatActivity {
         setContentView(R.layout.activity_food_menu);
         findViews();
 
-        chip0.setOnClickListener(new View.OnClickListener() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        /*chip0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 starters[noOfItems++] = chip0.getText().toString();
@@ -135,6 +141,25 @@ public class startersMenu extends AppCompatActivity {
             }
         });
 
+         */
+
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),foodMenu.class));
+            }
+        });
+
+        chooseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(startersMenu.this,"Chosen",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
 
     }
 
@@ -153,10 +178,8 @@ public class startersMenu extends AppCompatActivity {
         chip15=findViewById(R.id.chip15);
         chip16=findViewById(R.id.chip16);
         chip6=findViewById(R.id.chip6);
-
-
-
-
+        previousButton = findViewById(R.id.go_back);
+        chooseButton = findViewById(R.id.choose);
 
 
     }

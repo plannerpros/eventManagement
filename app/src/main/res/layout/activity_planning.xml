@@ -64,6 +64,14 @@
             android:layout_marginTop="20sp"
             android:background="@drawable/date_" />
 
+
+        <ImageView
+            android:id="@+id/food_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/food_menu" />
+
         <ImageView
             android:id="@+id/services"
             android:layout_width="wrap_content"
