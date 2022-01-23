@@ -102,7 +102,7 @@ public class Services extends AppCompatActivity {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String, Object> planInsert = new HashMap<>();
                 planInsert.put("Plan Choosen",finalService);
-                docuRefr.set(planInsert);
+                docuRefr.update(planInsert);
                 System.out.println(finalService);
                 Toast.makeText(Services.this, "Standard plan confirmed", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),planning.class));
@@ -146,7 +146,7 @@ public class Services extends AppCompatActivity {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String, Object> planInsert = new HashMap<>();
                 planInsert.put("Plan Choosen",finalService);
-                docuRefr.set(planInsert);
+                docuRefr.update(planInsert);
                 Toast.makeText(Services.this, "Basic plan confirmed!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
                 startActivity(new Intent(getApplicationContext(),planning.class));
@@ -185,7 +185,7 @@ public class Services extends AppCompatActivity {
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String, Object> planInsert = new HashMap<>();
                 planInsert.put("Plan Choosen",finalService);
-                docuRefr.set(planInsert);
+                docuRefr.update(planInsert);
                 System.out.println(finalService);
                 Toast.makeText(Services.this, "Premium plan confirmed!", Toast.LENGTH_SHORT).show();
                 dialog2.dismiss();

@@ -6,12 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +35,8 @@ public class VenueImageSlider extends AppCompatActivity {
 
 
     FirebaseDatabase fireData;
+    FirebaseAuth fireAuth;
+    FirebaseFirestore fireStore;
     DatabaseReference dataRefre;
     String venueConfirmStatus;
     //String url1, url2,url3;
@@ -44,6 +49,7 @@ public class VenueImageSlider extends AppCompatActivity {
     ImageButton previousButton, confirmButton;
     Dialog dialog1;
     String venueName;
+    String userId;
 
     //url must be replaced with the images data in the form if string
 
@@ -54,6 +60,7 @@ public class VenueImageSlider extends AppCompatActivity {
         previousButton = findViewById(R.id.previous_button_imageSlider);
         confirmButton = findViewById(R.id.confirm_button_imageSlider);
 
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -62,9 +69,11 @@ public class VenueImageSlider extends AppCompatActivity {
 
 
 
-
+        fireStore = FirebaseFirestore.getInstance();
+        fireAuth = FirebaseAuth.getInstance();
         fireData = FirebaseDatabase.getInstance();
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
+        userId = fireAuth.getCurrentUser().getUid();
 
         ID = getIntent().getExtras().get("userId").toString();
 
@@ -96,14 +105,21 @@ public class VenueImageSlider extends AppCompatActivity {
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
             }
         });
+
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 venueName = tName;
+                DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
+                Map<String,Object> user = new HashMap<>();
+                user.put("venueName",venueName);
+                user.put("location",tLocation);
+                docuRefr.update(user);
                 //System.out.println(tName);
                 System.out.println(venueName);
                 String toastText = venueName + " is confirmed!";
