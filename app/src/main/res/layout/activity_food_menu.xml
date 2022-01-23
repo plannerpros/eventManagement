@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,8 +7,99 @@
     android:background="@drawable/food_background"
     tools:context=".foodMenu">
 
-    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
 
 
+        <ImageButton
+            android:id="@+id/starters_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:background="none"
+            android:src="@drawable/starters" />
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/main_courses_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/starters_"
+            android:layout_marginTop="30sp"
+            android:background="none"
+            android:src="@drawable/main_courses" />
+
+        <ImageButton
+            android:id="@+id/beverages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_courses_"
+            android:layout_marginTop="30sp"
+            android:background="none"
+            android:src="@drawable/beverages" />
+
+        <ImageButton
+            android:id="@+id/desserts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/beverages"
+            android:layout_marginTop="30sp"
+            android:background="none"
+            android:src="@drawable/desserts" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/custom_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/desserts"
+            android:layout_marginTop="30sp"
+            android:elevation="30sp"
+            app:cardCornerRadius="40sp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/path_10" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50sp"
+                    android:layout_marginLeft="50sp"
+                    android:layout_marginTop="20sp"
+                    android:src="@drawable/titles" />
+
+                <EditText
+                    android:id="@+id/input_custom_food"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="20sp"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/done_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_food"
+            android:layout_marginTop="30sp"
+            android:layout_marginBottom="50sp"
+            android:background="none"
+            android:src="@drawable/all_set" />
+
+    </RelativeLayout>
+
+</ScrollView>
