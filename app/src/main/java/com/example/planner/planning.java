@@ -75,6 +75,7 @@ public class planning extends AppCompatActivity {
                 dialog.show();
             }
         });
+        //
 
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_dialog_layout);
