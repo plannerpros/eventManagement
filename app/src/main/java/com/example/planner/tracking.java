@@ -46,7 +46,7 @@ public class tracking extends AppCompatActivity {
         }
 
         detailsButton = findViewById(R.id.event_details_button);
-        previousButton = findViewById(R.id.previous_button);
+        previousButton = findViewById(R.id.previous_button_tracking);
         cancelButton = findViewById(R.id.cancel_event1);
         //added
 
@@ -57,7 +57,12 @@ public class tracking extends AppCompatActivity {
             }
         });
 
-        previousButton.setOnClickListener(v -> startActivity(new Intent(tracking.this, dashboard.class)));
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),dashboard.class));
+            }
+        });
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override

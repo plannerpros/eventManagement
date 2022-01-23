@@ -106,7 +106,9 @@ public class VenueImageSlider extends AppCompatActivity {
                 venueName = tName;
                 //System.out.println(tName);
                 System.out.println(venueName);
-
+                String toastText = venueName + " is confirmed!";
+                Toast.makeText(VenueImageSlider.this, toastText, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
                 //variable to set to the database confirmation of the event
             }
         });

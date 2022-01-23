@@ -66,9 +66,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 1;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-
-                startActivity(new Intent(getApplicationContext(),Services.class));
-
+                Toast.makeText(activity_eventType.this, "Birthday, it is!", Toast.LENGTH_SHORT).show();
             }
         });
         marrageButt.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +75,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 2;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Marriage, it is!", Toast.LENGTH_SHORT).show();
             }
         });
         nameCerobutton.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +84,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 3;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
-
+                Toast.makeText(activity_eventType.this, "Naming ceremony, it is!", Toast.LENGTH_SHORT).show();
             }
         });
         getTogetherbutt.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +93,8 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 4;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Get-together, it is!", Toast.LENGTH_SHORT).show();
+
 
             }
         });
@@ -107,7 +105,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 5;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Farewell party, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -118,7 +116,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 6;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "House warming ceremony, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -130,6 +128,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
                 startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Tea party, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -141,7 +140,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 8;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Reception, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -152,7 +151,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 9;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Appreciation event, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -163,7 +162,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 10;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Fund-raising, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -174,7 +173,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 11;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Seminars or conferences, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -185,7 +184,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 12;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Product-launcing event, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -196,7 +195,7 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 13;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
+                Toast.makeText(activity_eventType.this, "Team-building event, it is!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -208,6 +207,7 @@ public class activity_eventType extends AppCompatActivity {
                 //String input =
                 eventName = input_custom.getText().toString();
                 System.out.println(eventName);
+                Toast.makeText(activity_eventType.this, eventName+", it is!", Toast.LENGTH_SHORT).show();
 
             }
         });

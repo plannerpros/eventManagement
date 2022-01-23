@@ -64,6 +64,21 @@
             android:layout_marginTop="20sp"
             android:background="@drawable/date_" />
 
+        <ImageView
+            android:id="@+id/services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/services" />
+
+        <ImageView
+            android:id="@+id/confirmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="30sp"
+            android:background="@drawable/planned" />
+
 
     </LinearLayout>
 

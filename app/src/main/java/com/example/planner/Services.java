@@ -1,6 +1,7 @@
 package com.example.planner;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.cardview.widget.CardView;
 public class Services extends AppCompatActivity {
     CardView basic, standard, premium;
     Dialog dialog, dialog1, dialog2;
+    ImageButton previousButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,20 @@ public class Services extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+
+        previousButton = findViewById(R.id.previous_button_services);
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                previousButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(),planning.class));
+                    }
+                });
+            }
+        });
 
         basic = findViewById(R.id.card_view_basic);
         standard = findViewById(R.id.card_view_standard);
