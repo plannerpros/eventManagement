@@ -23,14 +23,14 @@ public class startersMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_menu);
+        setContentView(R.layout.activity_starters_menu);
         findViews();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
 
-        /*chip0.setOnClickListener(new View.OnClickListener() {
+        chip0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 starters[noOfItems++] = chip0.getText().toString();
@@ -141,7 +141,7 @@ public class startersMenu extends AppCompatActivity {
             }
         });
 
-         */
+
 
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,8 +178,8 @@ public class startersMenu extends AppCompatActivity {
         chip15=findViewById(R.id.chip15);
         chip16=findViewById(R.id.chip16);
         chip6=findViewById(R.id.chip6);
-        previousButton = findViewById(R.id.go_back);
-        chooseButton = findViewById(R.id.choose);
+        previousButton = findViewById(R.id.go_back_starters);
+        chooseButton = findViewById(R.id.choose_starters);
 
 
     }
