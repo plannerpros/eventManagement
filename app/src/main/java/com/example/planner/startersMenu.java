@@ -152,6 +152,7 @@ public class startersMenu extends AppCompatActivity {
                         System.out.println(starters[j]);
                     }
                 }
+                //new comment
                 /*if(chip0.isChecked()){
                     noOfItems = index++;
                     starters[noOfItems] = chip0.getText().toString();
