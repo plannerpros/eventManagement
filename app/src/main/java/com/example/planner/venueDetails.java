@@ -42,7 +42,7 @@ public class venueDetails extends AppCompatActivity {
         billing_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), com.example.planner.billing_info.class));
+                startActivity(new Intent(getApplicationContext(), transactions.class));
             }
         });
 
@@ -56,6 +56,7 @@ public class venueDetails extends AppCompatActivity {
     }
 
     private void find_View_By_Id() {
+        System.out.println("1");
         fireAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
         userId = fireAuth.getCurrentUser().getUid();
@@ -69,6 +70,7 @@ public class venueDetails extends AppCompatActivity {
         billing_info = findViewById(R.id.billing_info);
         event_strength = findViewById(R.id.no_of_people);
         location_info = findViewById(R.id.location_info);
+        System.out.println("2");
         DocumentReference dockRefre = fireStore.collection("customer").document(userId);
         dockRefre.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -76,18 +78,22 @@ public class venueDetails extends AppCompatActivity {
                 client_name.setText(value.getString("Full Name"));
             }
         });
+        System.out.println("3");
         DocumentReference dockRefre1 = fireStore.collection("eventChoose").document(userId);
         dockRefre1.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 event_type.setText(value.getString("Event Name"));
                 subscription_plan.setText(value.getString("Plan Choosen"));
+                System.out.println("4");
                 start_info.setText(value.getString("startDate"));
                 end_info.setText(value.getString("endDate"));
                 venue_name.setText(value.getString("venueName"));
+                System.out.println("6");
                 billing_info.setText(value.getString("Completed"));
                 event_strength.setText(value.getString("numberOfpeople"));
                 location_info.setText(value.getString("location"));
+                System.out.println("7");
 
 
             }
