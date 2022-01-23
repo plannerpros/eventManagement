@@ -35,29 +35,7 @@ public class venueDetails extends AppCompatActivity {
         //firebase fetching code
 
         //setting all texts
-        DocumentReference dockRefre = fireStore.collection("customer").document(userId);
-        dockRefre.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                client_name.setText(value.getString("Full Name"));
-            }
-        });
-        DocumentReference dockRefre1 = fireStore.collection("eventChoose").document(userId);
-        dockRefre1.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                event_type.setText(value.getString("Event Name"));
-                subscription_plan.setText(value.getString("Plan Choosen"));
-                start_info.setText(value.getString("startDate"));
-                end_info.setText(value.getString("endDate"));
-                venue_name.setText(value.getString("venueName"));
-                billing_info.setText(value.getString("Completed"));
-                event_strength.setText(value.getString("numberOfpeople"));
-                location_info.setText(value.getString("location"));
 
-
-            }
-        });
 
 
         find_View_By_Id();
@@ -91,5 +69,28 @@ public class venueDetails extends AppCompatActivity {
         billing_info = findViewById(R.id.billing_info);
         event_strength = findViewById(R.id.no_of_people);
         location_info = findViewById(R.id.location_info);
+        DocumentReference dockRefre = fireStore.collection("customer").document(userId);
+        dockRefre.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                client_name.setText(value.getString("Full Name"));
+            }
+        });
+        DocumentReference dockRefre1 = fireStore.collection("eventChoose").document(userId);
+        dockRefre1.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                event_type.setText(value.getString("Event Name"));
+                subscription_plan.setText(value.getString("Plan Choosen"));
+                start_info.setText(value.getString("startDate"));
+                end_info.setText(value.getString("endDate"));
+                venue_name.setText(value.getString("venueName"));
+                billing_info.setText(value.getString("Completed"));
+                event_strength.setText(value.getString("numberOfpeople"));
+                location_info.setText(value.getString("location"));
+
+
+            }
+        });
     }
 }
