@@ -33,18 +33,21 @@
 
 
     <TextView
+        android:id="@+id/vegetarian_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_title"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:background="@drawable/path_7"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
         android:text="Vegetarian foods>"
         android:textColor="@color/black"
-        android:id="@+id/vegetarian_title"
-        android:layout_below="@id/linear_layout_title"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textStyle="italic"
-        android:gravity="center"
-        android:background="@drawable/path_7"
-        android:layout_margin="20sp"/>
+        android:textStyle="italic" />
 
 
     <com.google.android.material.chip.ChipGroup
@@ -64,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="Spring roll"
+            android:text="Idly"
             android:textStyle="italic" />
 
         <com.google.android.material.chip.Chip
@@ -72,7 +75,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gobi tandoori" />
+            android:text="Dosa" />
 
 
         <com.google.android.material.chip.Chip
@@ -80,14 +83,14 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mushroom Tandoori" />
+            android:text="Fired Rice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip3"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cheese Pakora" />
+            android:text="North Indian Meals" />
 
 
         <com.google.android.material.chip.Chip
@@ -95,15 +98,21 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Babycorn salt and pepper" />
+            android:text="Sorth Indian Meals" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip5"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Green salad" />
+            android:text="Paneer Noodles" />
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veg Biriyani" />
 
 
     </com.google.android.material.chip.ChipGroup>
@@ -144,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="Egg Munchurian"
+            android:text="Kadai Chicken"
             android:textStyle="italic" />
 
         <com.google.android.material.chip.Chip
@@ -152,7 +161,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chilli chicken" />
+            android:text="Butter Chicken Masala" />
 
 
         <com.google.android.material.chip.Chip
@@ -160,14 +169,14 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chicken 65" />
+            android:text="Mutton Stew" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip13"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pepper chicken" />
+            android:text="Mutton pepper masala" />
 
 
         <com.google.android.material.chip.Chip
@@ -175,21 +184,36 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Schezwan chicken" />
+            android:text="Tandoori naan" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip15"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chicken lolly pop" />
+            android:text="Fish Fry" />
+
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip16"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chicken grill" />
+            android:text="Chicken Dum Biriyani" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip17"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mutton Dum Biriyani" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip18"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chicken Noodles" />
 
 
     </com.google.android.material.chip.ChipGroup>
