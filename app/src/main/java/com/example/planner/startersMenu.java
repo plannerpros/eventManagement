@@ -2,6 +2,7 @@ package com.example.planner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -10,9 +11,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 public class startersMenu extends AppCompatActivity {
     Chip chip0, chip10, chip1,chip6, chip11, chip2, chip12, chip3, chip13, chip4, chip14, chip5, chip15, chip16;
+    ChipGroup veg, nonveg;
     EditText custom;
     ImageButton previousButton, chooseButton;
     String[] starters = new String[50];
@@ -129,7 +132,27 @@ public class startersMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(startersMenu.this,"Chosen",Toast.LENGTH_SHORT).show();
-                if(chip0.isChecked()){
+
+                for (int i=0; i<veg.getChildCount();i++){
+                    Chip chip = (Chip)veg.getChildAt(i);
+                    //Log.i("outside if ", i+ " chip = " + chip.getText().toString());
+                    if (chip.isChecked()){
+                        //Log.i("inside if ", i+ " chip = " + chip.getText().toString());
+                        starters[i] = chip.getText().toString();
+                        System.out.println(starters[i]);
+                    }
+                }
+
+                for (int j=0; j<nonveg.getChildCount();j++){
+                    Chip chip1 = (Chip)nonveg.getChildAt(j);
+                    //Log.i("outside if ", i+ " chip = " + chip.getText().toString());
+                    if (chip1.isChecked()){
+                        //Log.i("inside if ", i+ " chip = " + chip.getText().toString());
+                        starters[j] = chip1.getText().toString();
+                        System.out.println(starters[j]);
+                    }
+                }
+                /*if(chip0.isChecked()){
                     noOfItems = index++;
                     starters[noOfItems] = chip0.getText().toString();
                     System.out.println(starters[++noOfItems]);
@@ -202,6 +225,9 @@ public class startersMenu extends AppCompatActivity {
                 for(int i=0;i<=noOfItems;i++){
                     System.out.println(starters[i]);
                 }
+*/
+
+
             }
         });
 
@@ -229,7 +255,8 @@ public class startersMenu extends AppCompatActivity {
         chip6=findViewById(R.id.chip6);
         previousButton = findViewById(R.id.go_back_starters);
         chooseButton = findViewById(R.id.choose_starters);
-
+        veg = findViewById(R.id.chip_group_vegetarian);
+        nonveg = findViewById(R.id.chip_group_non_vegetarian);
 
     }
 }
