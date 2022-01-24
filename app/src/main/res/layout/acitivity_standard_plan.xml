@@ -10,7 +10,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="30sp"
             android:padding="20sp"
@@ -18,7 +18,7 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -44,7 +44,7 @@
                             android:layout_marginStart="20sp"
                             android:layout_marginLeft="20sp"
                             android:layout_marginTop="20sp"
-                            android:text="Number of managers: "
+                            android:text="Decoration: "
                             android:textColor="#111213"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -53,7 +53,7 @@
                             android:id="@+id/number_of_managers"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Upto 4"
+                            android:text="20% off on total cost"
                             android:textColor="#68696A"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -76,7 +76,7 @@
                         android:layout_marginStart="20sp"
                         android:layout_marginLeft="20sp"
                         android:layout_marginTop="20sp"
-                        android:text="Return cancellation charges: "
+                        android:text="Photography: "
                         android:textColor="#111213"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -85,7 +85,7 @@
                         android:id="@+id/cancellation_charges"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="20%"
+                        android:text="20% off on total cost"
                         android:textColor="#68696A"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -106,7 +106,7 @@
                         android:layout_marginStart="20sp"
                         android:layout_marginLeft="20sp"
                         android:layout_marginTop="20sp"
-                        android:text="Times you could update the event: "
+                        android:text="Lightings: "
                         android:textColor="#111213"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -115,7 +115,7 @@
                         android:id="@+id/number_update_events"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2"
+                        android:text="20% off on total cost"
                         android:textColor="#68696A"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -136,7 +136,7 @@
                         android:layout_marginStart="20sp"
                         android:layout_marginLeft="20sp"
                         android:layout_marginTop="20sp"
-                        android:text="RSVP service: "
+                        android:text="Cancellation return amount: "
                         android:textColor="#111213"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -145,7 +145,7 @@
                         android:id="@+id/rsvp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Yes | Upto 200"
+                        android:text="30%"
                         android:textColor="#68696A"
                         android:textSize="18sp"
                         android:textStyle="bold" />
