@@ -9,10 +9,17 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.fido.fido2.api.common.Algorithm;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -29,9 +36,13 @@ public class transactions extends AppCompatActivity implements PaymentResultList
     ImageButton previous_button;
     TextView client_name, event_type, subscription_plan, start_info, end_info, venue_name, billing_info, event_strength, location_info;
     FirebaseFirestore fireStore;
+    DatabaseReference dataRefre;
+    FirebaseDatabase fireData;
     FirebaseAuth fireAuth;
-    String userId;
+    String userId,id;
     int Amount = 0;
+    int no_pople,tPrice,pPrice;
+    String eType,sPlan,eVenue,eNoPeople;
 
 
     @Override
@@ -73,6 +84,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
     private void findViews() {
         fireAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
+        dataRefre = FirebaseDatabase.getInstance().getReference("venues");
         userId = fireAuth.getCurrentUser().getUid();
         client_name = findViewById(R.id.client_name);
         previous_button = findViewById(R.id.previous_button_transactions);
@@ -98,19 +110,49 @@ public class transactions extends AppCompatActivity implements PaymentResultList
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 event_type.setText(value.getString("Event Name"));
+                eType = value.getString("Event Name");
                 subscription_plan.setText(value.getString("Plan Choosen"));
-
+                sPlan = value.getString("Plan Choosen");
                 start_info.setText(value.getString("startDate"));
                 end_info.setText(value.getString("endDate"));
                 venue_name.setText(value.getString("venueName"));
-
+                eVenue = value.getString("venueName");
                 billing_info.setText(value.getString("Completed"));
                 event_strength.setText(value.getString("numberOfpeople"));
+                eNoPeople = value.getString("numberOfpeople");
                 location_info.setText(value.getString("location"));
+                id = value.getString("id");
 
 
+                amountSetting(eType,sPlan,eVenue,eNoPeople,id);
             }
         });
+
+
+    }
+
+    private void amountSetting(String eType, String sPlan, String eVenue, String eNoPeople,String id) {
+        //System.out.println("Name:"+eType+"Plan"+sPlan+"Venue Name"+eVenue+"No of People"+eNoPeople);
+
+
+
+
+        StringBuffer sb=new StringBuffer(eNoPeople);
+        no_pople = Integer.parseInt(sb.delete(0,4).toString());
+        StringBuffer sb1=new StringBuffer(id);
+        tPrice = Integer.parseInt(sb1.substring(0,3).toString());
+        if(sPlan.equals("Basic Plan")){
+            pPrice = 100;
+        } else if(sPlan.equals("Standard Plan")){
+            pPrice = 500;
+        } else {
+            pPrice = 1000;
+        }
+
+        System.out.println(no_pople+" "+tPrice+" "+pPrice);
+
+
+
     }
 
 
@@ -163,3 +205,12 @@ public class transactions extends AppCompatActivity implements PaymentResultList
 
 
 }
+//dataRefre.child(id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//@Override
+//public void onComplete(@NonNull Task<DataSnapshot> task) {
+//        if (task.getResult().exists()) {
+//        DataSnapshot dataSnapshot = task.getResult();
+//        tPrice = String.valueOf(dataSnapshot.child("cost").getValue());
+//        }
+//        }
+//        });

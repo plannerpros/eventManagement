@@ -119,6 +119,7 @@ public class VenueImageSlider extends AppCompatActivity {
                 Map<String,Object> user = new HashMap<>();
                 user.put("venueName",venueName);
                 user.put("location",tLocation);
+                user.put("id",tPrice);
                 docuRefr.update(user);
                 //System.out.println(tName);
                 System.out.println(venueName);

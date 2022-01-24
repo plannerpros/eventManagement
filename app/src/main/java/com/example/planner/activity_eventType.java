@@ -29,6 +29,7 @@ public class activity_eventType extends AppCompatActivity {
     String userId;
     int eventNo;
     FirebaseFirestore fireStore;
+
     //final int birt = 101;
 
     @Override
