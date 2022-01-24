@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     tools:context=".desserts">
 
     <LinearLayout
@@ -32,31 +32,14 @@
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/vegetarian_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear_layout_title"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginBottom="20sp"
-        android:background="@drawable/path_7"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:gravity="center"
-        android:text="Vegetarian foods>"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="italic" />
-
-
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_group_vegetarian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/vegetarian_title"
+        android:layout_below="@id/linear_layout_title"
         android:layout_marginStart="20sp"
         android:layout_marginLeft="20sp"
+        android:layout_marginTop="50sp"
         android:foregroundGravity="center_horizontal"
         app:selectionRequired="false"
         app:singleSelection="false">
@@ -67,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="Idly"
+            android:text="Vanilla Icecream"
             android:textStyle="italic" />
 
         <com.google.android.material.chip.Chip
@@ -75,7 +58,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dosa" />
+            android:text="Chocolate Icecream" />
 
 
         <com.google.android.material.chip.Chip
@@ -83,14 +66,14 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fired Rice" />
+            android:text="Strawberry Icecream" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip3"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="North Indian Meals" />
+            android:text="Black Current Icecream" />
 
 
         <com.google.android.material.chip.Chip
@@ -98,125 +81,27 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sorth Indian Meals" />
+            android:text="Falooda" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip5"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Paneer Noodles" />
+            android:text="Fried Icecream" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip6"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Veg Biriyani" />
+            android:text="Falooda with Icecream" />
 
 
     </com.google.android.material.chip.ChipGroup>
 
 
-    <TextView
-        android:id="@+id/non_vegetarian_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chip_group_vegetarian"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginBottom="20sp"
-        android:background="@drawable/path_7"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:gravity="center"
-        android:text="Non-Vegetarian foods>"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="italic" />
 
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_group_non_vegetarian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/non_vegetarian_title"
-        android:layout_marginStart="20sp"
-        android:layout_marginLeft="20sp"
-        android:foregroundGravity="center_horizontal"
-        app:selectionRequired="false"
-        app:singleSelection="false">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip10"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Kadai Chicken"
-            android:textStyle="italic" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip11"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Butter Chicken Masala" />
-
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip12"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mutton Stew" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip13"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mutton pepper masala" />
-
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip14"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tandoori naan" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip15"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fish Fry" />
-
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip16"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chicken Dum Biriyani" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip17"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mutton Dum Biriyani" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip18"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chicken Noodles" />
-
-
-    </com.google.android.material.chip.ChipGroup>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -225,7 +110,7 @@
         android:background="@drawable/path_13"
         android:id="@+id/card_view_custom"
         android:layout_marginStart="20sp"
-        android:layout_below="@id/chip_group_non_vegetarian"
+        android:layout_below="@id/chip_group_vegetarian"
         app:cardCornerRadius="30sp"
         android:layout_marginLeft="20sp">
 
@@ -234,7 +119,7 @@
             android:layout_width="200sp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
-            android:hint="Custom foods"
+            android:hint="Custom desserts"
             android:layout_marginStart="20sp"
             android:inputType="number"
             android:minHeight="48dp"
