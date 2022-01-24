@@ -142,14 +142,15 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         StringBuffer sb1=new StringBuffer(id);
         tPrice = Integer.parseInt(sb1.substring(0,3).toString());
         if(sPlan.equals("Basic Plan")){
-            pPrice = 100;
+            pPrice = 20;
         } else if(sPlan.equals("Standard Plan")){
-            pPrice = 500;
+            pPrice = 50;
         } else {
-            pPrice = 1000;
+            pPrice = 70;
         }
 
         System.out.println(no_pople+" "+tPrice+" "+pPrice);
+        System.out.println((no_pople*tPrice)+(pPrice*no_pople));
 
 
 
