@@ -31,7 +31,7 @@ public class startersMenu extends AppCompatActivity {
     ChipGroup veg, nonveg;
     EditText custom;
     ImageButton previousButton, chooseButton;
-    String[] starters = new String[50];
+    String[] starters = new String[10];
     int noOfItems=0;
     int index = 0;
     String userId;
@@ -145,7 +145,7 @@ public class startersMenu extends AppCompatActivity {
             }
         });
 
-        DocumentReference dockRefre = fireStore.collection("food").document(userId);
+        DocumentReference dockRefre = fireStore.collection("eventChoose").document(userId);
 
         chooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,8 +172,12 @@ public class startersMenu extends AppCompatActivity {
                         System.out.println(starters[j]);
                     }
                 }
-                List<String> putMenue = Arrays.asList(starters);
-                dockRefre.set(putMenue);
+                //List<list> putMenue = Arrays.asList(starters);
+                ArrayList<String> subjectsArrayList = getListOfSubjects(starters);
+                Map<String, Object> putMenue = new HashMap<>();
+                putMenue.put("food", subjectsArrayList);
+                //putMenue.put("food", Arrays.asList(starters));
+                dockRefre.update(putMenue);
             /*get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(@NonNull DocumentSnapshot documentSnapshot) {
@@ -290,5 +294,12 @@ public class startersMenu extends AppCompatActivity {
         veg = findViewById(R.id.chip_group_vegetarian);
         nonveg = findViewById(R.id.chip_group_non_vegetarian);
 
+    }
+    public ArrayList<String> getListOfSubjects(String[] starters){
+        List<String> subjectsArrayList = new ArrayList<>();
+        for (int i = 0; i < starters.length; i++) {
+            subjectsArrayList.add(starters[i]);
+        }
+        return (ArrayList<String>) subjectsArrayList;
     }
 }
