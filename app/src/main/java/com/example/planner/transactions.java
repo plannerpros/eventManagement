@@ -1,25 +1,24 @@
 package com.example.planner;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.razorpay.Checkout;
-import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
@@ -27,6 +26,11 @@ import org.json.JSONObject;
 public class transactions extends AppCompatActivity implements PaymentResultListener {
     Button paybtn;
     TextView paytext;
+    ImageButton previous_button;
+    TextView client_name, event_type, subscription_plan, start_info, end_info, venue_name, billing_info, event_strength, location_info;
+    FirebaseFirestore fireStore;
+    FirebaseAuth fireAuth;
+    String userId;
     int Amount = 0;
 
 
@@ -39,11 +43,13 @@ public class transactions extends AppCompatActivity implements PaymentResultList
             getSupportActionBar().hide();
         }
 
+        findViews();
+
 
         Checkout.preload(getApplicationContext());
         paytext = (TextView) findViewById(R.id.textView);
         paybtn = (Button) findViewById(R.id.button2);
-        Amount = 100000 ;//(100+50)/10;
+        Amount = 100000;//(100+50)/10;
         System.out.println(Amount);
 
         paybtn.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +60,57 @@ public class transactions extends AppCompatActivity implements PaymentResultList
             }
         });
 
+        previous_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),dashboard.class));
+            }
+        });
+
+
+    }
+
+    private void findViews() {
+        fireAuth = FirebaseAuth.getInstance();
+        fireStore = FirebaseFirestore.getInstance();
+        userId = fireAuth.getCurrentUser().getUid();
+        client_name = findViewById(R.id.client_name);
+        previous_button = findViewById(R.id.previous_button_transactions);
+        event_type = findViewById(R.id.type_of_event);
+        subscription_plan = findViewById(R.id.subscription_plan);
+        start_info = findViewById(R.id.start_date_info);
+        end_info = findViewById(R.id.end_date_info);
+        venue_name = findViewById(R.id.venue_name);
+        billing_info = findViewById(R.id.billing_info);
+        event_strength = findViewById(R.id.no_of_people);
+        location_info = findViewById(R.id.location_info);
+
+        DocumentReference dockRefre = fireStore.collection("customer").document(userId);
+        dockRefre.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                client_name.setText(value.getString("Full Name"));
+            }
+        });
+
+        DocumentReference dockRefre1 = fireStore.collection("eventChoose").document(userId);
+        dockRefre1.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                event_type.setText(value.getString("Event Name"));
+                subscription_plan.setText(value.getString("Plan Choosen"));
+
+                start_info.setText(value.getString("startDate"));
+                end_info.setText(value.getString("endDate"));
+                venue_name.setText(value.getString("venueName"));
+
+                billing_info.setText(value.getString("Completed"));
+                event_strength.setText(value.getString("numberOfpeople"));
+                location_info.setText(value.getString("location"));
+
+
+            }
+        });
     }
 
 
