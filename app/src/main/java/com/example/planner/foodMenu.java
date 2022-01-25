@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class foodMenu extends AppCompatActivity {
 
-    ImageButton starters, mainCourses, beverages, desserts, confirmed;
+    ImageButton starters, mainCourses, beverages, desserts, confirmed, previous;
     EditText custom_food;
 
 
@@ -58,6 +58,12 @@ public class foodMenu extends AppCompatActivity {
 
             }
         });
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),planning.class));
+            }
+        });
     }
 
     private void findViews() {
@@ -67,5 +73,6 @@ public class foodMenu extends AppCompatActivity {
         desserts = findViewById(R.id.desserts);
         confirmed = findViewById(R.id.done_food);
         custom_food = findViewById(R.id.input_custom_food);
+        previous = findViewById(R.id.previous_button_food);
     }
 }
