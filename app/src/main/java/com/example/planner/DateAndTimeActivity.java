@@ -72,7 +72,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
     String Start1;
     int startDateint;
     int endDateint;
-
+    String ID;
 
 
 
@@ -102,9 +102,9 @@ public class DateAndTimeActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.go_back);
         endDatePicker = findViewById(R.id.select_end_date);
         endDateResult = findViewById(R.id.end_date_info);
-        
 
 
+        //ID = getIntent().getExtras().get("userId").toString();
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -291,9 +291,10 @@ public class DateAndTimeActivity extends AppCompatActivity {
 
             }
         };
+        ID = getIntent().getExtras().get("userId1").toString();
+        System.out.println(ID);
 
-
-        dataRefre.child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        dataRefre.child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.getResult().exists()) {
@@ -358,7 +359,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
                 dateTime.put("startTime",start_time);
                 dateTime.put("endTime:",end_time);
 
-                //dataRefre.child(userId).setValue(dateTime);
+                dataRefre.child(ID).push().setValue(dateTime);
 
 
 

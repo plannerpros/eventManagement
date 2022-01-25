@@ -106,7 +106,8 @@ public class VenueImageSlider extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
+                startActivity(new Intent(getApplicationContext(),DateAndTimeActivity.class));
+
             }
         });
 
@@ -115,6 +116,7 @@ public class VenueImageSlider extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 venueName = tName;
+                String id1 =ID;
                 DocumentReference docuRefr = fireStore.collection("eventChoose").document(userId);
                 Map<String,Object> user = new HashMap<>();
                 user.put("venueName",venueName);
@@ -125,10 +127,15 @@ public class VenueImageSlider extends AppCompatActivity {
                 System.out.println(venueName);
                 String toastText = venueName + " is confirmed!";
                 Toast.makeText(VenueImageSlider.this, toastText, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
+                //startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
                 //variable to set to the database confirmation of the event
+
+                Intent i = new Intent(VenueImageSlider.this,DateAndTimeActivity.class);
+                i.putExtra("userId1",id1);
+                startActivity(i);
             }
         });
+
 
 
         System.out.println("Venue name: "+tName);
