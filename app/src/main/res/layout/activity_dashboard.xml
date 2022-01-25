@@ -20,7 +20,8 @@
             android:layout_marginTop="20sp"
             android:layout_marginBottom="20sp"
             android:scaleType="centerCrop"
-            android:src="@drawable/profile_user" />
+            android:src="@drawable/profile_user"
+            android:layout_marginLeft="320sp" />
     </LinearLayout>
 
 
@@ -59,7 +60,8 @@
                 android:layout_marginStart="8sp"
                 android:text="Hi there!"
                 android:textColor="#212529"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:layout_marginLeft="8sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +99,8 @@
                 android:text="Plan an event"
                 android:textColor="#22223b"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginRight="80sp" />
 
             <ImageView
                 android:layout_width="50sp"
@@ -131,7 +134,8 @@
                 android:text="Track the progress"
                 android:textColor="#22223b"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginRight="30sp" />
 
             <ImageView
                 android:layout_width="50sp"
@@ -165,7 +169,8 @@
                 android:text="Transaction info"
                 android:textColor="#22223b"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginRight="50sp" />
 
             <ImageView
                 android:layout_width="50sp"
@@ -199,7 +204,8 @@
                 android:text="Feedback"
                 android:textColor="#22223b"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginRight="100sp" />
 
             <ImageView
                 android:layout_width="50sp"
@@ -233,7 +239,8 @@
                 android:text="LOGOUT"
                 android:textColor="#22223b"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginRight="100sp" />
 
             <ImageView
                 android:layout_width="50sp"
