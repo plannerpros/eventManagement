@@ -80,9 +80,9 @@ public class activity_collectdetails extends AppCompatActivity {
                     pnet.setError("Password is required");
                     return;
                 }
-                if(TextUtils.isEmpty(aadharNumber))
+                if(TextUtils.isEmpty(aadharNumber)&&aadharNumber.length()>12&&aadharNumber.length()<12)
                 {
-                    anet.setError("Email is Required");
+                    anet.setError("");
                     return;
                 }
                 if(TextUtils.isEmpty(address))
