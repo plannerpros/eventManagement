@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background_15"
     tools:context=".transactions">
 
 
@@ -210,31 +210,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed-medium"
-                    android:text="Billing info: "
-                    android:textColor="#01685F"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/billing_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Click here!"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5sp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="Event strength: "
                     android:textColor="#01685F"
                     android:textSize="18sp" />
@@ -356,12 +331,13 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="132dp"
-            android:layout_height="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="0sp"
+            android:layout_margin="20sp"
             android:fontFamily="sans-serif-condensed-medium"
             android:fontFeatureSettings="bold"
+            android:textSize="18sp"
             android:text="Transaction status"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/button2"
