@@ -34,7 +34,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
     Button paybtn;
     TextView paytext;
     ImageButton previous_button;
-    TextView client_name, event_type, subscription_plan, start_info, end_info, venue_name, billing_info, event_strength, location_info;
+    TextView client_name, event_type, subscription_plan, start_info, end_info, venue_name, billing_info, event_strength, location_info, totalAmount;
     FirebaseFirestore fireStore;
     DatabaseReference dataRefre;
     FirebaseDatabase fireData;

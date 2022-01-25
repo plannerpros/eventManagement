@@ -39,25 +39,25 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/details_event"
         android:layout_width="match_parent"
-        android:layout_height="350sp"
+        android:layout_height="wrap_content"
         android:layout_margin="20sp"
         android:elevation="60sp"
         app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387">
+        app:layout_constraintVertical_bias="0.259">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="20sp"
-            android:layout_marginTop="50sp"
-            android:layout_marginBottom="20sp"
+            android:layout_marginTop="30sp"
             android:layout_marginEnd="20sp"
+            android:layout_marginBottom="30sp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -69,8 +69,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Event planned by: "
                     android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Event planned by: "
                     android:textColor="#01685F"
                     android:textSize="18sp" />
 
@@ -94,8 +94,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Event type: "
                     android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Event type: "
                     android:textColor="#01685F"
                     android:textSize="18sp" />
 
@@ -119,8 +119,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Plans chosen: "
                     android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Plans chosen: "
                     android:textColor="#01685F"
                     android:textSize="18sp" />
 
@@ -144,8 +144,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Event duration: "
                     android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Event duration: "
                     android:textColor="#01685F"
                     android:textSize="18sp" />
 
@@ -184,9 +184,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="Venue: "
                     android:textColor="#01685F"
-                    android:fontFamily="sans-serif-condensed-medium"
                     android:textSize="18sp" />
 
                 <TextView
@@ -209,8 +209,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Billing info: "
                     android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Billing info: "
                     android:textColor="#01685F"
                     android:textSize="18sp" />
 
@@ -234,9 +234,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="Event strength: "
                     android:textColor="#01685F"
-                    android:fontFamily="sans-serif-condensed-medium"
                     android:textSize="18sp" />
 
                 <TextView
@@ -259,9 +259,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="Location: "
                     android:textColor="#01685F"
-                    android:fontFamily="sans-serif-condensed-medium"
                     android:textSize="18sp" />
 
                 <TextView
@@ -277,31 +277,93 @@
         </LinearLayout>
 
 
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:elevation="50sp"
+        app:cardCornerRadius="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_event"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="NotSibling">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Total amount: "
+                android:textColor="#01685F"
+                android:textSize="18sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="525dp"
+                android:layout_marginLeft="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginStart="10sp"
+                android:text="Rs."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="10sp" />
+
+            <TextView
+                android:id="@+id/total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Location's name"
+                android:layout_marginTop="20sp"
+                android:layout_marginStart="4sp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="10sp" />
+
+
+        </LinearLayout>
+
+
+
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_transaction_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20sp"
         android:elevation="60sp"
-        android:id="@+id/card_view_transaction_status"
         app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_event"
-        app:layout_constraintVertical_bias="0.14"
-        tools:layout_editor_absoluteX="20dp">
+        app:layout_constraintVertical_bias="0.567"
+        tools:layout_editor_absoluteX="24dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="135dp"
-            android:layout_gravity="center_horizontal"
             android:layout_height="28dp"
-            android:text="Transaction status"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="0sp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:textColor="@color/black"
             android:fontFeatureSettings="bold"
-            android:layout_margin="10sp"
+            android:text="Transaction status"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -325,6 +387,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
