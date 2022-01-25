@@ -13,23 +13,32 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class tracking extends AppCompatActivity {
-    String ID;
+    String ID,userId;
     int progrssCOunt = 0,min=1,max=100;
     String url, tName, tPrice, tLocation, tPeople;
     ImageView tImage;
     TextView titleName, titlePrice, titleLocation, titleNOpeople;
     TextView t1, t2, t3, t4, t5;
     FirebaseDatabase fireData;
+    FirebaseFirestore fireStore;
+    FirebaseAuth auth;
     DatabaseReference dataRefre;
     ProgressBar step1, step2, step3, step4;
     ImageButton previousButton, cancelButton, detailsButton;
@@ -44,6 +53,7 @@ public class tracking extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        getData();
 
         detailsButton = findViewById(R.id.event_details_button);
         previousButton = findViewById(R.id.previous_button_tracking);
@@ -101,10 +111,17 @@ public class tracking extends AppCompatActivity {
             }
         });
 
+        userId = auth.getCurrentUser().getUid();
+        DocumentReference docRef = fireStore.collection("eventChoose").document(userId);
+        docRef.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
-        getData();
-        ID = "1";
-        firebaseInsert(ID);
+                ID = value.getString("id1");
+                firebaseInsert(ID);
+            }
+        });
+
         progrssCOunt = (int)(Math.random()*(max-min+1)+min); ;
         progressBar(progrssCOunt);
         setText();
@@ -163,8 +180,11 @@ public class tracking extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        auth = FirebaseAuth.getInstance();
+        fireStore = FirebaseFirestore.getInstance();
         fireData = FirebaseDatabase.getInstance();
         dataRefre = FirebaseDatabase.getInstance().getReference("venues");
+
 
         step1 = findViewById(R.id.progress_bar_1);
 
