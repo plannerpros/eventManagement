@@ -178,6 +178,9 @@ public class startersMenu extends AppCompatActivity {
                 putMenue.put("food", subjectsArrayList);
                 //putMenue.put("food", Arrays.asList(starters));
                 dockRefre.update(putMenue);
+
+                startActivity(new Intent(getApplicationContext(),foodMenu.class));
+
             /*get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(@NonNull DocumentSnapshot documentSnapshot) {

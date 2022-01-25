@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class foodMenu extends AppCompatActivity {
 
@@ -55,7 +56,8 @@ public class foodMenu extends AppCompatActivity {
         confirmed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(foodMenu.this, "All set with food selection!",Toast.LENGTH_SHORT ).show();
+                startActivity(new Intent(getApplicationContext(),planning.class));
             }
         });
         previous.setOnClickListener(new View.OnClickListener() {

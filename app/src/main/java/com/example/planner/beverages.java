@@ -25,8 +25,6 @@ public class beverages extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beverages);
-        setContentView(R.layout.activity_main_courses);
-        setContentView(R.layout.activity_starters_menu);
         findViews();
 
         if (getSupportActionBar() != null) {
@@ -125,6 +123,9 @@ public class beverages extends AppCompatActivity {
                 for(int i=0;i<=noOfItems;i++){
                     System.out.println(beverages[i]);
                 }
+
+                startActivity(new Intent(getApplicationContext(),foodMenu.class));
+
             }
         });
 

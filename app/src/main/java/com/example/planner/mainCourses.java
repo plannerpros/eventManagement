@@ -23,7 +23,6 @@ public class mainCourses extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_courses);
-        setContentView(R.layout.activity_starters_menu);
         findViews();
 
         if (getSupportActionBar() != null) {
@@ -202,6 +201,8 @@ public class mainCourses extends AppCompatActivity {
                 for(int i=0;i<=noOfItems;i++){
                     System.out.println(mainCourses[i]);
                 }
+
+                startActivity(new Intent(getApplicationContext(),foodMenu.class));
             }
         });
 
