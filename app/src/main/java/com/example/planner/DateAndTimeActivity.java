@@ -325,7 +325,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 //                                endDateResult.setError("date is taken");
 //                                return;
 //                            }
-                    Toast.makeText(DateAndTimeActivity.this, "Date is taken", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(DateAndTimeActivity.this, "Date is taken", Toast.LENGTH_LONG).show();
 
                 }
                 else{
