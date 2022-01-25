@@ -95,6 +95,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         billing_info = findViewById(R.id.billing_info);
         event_strength = findViewById(R.id.no_of_people);
         location_info = findViewById(R.id.location_info);
+        totalAmount = findViewById(R.id.total_amount);
 
         DocumentReference dockRefre = fireStore.collection("customer").document(userId);
         dockRefre.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -149,8 +150,11 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         }
 
         System.out.println(no_pople+" "+tPrice+" "+pPrice);
+        int totalAmount1 = (no_pople*tPrice)+(pPrice*no_pople);
         System.out.println((no_pople*tPrice)+(pPrice*no_pople));
 
+
+        totalAmount.setText(totalAmount1);
 
 
     }
