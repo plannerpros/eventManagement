@@ -29,6 +29,9 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class transactions extends AppCompatActivity implements PaymentResultListener {
     Button paybtn;
     TextView paytext;
@@ -40,6 +43,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
     FirebaseAuth fireAuth;
     String userId,id;
     int Amount = 0;
+    String amountString;
     int no_pople,tPrice,pPrice;
     String eType,sPlan,eVenue,eNoPeople;
 
@@ -68,14 +72,25 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         Checkout.preload(getApplicationContext());
         paytext = (TextView) findViewById(R.id.textView);
         paybtn = (Button) findViewById(R.id.button2);
-        Amount = 100000;//(100+50)/10;
-        System.out.println(Amount);
+//        Amount = 100000;//(100+50)/10;
+//        System.out.println(Amount);
 
         paybtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 System.out.println(Amount);
-                makepayment(Amount);
+                dataRefre.child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (task.getResult().exists()){
+                            DataSnapshot dataSnapshot = task.getResult();
+                            amountString = String.valueOf(dataSnapshot.child("totalAmount").getValue());
+                            Amount = Integer.parseInt(amountString);
+                            makepayment(Amount);
+                        }
+                    }
+                });
+
             }
         });
 
@@ -85,7 +100,8 @@ public class transactions extends AppCompatActivity implements PaymentResultList
     private void findViews() {
         fireAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
-        dataRefre = FirebaseDatabase.getInstance().getReference("venues");
+        fireData  = FirebaseDatabase.getInstance();
+        dataRefre = FirebaseDatabase.getInstance().getReference("totalAmount");
         userId = fireAuth.getCurrentUser().getUid();
         client_name = findViewById(R.id.client_name);
         previous_button = findViewById(R.id.previous_button_transactions);
@@ -159,6 +175,10 @@ public class transactions extends AppCompatActivity implements PaymentResultList
 
 
         totalAmount.setText(amountTotal);
+
+        Map<String,Object> totalAmount = new HashMap<>();
+        totalAmount.put("totalAmount",amountTotal);
+        dataRefre.child(userId).setValue(totalAmount);
 
 
     }
