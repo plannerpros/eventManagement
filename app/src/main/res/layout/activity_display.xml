@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_5"
+    android:background="@drawable/background_15"
     tools:context=".activity_display">
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -20,87 +21,139 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
 
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="405dp"
-        android:layout_height="80dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingStart="50sp"
-        android:textSize="20sp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_margin="20sp"
+        android:elevation="50sp"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.248" />
+        app:layout_constraintVertical_bias="0.248">
 
-    <TextView
-        android:id="@+id/phoneNumber"
-        android:layout_width="405dp"
-        android:layout_height="80dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingStart="50sp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="left"
+            android:layout_margin="20sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="405dp"
-        android:layout_height="80dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingStart="50sp"
-        android:textSize="20sp"
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_margin="20sp"
+        android:elevation="50sp"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.408">
 
-    <TextView
-        android:id="@+id/dateofbirth"
-        android:layout_width="405dp"
-        android:layout_height="80dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingStart="50sp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="left"
+            android:layout_margin="20sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/aadhar"
-        android:layout_width="405dp"
-        android:layout_height="80dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingStart="50sp"
-        android:textSize="20sp"
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_margin="20sp"
+        android:elevation="50sp"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.568">
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="left"
+            android:layout_margin="20sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_margin="20sp"
+        android:elevation="50sp"
+        android:paddingLeft="50sp"
+        app:cardCornerRadius="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721">
+
+        <TextView
+            android:id="@+id/dateofbirth"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="left"
+            android:layout_margin="20sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:elevation="50sp"
+        app:cardCornerRadius="30sp"
+        android:layout_margin="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingLeft="50sp"
+        app:layout_constraintVertical_bias="0.88">
+
+        <TextView
+            android:id="@+id/aadhar"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="left"
+            android:layout_margin="20sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="20sp"  />
+
+
+    </androidx.cardview.widget.CardView>
 
 
     <Button
         android:id="@+id/dashboard"
-        android:layout_width="139dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Go to dashboard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/editDetails"
