@@ -326,7 +326,7 @@ public class DateAndTimeActivity extends AppCompatActivity {
 //                                return;
 //                            }
                     //Toast.makeText(DateAndTimeActivity.this, "Date is taken", Toast.LENGTH_LONG).show();
-
+//
                 }
                 else{
                     System.out.println("no value");
