@@ -56,6 +56,15 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         findViews();
 
 
+
+
+        previous_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),dashboard.class));
+            }
+        });
+
         Checkout.preload(getApplicationContext());
         paytext = (TextView) findViewById(R.id.textView);
         paybtn = (Button) findViewById(R.id.button2);
@@ -67,13 +76,6 @@ public class transactions extends AppCompatActivity implements PaymentResultList
             public void onClick(View view) {
                 System.out.println(Amount);
                 makepayment(Amount);
-            }
-        });
-
-        previous_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),dashboard.class));
             }
         });
 
@@ -153,8 +155,10 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         int totalAmount1 = (no_pople*tPrice)+(pPrice*no_pople);
         System.out.println((no_pople*tPrice)+(pPrice*no_pople));
 
+        String amountTotal = String.valueOf(totalAmount1);
 
-        totalAmount.setText(totalAmount1);
+
+        totalAmount.setText(amountTotal);
 
 
     }
