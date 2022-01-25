@@ -33,6 +33,7 @@ public class activity_collectdetails extends AppCompatActivity {
     FirebaseFirestore fbs;
     ImageButton gobck;
     String userId;
+    String phoneValidation = "[0-9]{10}";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class activity_collectdetails extends AppCompatActivity {
                     fnet.setError("Email is Required");
                     return;
                 }
-                if(TextUtils.isEmpty(phNumber))
+                if(TextUtils.isEmpty(phNumber)&&phNumber.toString().matches(phoneValidation)) //number.getText().toString().matches(MobilePattern)
                 {
                     pnet.setError("Password is required");
                     return;
