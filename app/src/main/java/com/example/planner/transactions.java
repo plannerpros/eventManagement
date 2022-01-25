@@ -117,7 +117,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
                 end_info.setText(value.getString("endDate"));
                 venue_name.setText(value.getString("venueName"));
                 eVenue = value.getString("venueName");
-                billing_info.setText(value.getString("Completed"));
+                //billing_info.setText(value.getString("Completed"));
                 event_strength.setText(value.getString("numberOfpeople"));
                 eNoPeople = value.getString("numberOfpeople");
                 location_info.setText(value.getString("location"));

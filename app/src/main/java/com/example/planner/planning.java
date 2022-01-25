@@ -18,7 +18,7 @@ import com.google.android.material.button.MaterialButton;
 public class planning extends AppCompatActivity {
 
     CardView c1, c2, c3,c4;
-    ImageView button_evntType,button_venueChooser,button_noofpeople,button_back, services, confirm, foodMenu;
+    ImageView button_evntType,button_venueChooser,button_dateTime,button_noofpeople,button_back, services, confirm, foodMenu;
     Dialog dialog;
 
     @Override
@@ -42,7 +42,12 @@ public class planning extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),activity_venueChooser.class));
             }
         });
-
+//        button_dateTime.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity( new Intent(getApplicationContext(), DateAndTimeActivity.class));
+//            }
+//        });
         button_noofpeople.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,6 +117,7 @@ public class planning extends AppCompatActivity {
     private void resourceid() {
         button_evntType = findViewById(R.id.type);
         button_venueChooser = findViewById(R.id.venue_choose);
+        //button_dateTime = findViewById(R.id.datentime);
         button_noofpeople = findViewById(R.id.numberPeople);
         button_back = findViewById(R.id.back_button);
         services = findViewById(R.id.services);
