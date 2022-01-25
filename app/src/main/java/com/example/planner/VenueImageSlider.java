@@ -122,7 +122,9 @@ public class VenueImageSlider extends AppCompatActivity {
                 user.put("venueName",venueName);
                 user.put("location",tLocation);
                 user.put("id",tPrice);
+                user.put("id1",ID);
                 docuRefr.update(user);
+
                 //System.out.println(tName);
                 System.out.println(venueName);
                 String toastText = venueName + " is confirmed!";
