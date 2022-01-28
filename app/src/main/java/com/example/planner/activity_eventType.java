@@ -128,7 +128,6 @@ public class activity_eventType extends AppCompatActivity {
                 eventNo = 7;
                 eventName = eventAssigner(eventNo);
                 System.out.println(eventName);
-                startActivity(new Intent(getApplicationContext(),Services.class));
                 Toast.makeText(activity_eventType.this, "Tea party, it is!", Toast.LENGTH_SHORT).show();
 
             }

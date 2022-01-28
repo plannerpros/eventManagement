@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8sp"
                 android:justificationMode="inter_word"
-                android:text="Worried about organizing an event? We're here to help you out just with lease details you could provide about the event!!!"
+                android:text="Worried about organizing an event? We're here to help you out just with least details you could provide about the event!!!"
                 android:textColor="#212529"
                 android:textSize="20sp"
                 android:textStyle="italic" />

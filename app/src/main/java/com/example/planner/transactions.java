@@ -56,11 +56,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
         findViews();
-
-
-
 
         previous_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +81,9 @@ public class transactions extends AppCompatActivity implements PaymentResultList
                         if (task.getResult().exists()){
                             DataSnapshot dataSnapshot = task.getResult();
                             amountString = String.valueOf(dataSnapshot.child("totalAmount").getValue());
+                            System.out.println(amountString);
                             Amount = Integer.parseInt(amountString);
+                            System.out.println(Amount);
                             makepayment(Amount);
                         }
                     }
@@ -202,7 +200,7 @@ public class transactions extends AppCompatActivity implements PaymentResultList
             //options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             options.put("theme.color", "#3399cc");
             options.put("currency", "INR");
-            options.put("amount", finalAmount);//pass amount in currency subunits
+            options.put("amount", Amount);//pass amount in currency subunits
             options.put("prefill.email", "gaurav.kumar@example.com");
             options.put("prefill.contact", "9551864622");
             JSONObject retryObj = new JSONObject();
